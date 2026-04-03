@@ -22,6 +22,17 @@ from collections import defaultdict
 DEFAULT_CONFIG = {
     "time_range_hours": 168,
     "max_description_length": 20,
+    "max_tree_depth": 3,
+    "shallow_folders": [
+        "backups",
+        "版本汇总",
+        "logs",
+        "tests",
+        "dist",
+        "__pycache__",
+        "临时池",
+        "暂存数据",
+    ],
     "ignore_list": [
         ".git",
         "node_modules",
@@ -637,7 +648,7 @@ def generate_project_map(files_info, git_changes):
     content = f"""# 🗺️ 项目地图 (Live)
 
 > **Updated:** {timestamp}
-> **Version:** 2.0 Standalone | **Mode:** Git集成 + 学习机制
+ > **Version:** 2.1 Standalone | **Mode:** 智能层级 + 关键文件识别
 
 ## 🔥 最近变动 (7天)
 
@@ -672,15 +683,15 @@ def install_hooks():
     hook_scripts = {
         "post-commit": """#!/bin/bash
 # post-commit hook - 提交后自动更新项目地图
-python3 "$(dirname "$0")/../standalone.py" --run-hook post-commit
+python3 "$(dirname "$0")/../generate_map.py" --run-hook post-commit
 """,
         "post-merge": """#!/bin/bash
 # post-merge hook - 合并后自动更新项目地图
-python3 "$(dirname "$0")/../standalone.py" --run-hook post-merge
+python3 "$(dirname "$0")/../generate_map.py" --run-hook post-merge
 """,
         "post-checkout": """#!/bin/bash
 # post-checkout hook - 切换分支后自动更新项目地图
-python3 "$(dirname "$0")/../standalone.py" --run-hook post-checkout
+python3 "$(dirname "$0")/../generate_map.py" --run-hook post-checkout
 """,
     }
 

@@ -97,7 +97,6 @@ def get_max_depth(folder_name):
     shallow_folders = {
         "backups",
         ".backup",
-        "backups",
         "版本汇总",
         "archive",
         "历史版本",
@@ -777,7 +776,7 @@ def generate_project_map(
     content = f"""# 🗺️ 项目地图 (Live)
 
 > **Updated:** {timestamp}
-> **Version:** 2.0 | **Mode:** Git集成 + 学习机制
+ > **Version:** 2.1 | **Mode:** 智能层级 + 关键文件识别
 
 ## 🔥 最近变动 (7天)
 
@@ -791,7 +790,7 @@ def generate_project_map(
 ```
 
 ---
-*由 generate_map_v2.py 自动生成*
+*由 generate_map.py V2.1 自动生成*
 """
 
     return content
