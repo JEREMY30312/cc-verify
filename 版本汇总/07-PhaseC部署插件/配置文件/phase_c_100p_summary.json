@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "batch_size": "100%",
+    "success_rate": "5/5",
+    "processing_time": "0.001秒",
+    "average_reduction": 4.8,
+    "average_quality": 1.0,
+    "targets_achieved": {
+      "reduction": false,
+      "p1": true,
+      "p2": true,
+      "quality": true
+    }
+  }
+}

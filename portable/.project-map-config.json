@@ -1,0 +1,80 @@
+{
+  "time_range_hours": 168,
+  "max_description_length": 20,
+  "ignore_list": [
+    ".git",
+    "node_modules",
+    "__pycache__",
+    ".DS_Store",
+    "dist",
+    "build",
+    ".idea",
+    ".vscode",
+    ".sisyphus",
+    ".opencode",
+    ".backup",
+    ".backups"
+  ],
+  "collapse_folders": [
+    "backups",
+    ".strategic-snapshots",
+    "\u7248\u672c\u6c47\u603b",
+    ".backup"
+  ],
+  "hooks": {
+    "post_commit_update": true,
+    "post_merge_update": true,
+    "post_checkout_update": true,
+    "auto_add_to_git": true
+  },
+  "output": {
+    "map_file": "PROJECT_MAP.md",
+    "fingerprint_file": "PROJECT_FINGERPRINT.json"
+  },
+  "max_tree_depth": 3,
+  "shallow_folders": [
+    "backups",
+    ".backup",
+    "\u7248\u672c\u6c47\u603b",
+    "archive",
+    "\u5386\u53f2\u7248\u672c",
+    "\u56de\u6536\u6587\u4ef6",
+    "logs",
+    ".log",
+    "\u9519\u8bef\u65e5\u5fd7",
+    "organizer.log",
+    "organizer-error.log",
+    "test_scripts",
+    "tests",
+    "spec",
+    "__tests__",
+    "dist",
+    "build",
+    "out",
+    ".next",
+    "node_modules",
+    ".idea",
+    ".vscode",
+    ".settings",
+    ".strategic-snapshots",
+    ".snapshots",
+    "__pycache__",
+    ".cache",
+    "tmp",
+    "temp",
+    "\u7f13\u5b58",
+    "\u4e34\u65f6\u6c60",
+    "\u6682\u5b58\u6570\u636e",
+    "\u6682\u5b58\u811a\u672c",
+    "playwright-report",
+    "coverage",
+    ".nyc_output"
+  ],
+  "description": {
+    "mode": "traditional",
+    "max_length": 20,
+    "cache_file": ".file-descriptions.json",
+    "tasks_file": ".llm-tasks.json",
+    "timeout_seconds": 60
+  }
+}

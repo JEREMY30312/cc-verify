@@ -1,0 +1,59 @@
+> **Description:** Agent运行时状态存储文件，记录各子Agent的agentId和知识库版本信息
+
+{
+  "version": "4.1",
+  "last_updated": "2026-02-05T22:46:00Z",
+  "project_config": {
+    "visual_style": "真人写实",
+    "target_medium": "短剧",
+    "aspect_ratio": "16:9",
+    "narrative_structure": "经典三幕式",
+    "genre": "action",
+    "enable_genre_weighting": true
+  },
+  "subagents": {
+    "storyboard-artist": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created",
+      "knowledge_layers": {
+        "contract_version": "4.1",
+        "principles_version": "4.1",
+        "examples_hash": null
+      }
+    },
+    "director": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created",
+      "knowledge_layers": {
+        "review_criteria_version": "4.1"
+      }
+    },
+    "animator": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created",
+      "knowledge_layers": {}
+    }
+  },
+  "current_phase": "idle",
+  "current_episode": null,
+  "snapshots": [],
+  "library_index": {
+    "contracts": [
+      "beat-analysis-schema.json",
+      "shot-board-schema.json"
+    ],
+    "prompts": [
+      "beat-analysis-core.txt",
+      "shot-expansion-core.txt"
+    ],
+    "examples": [
+      "beat-analysis-examples.json"
+    ]
+  }
+}

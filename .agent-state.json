@@ -1,0 +1,100 @@
+{
+  "version": "2.0",
+  "projectConfig": {
+    "visual_style": "国潮动漫",
+    "target_medium": "漫剧",
+    "aspect_ratio": "16:9",
+    "narrative_structure": "经典三幕式",
+    "genre": "动作/冒险"
+  },
+  "phase": "sequence_completed",
+  "current_episode": "ep01",
+  "subagents": {
+    "storyboard-artist": {
+      "agentId": null,
+      "last_task": "sequence",
+      "last_used": "2026-02-05T00:00:00Z",
+      "status": "completed"
+    },
+    "director": {
+      "agentId": null,
+      "last_task": "sequence-review",
+      "last_used": "2026-02-05T00:00:00Z",
+      "status": "completed"
+    },
+    "animator": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created"
+    }
+  },
+  "snapshots": [
+    {
+      "id": "snap-001",
+      "phase": "breakdown_completed",
+      "created_at": "2026-02-05T00:00:00Z",
+      "files": [
+        "outputs/scene-breakdown-ep01.json",
+        "outputs/beat-breakdown-ep01.md",
+        "outputs/breakdown-review-ep01.md"
+      ],
+      "notes": "节拍拆解完成，通过导演审核"
+    },
+    {
+      "id": "snap-002",
+      "phase": "beatboard_completed",
+      "created_at": "2026-02-05T00:00:00Z",
+      "files": [
+        "outputs/beat-board-full-list-ep01.json",
+        "outputs/beat-board-prompt-ep01.md",
+        "outputs/beat-board-prompt-ep01-board1.md",
+        "outputs/beat-board-prompt-ep01-board2.md",
+        "outputs/beatboard-review-ep01.md"
+      ],
+      "notes": "九宫格提示词完成，通过导演审核"
+    },
+    {
+      "id": "snap-003",
+      "phase": "sequence_completed",
+      "created_at": "2026-02-05T00:00:00Z",
+      "files": [
+        "outputs/sequence-board-prompt-ep01.md",
+        "outputs/sequence-review-ep01.md"
+      ],
+      "notes": "动态分镜板（前4节拍）完成，通过导演审核"
+    }
+  ],
+  "created_at": "2025-02-05T00:00:00Z",
+  "updated_at": "2026-02-05T00:00:00Z"
+}
+  },
+  "snapshots": [
+    {
+      "id": "snap-001",
+      "phase": "breakdown_completed",
+      "created_at": "2026-02-05T00:00:00Z",
+      "files": [
+        "outputs/scene-breakdown-ep01.json",
+        "outputs/beat-breakdown-ep01.md",
+        "outputs/breakdown-review-ep01.md"
+      ],
+      "notes": "节拍拆解完成，通过导演审核"
+    },
+    {
+      "id": "snap-002",
+      "phase": "beatboard_completed",
+      "created_at": "2026-02-05T00:00:00Z",
+      "files": [
+        "outputs/beat-board-full-list-ep01.json",
+        "outputs/beat-board-prompt-ep01.md",
+        "outputs/beat-board-prompt-ep01-board1.md",
+        "outputs/beat-board-prompt-ep01-board2.md",
+        "outputs/beatboard-review-ep01.md"
+      ],
+      "notes": "九宫格提示词完成，通过导演审核"
+    }
+  ],
+  "created_at": "2025-02-05T00:00:00Z",
+  "updated_at": "2026-02-05T00:00:00Z"
+}

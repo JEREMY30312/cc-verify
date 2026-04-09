@@ -1,0 +1,211 @@
+{
+  "batch_id": "example_batch_001",
+  "validation_time": "2026-01-30 13:05:45",
+  "overall_status": "warning",
+  "detailed_checks": {
+    "length_preservation": {
+      "status": "pass",
+      "avg_ratio": 0.92,
+      "min_ratio": 0.92,
+      "max_ratio": 0.92,
+      "sample_count": 50,
+      "issues": []
+    },
+    "quality_scores": {
+      "status": "pass",
+      "avg_score": 0.82,
+      "min_score": 0.82,
+      "max_score": 0.82,
+      "sample_count": 50,
+      "distribution": {
+        "excellent_90+": 0,
+        "good_70_89": 50,
+        "fair_50_69": 0,
+        "poor_below_50": 0
+      },
+      "issues": []
+    },
+    "element_preservation": {
+      "status": "pass",
+      "p1_preservation": {
+        "avg_ratio": 1.0,
+        "sample_count": 50,
+        "min_ratio": 1.0,
+        "max_ratio": 1.0
+      },
+      "p2_preservation": {
+        "avg_ratio": 0.9,
+        "sample_count": 50,
+        "min_ratio": 0.9,
+        "max_ratio": 0.9
+      },
+      "issues": []
+    },
+    "processing_time": {
+      "status": "pass",
+      "avg_processing_time": 2.5,
+      "max_processing_time": 2.5,
+      "total_processing_time": 300.0,
+      "sample_count": 50,
+      "issues": []
+    },
+    "error_analysis": {
+      "status": "pass",
+      "error_examples_count": 0,
+      "total_errors": 0,
+      "error_examples": [],
+      "issues": []
+    },
+    "phase_c_simplification_rate": {
+      "status": "pass",
+      "avg_simplification_rate": 0.08,
+      "min_simplification_rate": 0.08,
+      "max_simplification_rate": 0.08,
+      "target_rate": 0.079,
+      "sample_count": 50,
+      "issues": []
+    },
+    "phase_c_p1_p2_preservation": {
+      "status": "pass",
+      "p1_preservation": {
+        "avg_ratio": 1.0,
+        "sample_count": 50,
+        "min_ratio": 1.0,
+        "max_ratio": 1.0,
+        "target_ratio": 1.0
+      },
+      "p2_preservation": {
+        "avg_ratio": 0.9,
+        "sample_count": 50,
+        "min_ratio": 0.9,
+        "max_ratio": 0.9,
+        "target_ratio": 0.9
+      },
+      "issues": []
+    },
+    "phase_c_quality_degradation": {
+      "status": "pass",
+      "sampling_info": {
+        "total_samples": 50,
+        "sampled_count": 2,
+        "sampling_rate": 0.05
+      },
+      "issues": [
+        "最大质量下降 (8.9%) 超过允许的最大值 (8.0%)"
+      ],
+      "quality_degradation_stats": {
+        "avg_degradation": 0.089,
+        "max_degradation": 0.089,
+        "sample_count": 2,
+        "max_allowed": 0.08
+      }
+    },
+    "phase_c_user_perception": {
+      "status": "warning",
+      "user_perception_stats": {
+        "total_examples_analyzed": 50,
+        "negative_feedback_count": 2,
+        "negative_feedback_rate": 0.04,
+        "keyword_occurrences": {
+          "创意受损": 0,
+          "质量下降": 0,
+          "失去原意": 0,
+          "简化过度": 1,
+          "不够生动": 2,
+          "缺乏细节": 0,
+          "失去灵魂": 1,
+          "过于简单": 0,
+          "不够专业": 0,
+          "失去特色": 0
+        },
+        "total_keyword_occurrences": 4
+      },
+      "simulated_feedback_samples": [
+        {
+          "example_id": "example_005",
+          "feedback_type": "negative",
+          "keywords": [
+            "简化过度",
+            "不够生动"
+          ],
+          "comment": "用户反馈：简化过度, 不够生动"
+        },
+        {
+          "example_id": "example_008",
+          "feedback_type": "negative",
+          "keywords": [
+            "不够生动",
+            "失去灵魂"
+          ],
+          "comment": "用户反馈：不够生动, 失去灵魂"
+        }
+      ],
+      "issues": [
+        "检测到 4 次负面关键词出现，超过警告阈值 (3)",
+        "检测到 0 次高风险关键词出现（创意受损/质量下降/失去原意）"
+      ]
+    }
+  },
+  "issues_found": [
+    "最大质量下降 (8.9%) 超过允许的最大值 (8.0%)",
+    "检测到 4 次负面关键词出现，超过警告阈值 (3)",
+    "检测到 0 次高风险关键词出现（创意受损/质量下降/失去原意）"
+  ],
+  "recommendations": [
+    "发现 1 个警告问题，建议检查"
+  ],
+  "statistics": {
+    "total_examples": 50,
+    "successful_examples": 50,
+    "failed_examples": 0,
+    "success_rate": 1.0,
+    "quality_score_stats": {
+      "mean": 0.82,
+      "median": 0.82,
+      "stdev": 0.0,
+      "min": 0.82,
+      "max": 0.82
+    },
+    "processing_time_stats": {
+      "mean": 2.5,
+      "median": 2.5,
+      "total": 125.0,
+      "min": 2.5,
+      "max": 2.5
+    }
+  },
+  "passing_criteria": {
+    "must_have": [
+      "平均质量评分 ≥ 0.6",
+      "P1元素保留率 ≥ 70%",
+      "错误率 ≤ 10%",
+      "平均处理时间 ≤ 5秒/示例",
+      "平均精简率接近7.9% (5%-15%)",
+      "P1元素保留率 ≥ 99%",
+      "P2元素保留率 ≥ 85%",
+      "质量下降 ≤ 10%"
+    ],
+    "should_have": [
+      "平均质量评分 ≥ 0.8",
+      "P2元素保留率 ≥ 50%",
+      "错误率 ≤ 5%",
+      "长度保留率在 0.5-2.0 之间",
+      "平均精简率在6%-10%之间",
+      "P1元素保留率 = 100%",
+      "P2元素保留率 ≥ 90%",
+      "质量下降 ≤ 8%",
+      "负面用户反馈关键词 ≤ 3个"
+    ],
+    "nice_to_have": [
+      "平均质量评分 ≥ 0.9",
+      "所有示例无错误",
+      "处理时间稳定且可预测",
+      "良好的长度保留一致性",
+      "平均精简率 = 7.9% ± 1%",
+      "所有P1元素完全保留",
+      "P2元素保留率 ≥ 95%",
+      "质量下降 ≤ 5%",
+      "无负面用户反馈"
+    ]
+  }
+}

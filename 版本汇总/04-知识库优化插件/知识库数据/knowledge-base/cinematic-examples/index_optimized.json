@@ -1,0 +1,104 @@
+{
+  "version": "2.0",
+  "created_at": "2026-01-29T21:04:01+0800",
+  "examples": [
+    {
+      "id": "b6942e18daf7",
+      "title": "02 Warm Memory",
+      "category": "emotional_closeup",
+      "file_path": "knowledge-base/cinematic-examples/full-examples/02-warm-memory.md",
+      "keywords": [
+        "温馨",
+        "悬疑",
+        "特写",
+        "情感表达",
+        "回忆",
+        "揭示"
+      ],
+      "applicable_templates": [
+        "情绪特写模板",
+        "对话场景变体"
+      ],
+      "retention_priority": "high",
+      "access_count": 0,
+      "last_accessed": 0.0,
+      "similarity_score": 0.0,
+      "content_hash": ""
+    },
+    {
+      "id": "d10f26fd95fd",
+      "title": "05 Suspense Reveal",
+      "category": "emotional_closeup",
+      "file_path": "knowledge-base/cinematic-examples/full-examples/05-suspense-reveal.md",
+      "keywords": [
+        "温馨",
+        "悬疑",
+        "特写",
+        "情感表达",
+        "回忆",
+        "揭示"
+      ],
+      "applicable_templates": [
+        "情绪特写模板",
+        "对话场景变体"
+      ],
+      "retention_priority": "high",
+      "access_count": 0,
+      "last_accessed": 0.0,
+      "similarity_score": 0.0,
+      "content_hash": ""
+    },
+    {
+      "id": "18ff092d3697",
+      "title": "03 Lonely Vista",
+      "category": "establishing_shot",
+      "file_path": "knowledge-base/cinematic-examples/full-examples/03-lonely-vista.md",
+      "keywords": [
+        "孤独",
+        "世界观",
+        "远景",
+        "氛围建立",
+        "奇幻",
+        "科幻"
+      ],
+      "applicable_templates": [
+        "建立镜头模板"
+      ],
+      "retention_priority": "high",
+      "access_count": 0,
+      "last_accessed": 0.0,
+      "similarity_score": 0.0,
+      "content_hash": ""
+    },
+    {
+      "id": "e5b41a302ebc",
+      "title": "06 World Building",
+      "category": "establishing_shot",
+      "file_path": "knowledge-base/cinematic-examples/full-examples/06-world-building.md",
+      "keywords": [
+        "孤独",
+        "世界观",
+        "远景",
+        "氛围建立",
+        "奇幻",
+        "科幻"
+      ],
+      "applicable_templates": [
+        "建立镜头模板"
+      ],
+      "retention_priority": "high",
+      "access_count": 0,
+      "last_accessed": 0.0,
+      "similarity_score": 0.0,
+      "content_hash": ""
+    }
+  ],
+  "statistics": {
+    "total_examples": 4,
+    "categories": [
+      "establishing_shot",
+      "emotional_closeup"
+    ],
+    "total_keywords": 12
+  }
+}

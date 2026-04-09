@@ -1,0 +1,29 @@
+> **Description:** 分镜板数据结构的JSON Schema定义，规范四宫格提示词和台词整合的输出格式
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ShotBoardOutput",
+  "type": "object",
+  "required": ["board_id", "beat_id", "shots", "dialogue_integrated"],
+  "properties": {
+    "board_id": {"type": "string", "description": "分镜板编号"},
+    "beat_id": {"type": "string", "description": "关联的节拍ID"},
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "properties": {
+          "shot_id": {"type": "string"},
+          "frame_type": {"type": "string", "enum": ["key", "start", "action", "end"]},
+          "prompt": {"type": "string", "description": "图生视频提示词"},
+          "camera_movement": {"type": "string"},
+          "duration": {"type": "number"}
+        }
+      }
+    },
+    "dialogue_integrated": {"type": "boolean", "description": "是否已整合台词"},
+    "original_dialogue": {"type": "string"}
+  }
+}

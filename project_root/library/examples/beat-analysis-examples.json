@@ -1,0 +1,56 @@
+> **Description:** 节拍分析正负示例库，包含动作片和爱情片的典型场景分析案例
+
+{
+  "examples": [
+    {
+      "type": "positive",
+      "category": "action",
+      "input": "主角与反派在仓库激烈打斗，拳拳到肉，最终主角夺门而出",
+      "output": {
+        "beat_id": "ep01-beat-07",
+        "event_type": "高强度动作",
+        "base_weight": 2.5,
+        "genre": "action",
+        "genre_coeff": 1.5,
+        "narrative_function": "高潮对抗",
+        "base_narrative": 2.0,
+        "final_weight": 4.2,
+        "keyframe_level": "🔴特级",
+        "strategy_tags": ["蒙太奇组", "动势组"],
+        "suggested_grids": 3
+      },
+      "reasoning": "高强度动作+高潮对抗=高权重，动作片类型系数强化"
+    },
+    {
+      "type": "positive", 
+      "category": "romance",
+      "input": "男主角鼓起勇气，向女主角表白心意",
+      "output": {
+        "beat_id": "ep01-beat-12",
+        "event_type": "情感高潮",
+        "base_weight": 2.0,
+        "genre": "romance",
+        "genre_coeff": 1.6,
+        "narrative_function": "关键转折",
+        "base_narrative": 1.5,
+        "final_weight": 3.2,
+        "keyframe_level": "🔴特级",
+        "strategy_tags": ["单镜", "特写"],
+        "suggested_grids": 1
+      },
+      "reasoning": "情感高潮在爱情片中权重被类型系数放大"
+    },
+    {
+      "type": "negative",
+      "category": "common_mistake",
+      "input": "两人在咖啡厅闲聊日常",
+      "incorrect_output": {
+        "event_type": "重要对话",
+        "final_weight": 2.8,
+        "keyframe_level": "🟠高级"
+      },
+      "error": "过度评估日常对话的重要性",
+      "correct_analysis": "过渡铺垫类型，权重应<1.0"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+#!/bin/bash
+# post-commit hook - 提交后自动更新项目地图
+# 时机：每次 git commit 成功后
+# 目的：保持项目地图实时性
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+python3 "$SCRIPT_DIR/scripts/hook_runner.py" post-commit

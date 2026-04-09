@@ -1,0 +1,3 @@
+#!/bin/bash
+# 快捷命令：check
+./anineo-system-check.sh quick

@@ -1,0 +1,39 @@
+2026-01-30 12:48:42,435 - batch_validation - INFO - 开始验证批次报告: test_batch_001
+2026-01-30 12:48:42,436 - batch_validation - INFO - 批次验证完成: warning
+2026-01-30 12:48:42,439 - monitoring_dashboard - INFO - 没有找到历史指标数据，将创建新文件
+2026-01-30 12:48:42,439 - monitoring_dashboard - ERROR - 保存每日指标失败: [Errno 2] No such file or directory: 'validation_results/daily_metrics.json'
+2026-01-30 12:48:42,721 - rollback_system - INFO - 备份创建成功: test_backup_20260130_124842
+2026-01-30 12:48:42,726 - monitoring_dashboard - INFO - 没有找到历史指标数据，将创建新文件
+2026-01-30 12:48:42,726 - integrated_validation_system - INFO - 所有组件初始化成功
+2026-01-30 12:48:42,726 - integrated_validation_system - INFO - 开始处理批次报告: /var/folders/2j/j72r0z3913z_wxhrkl44rskw0000gn/T/tmpuf0ksclp.json
+2026-01-30 12:48:42,726 - integrated_validation_system - INFO - 步骤1: 执行批次验证
+2026-01-30 12:48:42,726 - batch_validation - INFO - 开始验证批次报告: test_batch_001
+2026-01-30 12:48:42,727 - batch_validation - INFO - 批次验证完成: warning
+2026-01-30 12:48:42,727 - batch_validation - INFO - 验证结果已保存到 validation_result_test_batch_001.json
+2026-01-30 12:48:42,728 - integrated_validation_system - INFO - 步骤2: 更新监控仪表板
+2026-01-30 12:48:42,728 - monitoring_dashboard - ERROR - 保存每日指标失败: [Errno 2] No such file or directory: 'validation_results/daily_metrics.json'
+2026-01-30 12:48:42,728 - integrated_validation_system - INFO - 步骤3: 警报系统分析
+2026-01-30 12:48:42,728 - alert_system - INFO - 警报已处理: quality_degradation_warning - warning
+2026-01-30 12:48:42,728 - alert_system - INFO - 警报已处理: user_perception_negative - warning
+2026-01-30 12:48:42,728 - integrated_validation_system - INFO - 步骤4: 回滚评估
+2026-01-30 12:48:42,728 - integrated_validation_system - INFO - 批次报告处理完成: warning
+2026-01-30 13:05:45,752 - batch_validation - INFO - 开始验证批次报告: example_batch_001
+2026-01-30 13:05:45,753 - batch_validation - INFO - 批次验证完成: pass
+2026-01-30 13:05:45,754 - monitoring_dashboard - INFO - 没有找到历史指标数据，将创建新文件
+2026-01-30 13:05:45,795 - alert_system - INFO - 警报已处理: simplification_rate_out_of_range - critical
+2026-01-30 13:05:45,796 - alert_system - INFO - 警报已处理: p1_preservation_warning - warning
+2026-01-30 13:05:45,796 - alert_system - INFO - 警报已处理: p2_preservation_warning - warning
+2026-01-30 13:05:45,800 - rollback_system - INFO - 备份创建成功: 演示备份_20260130_130545
+2026-01-30 13:05:45,802 - monitoring_dashboard - INFO - 没有找到历史指标数据，将创建新文件
+2026-01-30 13:05:45,802 - integrated_validation_system - INFO - 所有组件初始化成功
+2026-01-30 13:05:45,802 - integrated_validation_system - INFO - 开始处理批次报告: /var/folders/2j/j72r0z3913z_wxhrkl44rskw0000gn/T/tmpya65ple7.json
+2026-01-30 13:05:45,802 - integrated_validation_system - INFO - 步骤1: 执行批次验证
+2026-01-30 13:05:45,802 - batch_validation - INFO - 开始验证批次报告: example_batch_001
+2026-01-30 13:05:45,802 - batch_validation - INFO - 批次验证完成: warning
+2026-01-30 13:05:45,803 - batch_validation - INFO - 验证结果已保存到 validation_result_example_batch_001.json
+2026-01-30 13:05:45,803 - integrated_validation_system - INFO - 步骤2: 更新监控仪表板
+2026-01-30 13:05:45,803 - monitoring_dashboard - ERROR - 保存每日指标失败: [Errno 2] No such file or directory: 'validation_results/daily_metrics.json'
+2026-01-30 13:05:45,803 - integrated_validation_system - INFO - 步骤3: 警报系统分析
+2026-01-30 13:05:45,803 - alert_system - INFO - 警报已处理: user_perception_negative - warning
+2026-01-30 13:05:45,803 - integrated_validation_system - INFO - 步骤4: 回滚评估
+2026-01-30 13:05:45,803 - integrated_validation_system - INFO - 批次报告处理完成: warning

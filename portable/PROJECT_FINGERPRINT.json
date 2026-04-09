@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-09T11:17:02.512088",
+    "generator_version": "2.2-standalone",
+    "total_files": 4,
+    "total_directories": 1,
+    "time_range_hours": 168
+  },
+  "project_profile": {
+    "domain": "通用项目",
+    "architecture": "标准结构",
+    "key_characteristics": []
+  },
+  "structural_insights": {
+    "key_directories": {
+      "根目录": {
+        "count": 4,
+        "files": [
+          "standalone.py",
+          "TROUBLESHOOTING.md",
+          "install.sh",
+          "README.md"
+        ]
+      }
+    },
+    "file_type_distribution": {}
+  },
+  "temporal_analysis": {
+    "recent_changes_count": 0,
+    "hot_directories": []
+  },
+  "ai_optimized_index": {
+    "quick_answers": {
+      "如何开始": "README.md"
+    },
+    "search_shortcuts": {
+      "Python脚本": [
+        "standalone.py"
+      ],
+      "Markdown文档": [
+        "TROUBLESHOOTING.md",
+        "README.md"
+      ]
+    },
+    "hot_directories": [],
+    "file_count": 4,
+    "git_change_count": 0
+  }
+}

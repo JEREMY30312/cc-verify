@@ -1,0 +1,537 @@
+{
+  "analysis_summary": {
+    "total_examples": 3,
+    "average_score": 0.6055699481865284,
+    "high_creativity_count": 0,
+    "medium_creativity_count": 0,
+    "low_creativity_count": 3,
+    "average_reduction_target": 45.0,
+    "average_retention_rate": 60.0
+  },
+  "example_scores": [
+    {
+      "id": 1,
+      "title": "紧张对峙（剧情片）",
+      "score": 0.7545336787564766,
+      "grade": "D (差)",
+      "element_scores": {
+        "total_weighted_score": 23.299999999999997,
+        "max_possible_score": 154.4,
+        "categories": {
+          "visual_metaphors": {
+            "count": 3,
+            "weight": 1.2,
+            "score": 3.5999999999999996,
+            "max_score": 19.2,
+            "percentage": 18.75,
+            "grade": "不足"
+          },
+          "emotional_details": {
+            "count": 1,
+            "weight": 1.1,
+            "score": 1.1,
+            "max_score": 17.6,
+            "percentage": 6.25,
+            "grade": "不足"
+          },
+          "environmental_details": {
+            "count": 2,
+            "weight": 0.9,
+            "score": 1.8,
+            "max_score": 13.5,
+            "percentage": 13.333333333333334,
+            "grade": "不足"
+          },
+          "cinematic_techniques": {
+            "count": 2,
+            "weight": 1.5,
+            "score": 3.0,
+            "max_score": 31.5,
+            "percentage": 9.523809523809524,
+            "grade": "不足"
+          },
+          "lighting_effects": {
+            "count": 4,
+            "weight": 1.3,
+            "score": 5.2,
+            "max_score": 26.0,
+            "percentage": 20.0,
+            "grade": "不足"
+          },
+          "color_grading": {
+            "count": 3,
+            "weight": 1.0,
+            "score": 3.0,
+            "max_score": 20.0,
+            "percentage": 15.0,
+            "grade": "不足"
+          },
+          "atmosphere_creation": {
+            "count": 4,
+            "weight": 1.4,
+            "score": 5.6,
+            "max_score": 26.599999999999998,
+            "percentage": 21.05263157894737,
+            "grade": "不足"
+          }
+        }
+      },
+      "strengths": [
+        "atmosphere_creation: 4个元素 (得分21%)",
+        "lighting_effects: 4个元素 (得分20%)",
+        "visual_metaphors: 3个元素 (得分19%)"
+      ],
+      "weaknesses": [],
+      "recommendations": [
+        "创意质量偏低，可作为较大精简对象",
+        "保留50-60%核心创意，大幅压缩非关键元素"
+      ],
+      "processing_priority": "lowest",
+      "target_reduction": 45.0,
+      "creative_retention_rate": 60.0
+    },
+    {
+      "id": 2,
+      "title": "温馨回忆（剧情片）",
+      "score": 0.7124352331606219,
+      "grade": "D (差)",
+      "element_scores": {
+        "total_weighted_score": 22.000000000000004,
+        "max_possible_score": 154.4,
+        "categories": {
+          "visual_metaphors": {
+            "count": 2,
+            "weight": 1.2,
+            "score": 2.4,
+            "max_score": 19.2,
+            "percentage": 12.5,
+            "grade": "不足"
+          },
+          "emotional_details": {
+            "count": 6,
+            "weight": 1.1,
+            "score": 6.6000000000000005,
+            "max_score": 17.6,
+            "percentage": 37.5,
+            "grade": "不足"
+          },
+          "environmental_details": {
+            "count": 2,
+            "weight": 0.9,
+            "score": 1.8,
+            "max_score": 13.5,
+            "percentage": 13.333333333333334,
+            "grade": "不足"
+          },
+          "cinematic_techniques": {
+            "count": 3,
+            "weight": 1.5,
+            "score": 4.5,
+            "max_score": 31.5,
+            "percentage": 14.285714285714285,
+            "grade": "不足"
+          },
+          "lighting_effects": {
+            "count": 3,
+            "weight": 1.3,
+            "score": 3.9000000000000004,
+            "max_score": 26.0,
+            "percentage": 15.000000000000002,
+            "grade": "不足"
+          },
+          "color_grading": {
+            "count": 0,
+            "weight": 1.0,
+            "score": 0.0,
+            "max_score": 20.0,
+            "percentage": 0.0,
+            "grade": "不足"
+          },
+          "atmosphere_creation": {
+            "count": 2,
+            "weight": 1.4,
+            "score": 2.8,
+            "max_score": 26.599999999999998,
+            "percentage": 10.526315789473685,
+            "grade": "不足"
+          }
+        }
+      },
+      "strengths": [
+        "emotional_details: 6个元素 (得分38%)",
+        "lighting_effects: 3个元素 (得分15%)",
+        "cinematic_techniques: 3个元素 (得分14%)"
+      ],
+      "weaknesses": [],
+      "recommendations": [
+        "创意质量偏低，可作为较大精简对象",
+        "保留50-60%核心创意，大幅压缩非关键元素"
+      ],
+      "processing_priority": "lowest",
+      "target_reduction": 45.0,
+      "creative_retention_rate": 60.0
+    },
+    {
+      "id": 6,
+      "title": "世界观建立（奇幻/科幻）",
+      "score": 0.34974093264248696,
+      "grade": "D (差)",
+      "element_scores": {
+        "total_weighted_score": 10.799999999999999,
+        "max_possible_score": 154.4,
+        "categories": {
+          "visual_metaphors": {
+            "count": 3,
+            "weight": 1.2,
+            "score": 3.5999999999999996,
+            "max_score": 19.2,
+            "percentage": 18.75,
+            "grade": "不足"
+          },
+          "emotional_details": {
+            "count": 0,
+            "weight": 1.1,
+            "score": 0.0,
+            "max_score": 17.6,
+            "percentage": 0.0,
+            "grade": "不足"
+          },
+          "environmental_details": {
+            "count": 0,
+            "weight": 0.9,
+            "score": 0.0,
+            "max_score": 13.5,
+            "percentage": 0.0,
+            "grade": "不足"
+          },
+          "cinematic_techniques": {
+            "count": 1,
+            "weight": 1.5,
+            "score": 1.5,
+            "max_score": 31.5,
+            "percentage": 4.761904761904762,
+            "grade": "不足"
+          },
+          "lighting_effects": {
+            "count": 1,
+            "weight": 1.3,
+            "score": 1.3,
+            "max_score": 26.0,
+            "percentage": 5.0,
+            "grade": "不足"
+          },
+          "color_grading": {
+            "count": 3,
+            "weight": 1.0,
+            "score": 3.0,
+            "max_score": 20.0,
+            "percentage": 15.0,
+            "grade": "不足"
+          },
+          "atmosphere_creation": {
+            "count": 1,
+            "weight": 1.4,
+            "score": 1.4,
+            "max_score": 26.599999999999998,
+            "percentage": 5.2631578947368425,
+            "grade": "不足"
+          }
+        }
+      },
+      "strengths": [
+        "visual_metaphors: 3个元素 (得分19%)",
+        "color_grading: 3个元素 (得分15%)",
+        "atmosphere_creation: 1个元素 (得分5%)"
+      ],
+      "weaknesses": [],
+      "recommendations": [
+        "创意质量偏低，可作为较大精简对象",
+        "保留50-60%核心创意，大幅压缩非关键元素"
+      ],
+      "processing_priority": "lowest",
+      "target_reduction": 45.0,
+      "creative_retention_rate": 60.0
+    }
+  ],
+  "scoring_distribution": {
+    "A_plus": 0,
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 3,
+    "score_ranges": {
+      "4.5-5.0": 0,
+      "4.0-4.5": 0,
+      "3.5-4.0": 0,
+      "3.0-3.5": 0,
+      "<3.0": 3
+    }
+  },
+  "tiered_processing_plan": {
+    "high_creativity_tier": {
+      "examples": [],
+      "strategy": "轻度精简，重点保护创意核心",
+      "target_reduction": "20-25%",
+      "retention_rate": "90%",
+      "processing_notes": "使用完整模式或标准模式，优先保护P1和P2元素"
+    },
+    "medium_creativity_tier": {
+      "examples": [],
+      "strategy": "适度精简，平衡质量与性能",
+      "target_reduction": "30-35%",
+      "retention_rate": "80%",
+      "processing_notes": "使用标准模式，保护高权重创意元素，适度压缩P3元素"
+    },
+    "low_creativity_tier": {
+      "examples": [
+        {
+          "id": 1,
+          "title": "紧张对峙（剧情片）",
+          "score": 0.7545336787564766,
+          "grade": "D (差)",
+          "element_scores": {
+            "total_weighted_score": 23.299999999999997,
+            "max_possible_score": 154.4,
+            "categories": {
+              "visual_metaphors": {
+                "count": 3,
+                "weight": 1.2,
+                "score": 3.5999999999999996,
+                "max_score": 19.2,
+                "percentage": 18.75,
+                "grade": "不足"
+              },
+              "emotional_details": {
+                "count": 1,
+                "weight": 1.1,
+                "score": 1.1,
+                "max_score": 17.6,
+                "percentage": 6.25,
+                "grade": "不足"
+              },
+              "environmental_details": {
+                "count": 2,
+                "weight": 0.9,
+                "score": 1.8,
+                "max_score": 13.5,
+                "percentage": 13.333333333333334,
+                "grade": "不足"
+              },
+              "cinematic_techniques": {
+                "count": 2,
+                "weight": 1.5,
+                "score": 3.0,
+                "max_score": 31.5,
+                "percentage": 9.523809523809524,
+                "grade": "不足"
+              },
+              "lighting_effects": {
+                "count": 4,
+                "weight": 1.3,
+                "score": 5.2,
+                "max_score": 26.0,
+                "percentage": 20.0,
+                "grade": "不足"
+              },
+              "color_grading": {
+                "count": 3,
+                "weight": 1.0,
+                "score": 3.0,
+                "max_score": 20.0,
+                "percentage": 15.0,
+                "grade": "不足"
+              },
+              "atmosphere_creation": {
+                "count": 4,
+                "weight": 1.4,
+                "score": 5.6,
+                "max_score": 26.599999999999998,
+                "percentage": 21.05263157894737,
+                "grade": "不足"
+              }
+            }
+          },
+          "strengths": [
+            "atmosphere_creation: 4个元素 (得分21%)",
+            "lighting_effects: 4个元素 (得分20%)",
+            "visual_metaphors: 3个元素 (得分19%)"
+          ],
+          "weaknesses": [],
+          "recommendations": [
+            "创意质量偏低，可作为较大精简对象",
+            "保留50-60%核心创意，大幅压缩非关键元素"
+          ],
+          "processing_priority": "lowest",
+          "target_reduction": 45.0,
+          "creative_retention_rate": 60.0
+        },
+        {
+          "id": 2,
+          "title": "温馨回忆（剧情片）",
+          "score": 0.7124352331606219,
+          "grade": "D (差)",
+          "element_scores": {
+            "total_weighted_score": 22.000000000000004,
+            "max_possible_score": 154.4,
+            "categories": {
+              "visual_metaphors": {
+                "count": 2,
+                "weight": 1.2,
+                "score": 2.4,
+                "max_score": 19.2,
+                "percentage": 12.5,
+                "grade": "不足"
+              },
+              "emotional_details": {
+                "count": 6,
+                "weight": 1.1,
+                "score": 6.6000000000000005,
+                "max_score": 17.6,
+                "percentage": 37.5,
+                "grade": "不足"
+              },
+              "environmental_details": {
+                "count": 2,
+                "weight": 0.9,
+                "score": 1.8,
+                "max_score": 13.5,
+                "percentage": 13.333333333333334,
+                "grade": "不足"
+              },
+              "cinematic_techniques": {
+                "count": 3,
+                "weight": 1.5,
+                "score": 4.5,
+                "max_score": 31.5,
+                "percentage": 14.285714285714285,
+                "grade": "不足"
+              },
+              "lighting_effects": {
+                "count": 3,
+                "weight": 1.3,
+                "score": 3.9000000000000004,
+                "max_score": 26.0,
+                "percentage": 15.000000000000002,
+                "grade": "不足"
+              },
+              "color_grading": {
+                "count": 0,
+                "weight": 1.0,
+                "score": 0.0,
+                "max_score": 20.0,
+                "percentage": 0.0,
+                "grade": "不足"
+              },
+              "atmosphere_creation": {
+                "count": 2,
+                "weight": 1.4,
+                "score": 2.8,
+                "max_score": 26.599999999999998,
+                "percentage": 10.526315789473685,
+                "grade": "不足"
+              }
+            }
+          },
+          "strengths": [
+            "emotional_details: 6个元素 (得分38%)",
+            "lighting_effects: 3个元素 (得分15%)",
+            "cinematic_techniques: 3个元素 (得分14%)"
+          ],
+          "weaknesses": [],
+          "recommendations": [
+            "创意质量偏低，可作为较大精简对象",
+            "保留50-60%核心创意，大幅压缩非关键元素"
+          ],
+          "processing_priority": "lowest",
+          "target_reduction": 45.0,
+          "creative_retention_rate": 60.0
+        },
+        {
+          "id": 6,
+          "title": "世界观建立（奇幻/科幻）",
+          "score": 0.34974093264248696,
+          "grade": "D (差)",
+          "element_scores": {
+            "total_weighted_score": 10.799999999999999,
+            "max_possible_score": 154.4,
+            "categories": {
+              "visual_metaphors": {
+                "count": 3,
+                "weight": 1.2,
+                "score": 3.5999999999999996,
+                "max_score": 19.2,
+                "percentage": 18.75,
+                "grade": "不足"
+              },
+              "emotional_details": {
+                "count": 0,
+                "weight": 1.1,
+                "score": 0.0,
+                "max_score": 17.6,
+                "percentage": 0.0,
+                "grade": "不足"
+              },
+              "environmental_details": {
+                "count": 0,
+                "weight": 0.9,
+                "score": 0.0,
+                "max_score": 13.5,
+                "percentage": 0.0,
+                "grade": "不足"
+              },
+              "cinematic_techniques": {
+                "count": 1,
+                "weight": 1.5,
+                "score": 1.5,
+                "max_score": 31.5,
+                "percentage": 4.761904761904762,
+                "grade": "不足"
+              },
+              "lighting_effects": {
+                "count": 1,
+                "weight": 1.3,
+                "score": 1.3,
+                "max_score": 26.0,
+                "percentage": 5.0,
+                "grade": "不足"
+              },
+              "color_grading": {
+                "count": 3,
+                "weight": 1.0,
+                "score": 3.0,
+                "max_score": 20.0,
+                "percentage": 15.0,
+                "grade": "不足"
+              },
+              "atmosphere_creation": {
+                "count": 1,
+                "weight": 1.4,
+                "score": 1.4,
+                "max_score": 26.599999999999998,
+                "percentage": 5.2631578947368425,
+                "grade": "不足"
+              }
+            }
+          },
+          "strengths": [
+            "visual_metaphors: 3个元素 (得分19%)",
+            "color_grading: 3个元素 (得分15%)",
+            "atmosphere_creation: 1个元素 (得分5%)"
+          ],
+          "weaknesses": [],
+          "recommendations": [
+            "创意质量偏低，可作为较大精简对象",
+            "保留50-60%核心创意，大幅压缩非关键元素"
+          ],
+          "processing_priority": "lowest",
+          "target_reduction": 45.0,
+          "creative_retention_rate": 60.0
+        }
+      ],
+      "strategy": "较大精简，优化性能",
+      "target_reduction": "40-45%",
+      "retention_rate": "60-75%",
+      "processing_notes": "使用标准模式或快速模式，保护P1元素，大幅压缩P3/P4元素"
+    }
+  }
+}

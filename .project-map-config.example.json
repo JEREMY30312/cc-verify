@@ -1,0 +1,84 @@
+{
+  "// 配置说明": "项目地图生成器配置文件 - 修改后保存即可生效",
+
+  "// time_range_hours": "显示最近多少小时的变化（默认168=7天）",
+  "time_range_hours": 168,
+
+  "// max_description_length": "文件描述最多多少字（默认20）",
+  "max_description_length": 20,
+
+  "// max_tree_depth": "目录树最大显示深度（默认3，非功能性文件夹只显示第一层）",
+  "max_tree_depth": 3,
+
+  "// shallow_folders": "浅层显示文件夹列表（只显示第一层，不展开子目录）",
+  "shallow_folders": [
+    "backups",
+    "版本汇总",
+    "logs",
+    "tests",
+    "dist",
+    "__pycache__",
+    "临时池",
+    "暂存数据",
+    "暂存脚本",
+    "playwright-report",
+    "coverage",
+    ".nyc_output"
+  ],
+
+  "// ignore_list": "扫描时忽略的文件夹列表",
+  "ignore_list": [
+    ".git",
+    "node_modules",
+    "__pycache__",
+    ".DS_Store",
+    "dist",
+    "build",
+    ".idea",
+    ".vscode",
+    ".sisyphus",
+    ".opencode",
+    ".backup",
+    ".backups"
+  ],
+
+  "// collapse_folders": "在目录树中折叠显示的文件夹（显示为...）",
+  "collapse_folders": [
+    "backups",
+    ".strategic-snapshots",
+    "版本汇总",
+    ".backup"
+  ],
+
+  "// hooks": "Git钩子开关 - 控制哪些操作后自动更新地图",
+  "hooks": {
+    "// post_commit_update": "git commit 后是否自动更新（true/false）",
+    "post_commit_update": true,
+    "// post_merge_update": "git merge/pull 后是否自动更新（true/false）",
+    "post_merge_update": true,
+    "// post_checkout_update": "git checkout 切换分支后是否自动更新（true/false）",
+    "post_checkout_update": true,
+    "// auto_add_to_git": "更新后是否自动 git add 地图文件（true/false）",
+    "auto_add_to_git": true
+  },
+
+  "// output": "输出文件名配置",
+  "output": {
+    "map_file": "PROJECT_MAP.md",
+    "fingerprint_file": "PROJECT_FINGERPRINT.json"
+  },
+
+  "// description": "LLM智能描述配置（V2.2新增）",
+  "description": {
+    "// mode": "描述生成模式：llm=LLM智能生成，traditional=传统YAML提取",
+    "mode": "llm",
+    "// max_length": "描述最大长度（默认20字）",
+    "max_length": 20,
+    "// cache_file": "描述缓存文件路径（.file-descriptions.json）",
+    "cache_file": ".file-descriptions.json",
+    "// tasks_file": "任务清单文件路径（.llm-tasks.json）",
+    "tasks_file": ".llm-tasks.json",
+    "// timeout_seconds": "等待AI完成描述的超时时间（默认60秒）",
+    "timeout_seconds": 60
+  }
+}

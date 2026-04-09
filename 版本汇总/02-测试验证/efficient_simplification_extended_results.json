@@ -1,0 +1,193 @@
+{
+  "examples": [
+    {
+      "title": "动作场景（动作片）",
+      "original": "中景，两名特工在狭窄的巷子里搏斗。快速剪辑，拳脚相交，动作流畅而有力。雨水打湿的地面反射霓虹灯光，每一次击打都溅起水花。动态构图，倾斜角度增强紧张感。慢动作捕捉关键瞬间，展现力量与技巧。肾上腺素飙升，生死对决的紧张时刻。",
+      "detected_scenes": [
+        "action_scene",
+        "suspense_scene"
+      ],
+      "scene_p2_keywords_count": 69,
+      "modes": {
+        "full": {
+          "content": "中景，两名特工在狭窄巷子里搏斗。快速剪辑，拳脚相交，动作流畅有力。雨水打湿地面反射霓虹灯光，每一次击打都溅起水花。动态构图，倾斜角度增强紧张感。慢动作捕捉关键瞬间，展现力量与技巧。肾上腺素飙升，生死对决紧张时刻。",
+          "reduction": 3.6,
+          "preserved_p1": 2,
+          "preserved_p2_base": 0,
+          "preserved_p2_scene": 16,
+          "preserved_p2_total": 16,
+          "achieved_target": false
+        },
+        "standard": {
+          "content": "中景，两名特工在狭窄巷子里搏斗。快速剪辑，拳脚相交，动作流畅有力。雨水打湿地面反射霓虹灯光，每一次击打都溅起水花。动态构图，倾斜角度增强紧张感。慢动作捕捉关键瞬间，展现力量与技巧。肾上腺素飙升，生死对决紧张时刻。",
+          "reduction": 3.6,
+          "preserved_p1": 2,
+          "preserved_p2_base": 0,
+          "preserved_p2_scene": 16,
+          "preserved_p2_total": 16,
+          "achieved_target": false
+        },
+        "fast": {
+          "content": "中景，两名特工在狭窄巷子里搏斗。快速剪辑，拳脚相交，动作流畅有力。雨水打湿地面反射霓虹灯光，每一次击打都溅起水花。动态构图，倾斜角度增强紧张感。慢动作捕捉关键瞬间，展现力量与技巧。肾上腺素飙升，生死对决紧张时刻。",
+          "reduction": 3.6,
+          "preserved_p1": 2,
+          "preserved_p2_base": 0,
+          "preserved_p2_scene": 16,
+          "preserved_p2_total": 16,
+          "achieved_target": false
+        }
+      }
+    },
+    {
+      "title": "温馨回忆（剧情片）",
+      "original": "特写，年轻女性的面容。她望向雨水划过的窗户，眼中闪着未落的泪光，嘴角却浮现一丝温柔的微笑。手中握着一张老照片，手指轻轻描摹着边缘。黄金时段的柔光透过窗户，温暖她的面容，在凌乱的发丝上晕出光晕。背景是温馨的客厅和书架，85mm镜头虚化成柔和的色块。苦涩而温柔，私密的回忆时刻。",
+      "detected_scenes": [
+        "emotional_closeup"
+      ],
+      "scene_p2_keywords_count": 50,
+      "modes": {
+        "full": {
+          "content": "特写，年轻女性面容。她望向雨水划过窗户，眼中闪着未落泪光，嘴角浮现一丝温柔微笑。手中握着一张老照片，手指轻轻描摹着边缘。黄金时段柔光透过窗户，温暖她面容，在凌乱发丝上晕出光晕。背景是温馨客厅和书架，85，m，m镜头虚化成柔和色块。苦涩温柔，私密回忆时刻。",
+          "reduction": 7.3,
+          "preserved_p1": 1,
+          "preserved_p2_base": 4,
+          "preserved_p2_scene": 11,
+          "preserved_p2_total": 15,
+          "achieved_target": false
+        },
+        "standard": {
+          "content": "特写，年轻女性面容。她望向雨水划过窗户，眼中闪着未落泪光，嘴角浮现一丝温柔微笑。手中握着一张老照片，手指轻轻描摹着边缘。黄金时段柔光透过窗户，温暖她面容，在凌乱发丝上晕出光晕。背景是温馨客厅和书架，85，m，m镜头虚化成柔和色块。苦涩温柔，私密回忆时刻。",
+          "reduction": 7.3,
+          "preserved_p1": 1,
+          "preserved_p2_base": 4,
+          "preserved_p2_scene": 11,
+          "preserved_p2_total": 15,
+          "achieved_target": false
+        },
+        "fast": {
+          "content": "特写，年轻女性面容。她望向雨水划过窗户，眼中闪着未落泪光，嘴角浮现一丝温柔微笑。手中握着一张老照片，手指轻轻描摹着边缘。黄金时段柔光透过窗户，温暖她面容，在凌乱发丝上晕出光晕。背景是温馨客厅和书架，85，m，m镜头虚化成柔和色块。苦涩温柔，私密回忆时刻。",
+          "reduction": 7.3,
+          "preserved_p1": 1,
+          "preserved_p2_base": 4,
+          "preserved_p2_scene": 11,
+          "preserved_p2_total": 15,
+          "achieved_target": false
+        }
+      }
+    },
+    {
+      "title": "孤独远景（剧情片）",
+      "original": "极远景，无尽的灰色海滩。一个孤独的身影站在边缘。阴沉的天空，平坦无色的沙滩，这个人显得无比渺小。远处海浪轻轻拍打海岸。阴天散射光，天空与地平线无缝融合。没有其他人，没有鸟，没有生命的迹象。大量留白，灰色与淡蓝的低饱和色调。安静，沉重，深深的孤独。",
+      "detected_scenes": [
+        "establishing_shot"
+      ],
+      "scene_p2_keywords_count": 51,
+      "modes": {
+        "full": {
+          "content": "极远景，无尽灰色海滩。一个孤独身影站在边缘。阴沉天空，平坦无色沙滩，这个人无比渺小。远处海浪轻轻拍打海岸。阴天散射光，天空与地平线无缝融合。没有其他人，没有鸟，没有生命迹象。大量留白，灰色与淡蓝低饱和色调。安静，沉重，深深孤独。",
+          "reduction": 7.3,
+          "preserved_p1": 1,
+          "preserved_p2_base": 0,
+          "preserved_p2_scene": 10,
+          "preserved_p2_total": 10,
+          "achieved_target": false
+        },
+        "standard": {
+          "content": "极远景，无尽灰色海滩。一个孤独身影站在边缘。阴沉天空，平坦无色沙滩，这个人无比渺小。远处海浪轻轻拍打海岸。阴天散射光，天空与地平线无缝融合。没有其他人，没有鸟，没有生命迹象。大量留白，灰色与淡蓝低饱和色调。安静，沉重，深深孤独。",
+          "reduction": 7.3,
+          "preserved_p1": 1,
+          "preserved_p2_base": 0,
+          "preserved_p2_scene": 10,
+          "preserved_p2_total": 10,
+          "achieved_target": false
+        },
+        "fast": {
+          "content": "极远景，无尽灰色海滩。一个孤独身影站在边缘。阴沉天空，平坦无色沙滩，这个人无比渺小。远处海浪轻轻拍打海岸。阴天散射光，天空与地平线无缝融合。没有其他人，没有鸟，没有生命迹象。大量留白，灰色与淡蓝低饱和色调。安静，沉重，深深孤独。",
+          "reduction": 7.3,
+          "preserved_p1": 1,
+          "preserved_p2_base": 0,
+          "preserved_p2_scene": 10,
+          "preserved_p2_total": 10,
+          "achieved_target": false
+        }
+      }
+    },
+    {
+      "title": "对话对峙（剧情片）",
+      "original": "双人镜头，两人面对面站立。紧张的对峙，眼神交锋，微妙的面部表情变化。背景是空旷的会议室，长桌分隔两人。顶光营造戏剧性阴影，突出面部轮廓。浅景深聚焦人物，背景虚化。无声的较量，未说出口的真相在空气中弥漫。",
+      "detected_scenes": [
+        "emotional_closeup",
+        "dialogue_confrontation",
+        "suspense_scene"
+      ],
+      "scene_p2_keywords_count": 96,
+      "modes": {
+        "full": {
+          "content": "双人镜头，两人面对面站立。紧张对峙，眼神交锋，微妙面部表情变化。背景是空旷会议室，长桌分隔两人。顶光营造戏剧性阴影，突出面部轮廓。浅景深聚焦人物，背景虚化。无声较量，未说出口真相在空气中弥漫。",
+          "reduction": 5.0,
+          "preserved_p1": 2,
+          "preserved_p2_base": 2,
+          "preserved_p2_scene": 17,
+          "preserved_p2_total": 19,
+          "achieved_target": false
+        },
+        "standard": {
+          "content": "双人镜头，两人面对面站立。紧张对峙，眼神交锋，微妙面部表情变化。背景是空旷会议室，长桌分隔两人。顶光营造戏剧性阴影，突出面部轮廓。浅景深聚焦人物，背景虚化。无声较量，未说出口真相在空气中弥漫。",
+          "reduction": 5.0,
+          "preserved_p1": 2,
+          "preserved_p2_base": 2,
+          "preserved_p2_scene": 17,
+          "preserved_p2_total": 19,
+          "achieved_target": false
+        },
+        "fast": {
+          "content": "双人镜头，两人面对面站立。紧张对峙，眼神交锋，微妙面部表情变化。背景是空旷会议室，长桌分隔两人。顶光营造戏剧性阴影，突出面部轮廓。浅景深聚焦人物，背景虚化。无声较量，未说出口真相在空气中弥漫。",
+          "reduction": 5.0,
+          "preserved_p1": 2,
+          "preserved_p2_base": 2,
+          "preserved_p2_scene": 17,
+          "preserved_p2_total": 19,
+          "achieved_target": false
+        }
+      }
+    },
+    {
+      "title": "悬疑揭示（悬疑片）",
+      "original": "紧凑特写，侦探的面容。恐怖领悟的瞬间。眼睛几乎难以察觉地睁大，瞳孔收缩。一滴汗珠从太阳穴滑落。脸的左半隐没在深影中，右侧被单一光源照亮——每一个毛孔、每一道皱纹都清晰可见。身后完全失焦，隐约可辨犯罪现场照片的轮廓。浅景深隔离表情，冷淡去饱和的色调，病态的绿与灰。蔓延的恐惧，可怕的顿悟。",
+      "detected_scenes": [
+        "emotional_closeup",
+        "suspense_scene"
+      ],
+      "scene_p2_keywords_count": 71,
+      "modes": {
+        "full": {
+          "content": "紧凑特写，侦探面容。恐怖领悟瞬间。眼睛几乎难以察觉地睁大，瞳孔收缩。一滴汗珠从阳穴滑落。脸左半隐没在深影中，右侧被单一光源照亮——每一个毛孔、每一道皱纹都清晰可见。身后完全失焦，隐约可辨犯罪现场照片轮廓。浅景深隔离表情，冷淡去饱和色调，病态绿与灰。蔓延恐惧，可怕顿悟。",
+          "reduction": 6.3,
+          "preserved_p1": 4,
+          "preserved_p2_base": 2,
+          "preserved_p2_scene": 6,
+          "preserved_p2_total": 8,
+          "achieved_target": false
+        },
+        "standard": {
+          "content": "紧凑特写，侦探面容。恐怖领悟瞬间。眼睛几乎难以察觉地睁大，瞳孔收缩。一滴汗珠从阳穴滑落。脸左半隐没在深影中，右侧被单一光源照亮——每一个毛孔、每一道皱纹都清晰可见。身后完全失焦，隐约可辨犯罪现场照片轮廓。浅景深隔离表情，冷淡去饱和色调，病态绿与灰。蔓延恐惧，可怕顿悟。",
+          "reduction": 6.3,
+          "preserved_p1": 4,
+          "preserved_p2_base": 2,
+          "preserved_p2_scene": 6,
+          "preserved_p2_total": 8,
+          "achieved_target": false
+        },
+        "fast": {
+          "content": "紧凑特写，侦探面容。恐怖领悟瞬间。眼睛几乎难以察觉地睁大，瞳孔收缩。一滴汗珠从阳穴滑落。脸左半隐没在深影中，右侧被单一光源照亮——每一个毛孔、每一道皱纹都清晰可见。身后完全失焦，隐约可辨犯罪现场照片轮廓。浅景深隔离表情，冷淡去饱和色调，病态绿与灰。蔓延恐惧，可怕顿悟。",
+          "reduction": 6.3,
+          "preserved_p1": 4,
+          "preserved_p2_base": 2,
+          "preserved_p2_scene": 6,
+          "preserved_p2_total": 8,
+          "achieved_target": false
+        }
+      }
+    }
+  ]
+}

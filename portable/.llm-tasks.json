@@ -1,0 +1,19 @@
+{
+  "version": "2.2",
+  "generated_at": "2026-04-09 11:14:16",
+  "task_count": 2,
+  "tasks": [
+    {
+      "type": "generate_description",
+      "file": "TROUBLESHOOTING.md",
+      "content_preview": "# 故障排除指南\n\n## 常见问题\n\n### Q1: 运行后没有生成 PROJECT_MAP.md\n\n**症状**：运行 `python3 generate_map.py` 后，没有生成输出文件。\n\n**排查步骤**：\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "README.md",
+      "content_preview": "# 项目地图生成器 - 可移植版\n\n> **Description:** 单文件项目地图生成器，支持Git集成、LLM智能描述、学习机制、YAML描述提取\n\n## 快速开始\n\n### 方法1：一键安装（推荐）\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/JEREMY30312/cc-verify/main/portable/install.sh | bash",
+      "max_length": 20
+    }
+  ]
+}

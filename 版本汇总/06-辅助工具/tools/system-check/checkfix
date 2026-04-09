@@ -1,0 +1,3 @@
+#!/bin/bash
+# 快捷命令：checkfix (检查并显示报告)
+./anineo-system-check.sh full && cat .system-check-report.md

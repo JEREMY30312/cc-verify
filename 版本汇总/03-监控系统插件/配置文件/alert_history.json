@@ -1,0 +1,98 @@
+[
+  {
+    "rule_name": "quality_degradation_warning",
+    "description": "质量下降过高",
+    "severity": "warning",
+    "message": "质量下降过高: 12.0%",
+    "batch_id": "test_batch_001",
+    "timestamp": "2026-01-30 12:48:42",
+    "data": {
+      "overall_status": "warning",
+      "avg_simplification_rate": 0.08,
+      "p1_avg_ratio": 0.998,
+      "p2_avg_ratio": 0.98,
+      "avg_quality_degradation": 0.12,
+      "error_rate": 0.05,
+      "negative_keyword_count": 4
+    }
+  },
+  {
+    "rule_name": "user_perception_negative",
+    "description": "用户感知负面反馈过多",
+    "severity": "warning",
+    "message": "检测到 4 次负面用户反馈关键词",
+    "batch_id": "test_batch_001",
+    "timestamp": "2026-01-30 12:48:42",
+    "data": {
+      "overall_status": "warning",
+      "avg_simplification_rate": 0.08,
+      "p1_avg_ratio": 0.998,
+      "p2_avg_ratio": 0.98,
+      "avg_quality_degradation": 0.12,
+      "error_rate": 0.05,
+      "negative_keyword_count": 4
+    }
+  },
+  {
+    "rule_name": "simplification_rate_out_of_range",
+    "description": "精简率超出目标范围",
+    "severity": "critical",
+    "message": "精简率严重异常: 3.0% (目标: 7.9% ± 12%)",
+    "batch_id": "alert_test_batch",
+    "timestamp": "2025-01-30 10:10:00",
+    "data": {
+      "overall_status": "warning",
+      "avg_simplification_rate": 0.03,
+      "p1_avg_ratio": 0.98,
+      "p2_avg_ratio": 0.82,
+      "error_rate": 0.0
+    }
+  },
+  {
+    "rule_name": "p1_preservation_warning",
+    "description": "P1元素保留率不足",
+    "severity": "warning",
+    "message": "P1元素保留率不足: 98.0%",
+    "batch_id": "alert_test_batch",
+    "timestamp": "2025-01-30 10:10:00",
+    "data": {
+      "overall_status": "warning",
+      "avg_simplification_rate": 0.03,
+      "p1_avg_ratio": 0.98,
+      "p2_avg_ratio": 0.82,
+      "error_rate": 0.0
+    }
+  },
+  {
+    "rule_name": "p2_preservation_warning",
+    "description": "P2元素保留率不足",
+    "severity": "warning",
+    "message": "P2元素保留率不足: 82.0%",
+    "batch_id": "alert_test_batch",
+    "timestamp": "2025-01-30 10:10:00",
+    "data": {
+      "overall_status": "warning",
+      "avg_simplification_rate": 0.03,
+      "p1_avg_ratio": 0.98,
+      "p2_avg_ratio": 0.82,
+      "error_rate": 0.0
+    }
+  },
+  {
+    "rule_name": "user_perception_negative",
+    "description": "用户感知负面反馈过多",
+    "severity": "warning",
+    "message": "检测到 4 次负面用户反馈关键词",
+    "batch_id": "example_batch_001",
+    "timestamp": "2026-01-30 13:05:45",
+    "data": {
+      "overall_status": "warning",
+      "avg_simplification_rate": 0.08,
+      "p1_avg_ratio": 1.0,
+      "p2_avg_ratio": 0.9,
+      "avg_quality_degradation": 0.089,
+      "error_rate": 0.0,
+      "negative_keyword_count": 4
+    }
+  }
+]

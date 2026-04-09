@@ -1,0 +1,62 @@
+{
+  "version": "2.0",
+  "projectConfig": {
+    "visual_style": "国潮动漫",
+    "target_medium": "漫剧",
+    "aspect_ratio": "16:9横屏"
+  },
+  "phase": "motion",
+  "current_episode": "story",
+  "subagents": {
+    "storyboard-artist": {
+      "agentId": null,
+      "last_task": "motion",
+      "last_used": null,
+      "status": "busy"
+    },
+    "director": {
+      "agentId": null,
+      "last_task": "motion-review",
+      "last_used": null,
+      "status": "not_created"
+    },
+    "animator": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created"
+    }
+  },
+  "snapshots": [
+    {
+      "id": "snapshot-001",
+      "timestamp": "2026-01-28T16:45:00Z",
+      "phase": "beatbreakdown",
+      "description": "节拍拆解完成，导演审核通过",
+      "files": [
+        "outputs/beat-breakdown-story.md",
+        "outputs/beat-breakdown-story-review.md"
+      ]
+    },
+    {
+      "id": "snapshot-002",
+      "timestamp": "2026-01-28T16:52:00Z",
+      "phase": "beatboard",
+      "description": "九宫格提示词完成，导演审核通过",
+      "files": [
+        "outputs/beat-board-prompt-story.md",
+        "outputs/beat-board-prompt-story-review.md"
+      ]
+    },
+    {
+      "id": "snapshot-003",
+      "timestamp": "2026-01-28T17:00:00Z",
+      "phase": "sequence",
+      "description": "四宫格提示词完成，导演审核通过",
+      "files": [
+        "outputs/sequence-board-prompt-story.md",
+        "outputs/sequence-board-prompt-story-review.md"
+      ]
+    }
+  ]
+}

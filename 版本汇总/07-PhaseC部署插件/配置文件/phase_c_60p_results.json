@@ -1,0 +1,91 @@
+{
+  "batch_info": {
+    "batch_size": "3/5 (60.0%)",
+    "processed_examples": [
+      "紧张对峙（剧情片）",
+      "世界观建立（奇幻/科幻）",
+      "温馨回忆（剧情片）"
+    ],
+    "processed_categories": [
+      "dialogue_confrontation",
+      "establishing_shot",
+      "emotional_closeup"
+    ],
+    "timestamp": "2026-01-30"
+  },
+  "overall_metrics": {
+    "average_reduction": 5.5,
+    "average_p1_preserved": 1.7,
+    "average_p2_preserved": 5.3,
+    "average_quality_score": 1.0,
+    "target_reduction": 7.9,
+    "target_p1": 100,
+    "target_p2": 90,
+    "target_quality": 0.8
+  },
+  "category_analysis": {
+    "dialogue_confrontation": {
+      "count": 1,
+      "avg_reduction": 3.5,
+      "avg_p1": 2.0,
+      "avg_p2": 4.0,
+      "avg_quality": 0.0
+    },
+    "establishing_shot": {
+      "count": 1,
+      "avg_reduction": 5.7,
+      "avg_p1": 1.0,
+      "avg_p2": 6.0,
+      "avg_quality": 0.0
+    },
+    "emotional_closeup": {
+      "count": 1,
+      "avg_reduction": 7.3,
+      "avg_p1": 2.0,
+      "avg_p2": 6.0,
+      "avg_quality": 0.0
+    }
+  },
+  "validation": {
+    "reduction_target_achieved": true,
+    "p1_target_achieved": true,
+    "p2_target_achieved": true,
+    "quality_target_achieved": true,
+    "all_categories_processed": true
+  },
+  "results": [
+    {
+      "example_id": "example_02",
+      "title": "紧张对峙（剧情片）",
+      "category": "dialogue_confrontation",
+      "original_length": 143,
+      "simplified_length": 138,
+      "reduction_percentage": 3.5,
+      "preserved_p1": 2,
+      "preserved_p2": 4,
+      "quality_score": 1.0
+    },
+    {
+      "example_id": "example_03",
+      "title": "世界观建立（奇幻/科幻）",
+      "category": "establishing_shot",
+      "original_length": 140,
+      "simplified_length": 132,
+      "reduction_percentage": 5.7,
+      "preserved_p1": 1,
+      "preserved_p2": 6,
+      "quality_score": 1.0
+    },
+    {
+      "example_id": "example_01",
+      "title": "温馨回忆（剧情片）",
+      "category": "emotional_closeup",
+      "original_length": 137,
+      "simplified_length": 127,
+      "reduction_percentage": 7.3,
+      "preserved_p1": 2,
+      "preserved_p2": 6,
+      "quality_score": 1.0
+    }
+  ]
+}

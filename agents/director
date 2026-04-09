@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# ANINEO Agent 快捷调用 - Director (导演)
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CALLER="$SCRIPT_DIR/caller.js"
+
+TASK="${1:-default}"
+shift
+
+echo "🎬 调用 director (导演), 任务: $TASK"
+node "$CALLER" director --task "$TASK" "$@"

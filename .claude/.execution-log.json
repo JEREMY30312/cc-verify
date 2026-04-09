@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "created_at": "2025-02-04T14:30:00Z",
+  "executions": {},
+  "last_execution_id": null,
+  "statistics": {
+    "total_executions": 0,
+    "successful_executions": 0,
+    "failed_executions": 0
+  }
+}

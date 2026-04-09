@@ -1,0 +1,252 @@
+{
+  "batch_id": "test_batch_001",
+  "validation_time": "2026-01-30 12:48:42",
+  "overall_status": "warning",
+  "detailed_checks": {
+    "length_preservation": {
+      "status": "pass",
+      "avg_ratio": 0.92,
+      "min_ratio": 0.919,
+      "max_ratio": 0.921,
+      "sample_count": 100,
+      "issues": []
+    },
+    "quality_scores": {
+      "status": "pass",
+      "avg_score": 0.8,
+      "min_score": 0.751,
+      "max_score": 0.85,
+      "sample_count": 100,
+      "distribution": {
+        "excellent_90+": 0,
+        "good_70_89": 100,
+        "fair_50_69": 0,
+        "poor_below_50": 0
+      },
+      "issues": []
+    },
+    "element_preservation": {
+      "status": "pass",
+      "p1_preservation": {
+        "avg_ratio": 0.998,
+        "sample_count": 100,
+        "min_ratio": 0.9,
+        "max_ratio": 1.0
+      },
+      "p2_preservation": {
+        "avg_ratio": 0.98,
+        "sample_count": 100,
+        "min_ratio": 0.8,
+        "max_ratio": 1.0
+      },
+      "issues": []
+    },
+    "processing_time": {
+      "status": "pass",
+      "avg_processing_time": 2.45,
+      "max_processing_time": 2.9,
+      "total_processing_time": 300.0,
+      "sample_count": 100,
+      "issues": []
+    },
+    "error_analysis": {
+      "status": "pass",
+      "error_examples_count": 5,
+      "total_errors": 5,
+      "error_examples": [
+        {
+          "example_id": "example_095",
+          "error_count": 1,
+          "errors": [
+            "处理超时"
+          ]
+        },
+        {
+          "example_id": "example_096",
+          "error_count": 1,
+          "errors": [
+            "处理超时"
+          ]
+        },
+        {
+          "example_id": "example_097",
+          "error_count": 1,
+          "errors": [
+            "处理超时"
+          ]
+        },
+        {
+          "example_id": "example_098",
+          "error_count": 1,
+          "errors": [
+            "处理超时"
+          ]
+        },
+        {
+          "example_id": "example_099",
+          "error_count": 1,
+          "errors": [
+            "处理超时"
+          ]
+        }
+      ],
+      "issues": []
+    },
+    "phase_c_simplification_rate": {
+      "status": "pass",
+      "avg_simplification_rate": 0.08,
+      "min_simplification_rate": 0.079,
+      "max_simplification_rate": 0.081,
+      "target_rate": 0.079,
+      "sample_count": 100,
+      "issues": []
+    },
+    "phase_c_p1_p2_preservation": {
+      "status": "pass",
+      "p1_preservation": {
+        "avg_ratio": 0.998,
+        "sample_count": 100,
+        "min_ratio": 0.9,
+        "max_ratio": 1.0,
+        "target_ratio": 1.0
+      },
+      "p2_preservation": {
+        "avg_ratio": 0.98,
+        "sample_count": 100,
+        "min_ratio": 0.8,
+        "max_ratio": 1.0,
+        "target_ratio": 0.9
+      },
+      "issues": [
+        "发现 2 个示例的P1元素未完全保留"
+      ]
+    },
+    "phase_c_quality_degradation": {
+      "status": "warning",
+      "sampling_info": {
+        "total_samples": 100,
+        "sampled_count": 5,
+        "sampling_rate": 0.05
+      },
+      "issues": [
+        "平均质量下降 (12.0%) 超过警告阈值 (10.0%)",
+        "最大质量下降 (16.1%) 超过允许的最大值 (8.0%)"
+      ],
+      "quality_degradation_stats": {
+        "avg_degradation": 0.12,
+        "max_degradation": 0.161,
+        "sample_count": 5,
+        "max_allowed": 0.08
+      }
+    },
+    "phase_c_user_perception": {
+      "status": "warning",
+      "user_perception_stats": {
+        "total_examples_analyzed": 100,
+        "negative_feedback_count": 2,
+        "negative_feedback_rate": 0.02,
+        "keyword_occurrences": {
+          "创意受损": 2,
+          "质量下降": 0,
+          "失去原意": 0,
+          "简化过度": 1,
+          "不够生动": 0,
+          "缺乏细节": 0,
+          "失去灵魂": 1,
+          "过于简单": 0,
+          "不够专业": 0,
+          "失去特色": 0
+        },
+        "total_keyword_occurrences": 4
+      },
+      "simulated_feedback_samples": [
+        {
+          "example_id": "example_000",
+          "feedback_type": "negative",
+          "keywords": [
+            "创意受损",
+            "失去灵魂"
+          ],
+          "comment": "用户反馈：创意受损, 失去灵魂"
+        },
+        {
+          "example_id": "example_008",
+          "feedback_type": "negative",
+          "keywords": [
+            "创意受损",
+            "简化过度"
+          ],
+          "comment": "用户反馈：创意受损, 简化过度"
+        }
+      ],
+      "issues": [
+        "检测到 4 次负面关键词出现，超过警告阈值 (3)",
+        "检测到 2 次高风险关键词出现（创意受损/质量下降/失去原意）"
+      ]
+    }
+  },
+  "issues_found": [
+    "发现 2 个示例的P1元素未完全保留",
+    "平均质量下降 (12.0%) 超过警告阈值 (10.0%)",
+    "最大质量下降 (16.1%) 超过允许的最大值 (8.0%)",
+    "检测到 4 次负面关键词出现，超过警告阈值 (3)",
+    "检测到 2 次高风险关键词出现（创意受损/质量下降/失去原意）"
+  ],
+  "recommendations": [
+    "发现 2 个警告问题，建议检查"
+  ],
+  "statistics": {
+    "total_examples": 100,
+    "successful_examples": 95,
+    "failed_examples": 5,
+    "success_rate": 0.95,
+    "quality_score_stats": {
+      "mean": 0.8,
+      "median": 0.8,
+      "stdev": 0.029,
+      "min": 0.751,
+      "max": 0.85
+    },
+    "processing_time_stats": {
+      "mean": 2.45,
+      "median": 2.45,
+      "total": 245.0,
+      "min": 2.0,
+      "max": 2.9
+    }
+  },
+  "passing_criteria": {
+    "must_have": [
+      "平均质量评分 ≥ 0.6",
+      "P1元素保留率 ≥ 70%",
+      "错误率 ≤ 10%",
+      "平均处理时间 ≤ 5秒/示例",
+      "平均精简率接近7.9% (5%-15%)",
+      "P1元素保留率 ≥ 99%",
+      "P2元素保留率 ≥ 85%",
+      "质量下降 ≤ 10%"
+    ],
+    "should_have": [
+      "平均质量评分 ≥ 0.8",
+      "P2元素保留率 ≥ 50%",
+      "错误率 ≤ 5%",
+      "长度保留率在 0.5-2.0 之间",
+      "平均精简率在6%-10%之间",
+      "P1元素保留率 = 100%",
+      "P2元素保留率 ≥ 90%",
+      "质量下降 ≤ 8%",
+      "负面用户反馈关键词 ≤ 3个"
+    ],
+    "nice_to_have": [
+      "平均质量评分 ≥ 0.9",
+      "所有示例无错误",
+      "处理时间稳定且可预测",
+      "良好的长度保留一致性",
+      "平均精简率 = 7.9% ± 1%",
+      "所有P1元素完全保留",
+      "P2元素保留率 ≥ 95%",
+      "质量下降 ≤ 5%",
+      "无负面用户反馈"
+    ]
+  }
+}

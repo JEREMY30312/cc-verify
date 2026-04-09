@@ -1,0 +1,51 @@
+{
+  "name": "国潮动漫风格",
+  "description": "融合传统水墨与现代动漫元素的独特视觉风格",
+  "config": {
+    "visualStyle": "国潮动漫风格",
+    "targetMedium": "漫剧",
+    "aspectRatio": "16:9",
+    "lightingSystem": {
+      "primary": "晨光体系",
+      "secondary": "暖色调夕阳",
+      "special": "水墨晕染光效"
+    },
+    "colorPalette": {
+      "primary": ["墨色", "朱砂红", "靛蓝", "藤黄"],
+      "accent": "朱砂红",
+      "mood": "传统与现代融合"
+    },
+    "renderingStyle": {
+      "technique": "水墨渲染+现代动漫线条",
+      "texture": "宣纸质感",
+      "linework": "工笔线条"
+    },
+    "characterDesign": {
+      "style": "传统服饰+现代剪裁",
+      "proportions": "七头身",
+      "details": "传统配饰现代化演绎"
+    },
+    "environmentDesign": {
+      "style": "水墨山水+现代建筑",
+      "atmosphere": "诗意与力量感并存",
+      "specialEffects": "墨韵流动效果"
+    },
+    "cameraStyle": {
+      "movement": "流畅运镜",
+      "angles": "多角度切换",
+      "framing": "动态构图"
+    },
+    "narrativeStyle": {
+      "pace": "节奏明快",
+      "emotion": "强烈对比",
+      "emphasis": "动作与情感并重"
+    },
+    "transitions": {
+      "style": "水墨过渡",
+      "duration": "适中",
+      "effects": "墨韵散开效果"
+    }
+  },
+  "recommendedFor": ["武侠", "神话", "历史题材", "传统文化"],
+  "icon": "🎨"
+}

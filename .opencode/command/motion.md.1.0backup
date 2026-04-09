@@ -1,0 +1,118 @@
+---
+description: 执行动态提示词阶段。基于四宫格提示词生成 Motion Prompt 动态提示词。完整支持模块依赖、导演审核、用户确认和快照管理。
+---
+
+# 动态提示词
+
+**目的**：基于四宫格提示词生成 Motion Prompt 动态提示词
+
+**前置条件**：
+- 所有前置阶段已完成：
+  - `outputs/beat-breakdown-{集数}.md`
+  - `outputs/beat-board-prompt-{集数}-board*.md`
+  - `outputs/sequence-board-prompt-{集数}.md`
+
+**使用方式**：
+```bash
+/motion             # 单集时使用
+/motion ep01        # 指定集数
+```
+
+**输出文件**：
+- `outputs/motion-prompt-{集数}.md`
+
+**内容结构**：
+- 动态参数总览（帧率、运动速度、节奏特点）
+- 核心角色动态设定
+- 分段动态提示词（6幕结构）
+- 关键动作拆解表
+- 节奏曲线
+- 音效与配乐建议
+
+**完整工作流程**：
+
+```
+步骤1: 读取前置产物
+       ├── outputs/sequence-board-prompt-{集数}.md（四宫格提示词）
+       ├── outputs/beat-board-prompt-{集数}.md（九宫格总览）
+       ├── outputs/beat-breakdown-{集数}.md（节拍拆解）
+       └── .agent-state.json
+
+步骤2: 读取分析模块（按 animator-skill/SKILL.md 定义）
+       ├── animator-skill/motion-prompt-methodology/index.md ← 动态提示词方法论
+       ├── animator-skill/physics-verification-rules.md ← 物理验证规则
+       └── animator-skill/templates/motion-prompt-template.md ← 输出格式模板
+
+步骤3: 执行五模块构造
+       ├── 按 motion-prompt-methodology 规则构造：
+       │   ├── 镜头运动模块（1-2种运动）
+       │   ├── 主体动作模块（1-2种动作）
+       │   ├── 环境动态模块（必须包含）
+       │   ├── 节奏控制模块
+       │   └── 氛围强化模块
+       └── 每组包含5个 Motion Prompt（1关键帧 + 4四宫格）
+
+步骤4: 执行物理合理性检查
+       ├── 按 physics-verification-rules.md 逐项检查：
+       │   ├── 重力影响检查
+       │   ├── 惯性表现检查
+       │   ├── 材质反应检查
+       │   ├── 能量守恒检查
+       │   └── 流体动力学检查（如适用）
+       └── 标记物理异常项：✅ 合理 / ⚠️ 轻微异常 / ❌ 物理错误
+
+步骤5: 占位格特殊处理
+       ├── 识别九宫格中的占位格（PH-标记）
+       ├── 对占位格生成"建议动态方案"
+       └── 明确标注"待用户确认"
+
+步骤6: 保存输出文件
+       └── outputs/motion-prompt-{集数}.md
+
+步骤7: 调用导演审核（storyboard-review-skill）
+       ├── 读取 storyboard-review-skill/review-checklist.md
+       ├── 按 Motion Prompt 验收清单逐项检查
+       └── 生成审核报告：outputs/motion-prompt-{集数}-review.md
+
+步骤8: 执行用户确认（CP4）
+       ├── 读取 common/user-confirmation-protocol.md
+       ├── 展示标准确认UI：
+       │   ├── 进度条
+       │   ├── 质量评分
+       │   ├── 审核状态
+       │   └── 操作选项：[通过] ✅ / [修改] ✏️ / [重生成] 🔄 / [回滚] ⏪
+       └── 等待用户选择
+
+步骤9: 创建快照（按 common/snapshot-management.md）
+       ├── 快照类型：参数快照
+       ├── 保存路径：.strategic-snapshots/snapshot-{编号}/
+       └── 更新 .agent-state.json
+
+步骤10: 进入下一阶段或结束
+         ├── [通过] → 可执行 /review motion 进入最终审核阶段
+         ├── [修改] → 等待修改后重新审核
+         ├── [重生成] → 返回步骤3重新执行
+         └── [回滚] → 恢复到历史快照
+```
+
+**模块依赖声明**（来自 animator-skill/SKILL.md）：
+
+| 模块 | 作用 | 是否必需 |
+|------|------|----------|
+| animator-skill/motion-prompt-methodology/index.md | 动态提示词方法论 | ✅ 必需 |
+| animator-skill/physics-verification-rules.md | 物理验证规则 | ✅ 必需 |
+| animator-skill/templates/motion-prompt-template.md | 输出格式模板 | ✅ 必需 |
+
+**协议文件**：
+
+| 文件 | 作用 | 调用时机 |
+|------|------|----------|
+| common/user-confirmation-protocol.md | 用户确认UI规范 | 步骤8执行前 |
+| common/snapshot-management.md | 快照创建规则 | 步骤9执行前 |
+
+**相关文件**：
+- 模板：`animator-skill/templates/motion-prompt-template.md`
+- 方法论：`animator-skill/motion-prompt-methodology/index.md`
+- 物理验证：`animator-skill/physics-verification-rules.md`
+- 审核：`storyboard-review-skill/`（使用 review-checklist.md）
+- 协议：`common/user-confirmation-protocol.md`、`common/snapshot-management.md`

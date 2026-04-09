@@ -1,0 +1,88 @@
+{
+  "total_tests": 4,
+  "passed_tests": 4,
+  "average_coverage": 1.0,
+  "overall_passed": true,
+  "test_results": [
+    {
+      "test_id": "TS001",
+      "scene_type": "emotional_closeup",
+      "description": "温馨回忆场景：老人看着老照片",
+      "expected_rules": [
+        "特写构图",
+        "柔和光线",
+        "背景虚化",
+        "温暖色调"
+      ],
+      "system_response": {
+        "framing": "特写",
+        "lighting": "柔和侧光",
+        "background": "虚化背景",
+        "color": "温暖色调",
+        "emotion": "情感表达"
+      },
+      "coverage": 1.0,
+      "passed": true
+    },
+    {
+      "test_id": "TS002",
+      "scene_type": "establishing_shot",
+      "description": "孤独远景场景：沙漠中的旅行者",
+      "expected_rules": [
+        "极远景别",
+        "单调环境",
+        "低饱和色调",
+        "大量留白"
+      ],
+      "system_response": {
+        "framing": "极远景",
+        "environment": "简洁单调",
+        "color": "低饱和冷色调",
+        "composition": "大量留白",
+        "emotion": "孤独/敬畏"
+      },
+      "coverage": 1.0,
+      "passed": true
+    },
+    {
+      "test_id": "TS003",
+      "scene_type": "suspense_reveal",
+      "description": "悬疑揭示场景：侦探发现关键证据",
+      "expected_rules": [
+        "紧凑特写",
+        "戏剧光影",
+        "浅景深",
+        "冷色调"
+      ],
+      "system_response": {
+        "framing": "紧凑特写",
+        "lighting": "戏剧性硬光",
+        "color": "冷色调",
+        "depth": "浅景深",
+        "emotion": "紧张/恐惧"
+      },
+      "coverage": 1.0,
+      "passed": true
+    },
+    {
+      "test_id": "TS004",
+      "scene_type": "world_building",
+      "description": "奇幻世界观：天空漂浮的岛屿",
+      "expected_rules": [
+        "极远景",
+        "奇幻元素",
+        "体积光",
+        "敬畏情绪"
+      ],
+      "system_response": {
+        "framing": "极远景",
+        "elements": "奇幻元素",
+        "lighting": "体积光",
+        "color": "奇幻色调",
+        "emotion": "惊奇敬畏"
+      },
+      "coverage": 1.0,
+      "passed": true
+    }
+  ]
+}

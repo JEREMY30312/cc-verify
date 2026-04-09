@@ -1,0 +1,452 @@
+{
+  "version": "2.0",
+  "episode_id": "ep01",
+  "project": "猪打镇关西",
+  "visual_style": "国潮动漫风格",
+  "target_medium": "漫剧",
+  "aspect_ratio": "16:9横屏",
+  "narrative_structure": "经典三幕式",
+  "genre": "动作/冒险",
+  
+  "grids": [
+    {
+      "grid_id": "board1",
+      "beat_range": [1, 7],
+      "grid_index": 1,
+      "frames": [
+        {
+          "beat_id": 1,
+          "frame_index": 1,
+          "scene_description": "鲁达闭目端坐于肉铺前长凳，面容平静如水，双手自然搭于膝上",
+          "frame_type": "基础帧",
+          "drama_tension_score": 0.55,
+          "strategy_tag": "[单镜:开场]",
+          "visual_anchor": "玄铁杀猪刀、墨迹残影",
+          "camera": {
+            "type": "中景",
+            "angle": "平视",
+            "movement": "固定"
+          },
+          "rendering_style": "平涂赛璐璐风格",
+          "style_notes": "开场氛围，墨线轮廓粗犷遒劲",
+          "alternative_frames": []
+        },
+        {
+          "beat_id": 2,
+          "frame_index": 2,
+          "scene_description": "鲁达睁开双眼，目光挑剔审视案板上的肉块，嘴角微扬傲慢微笑",
+          "frame_type": "动作高潮帧",
+          "drama_tension_score": 2.16,
+          "strategy_tag": "[正反打:对话]",
+          "visual_anchor": "两人对峙表情",
+          "camera": {
+            "type": "双人中景",
+            "angle": "平视",
+            "movement": "固定"
+          },
+          "rendering_style": "平涂赛璐璐风格",
+          "style_notes": "正反打构图，戏剧张力最强帧",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "镇关西卑微询问官爷",
+              "drama_tension_score": 1.8,
+              "reason": "对话起势，戏剧张力较弱"
+            }
+          ]
+        },
+        {
+          "beat_id": 3,
+          "frame_index": 3,
+          "scene_description": "镇关西专注切肉表情，咬牙切齿却手法熟练，额角青筋微微跳动",
+          "frame_type": "动作帧",
+          "drama_tension_score": 0.5,
+          "strategy_tag": "[单镜:切肉]",
+          "visual_anchor": "切肉动作、臊子",
+          "camera": {
+            "type": "近景",
+            "angle": "俯视",
+            "movement": "固定"
+          },
+          "rendering_style": "平涂赛璐璐风格",
+          "style_notes": "过渡连接",
+          "alternative_frames": []
+        },
+        {
+          "beat_id": 4,
+          "frame_index": 4,
+          "scene_description": "鲁达眯眼视线转移，目光越过肉铺落在包子猪身上，眼神闪烁计谋",
+          "frame_type": "过渡帧",
+          "drama_tension_score": 1.2,
+          "strategy_tag": "[单镜:视线转移]",
+          "visual_anchor": "鲁达视线转移",
+          "camera": {
+            "type": "中景→近景",
+            "angle": "平视→俯视",
+            "movement": "跟拍"
+          },
+          "rendering_style": "平涂赛璐璐风格",
+          "style_notes": "第一次转折",
+          "alternative_frames": []
+        },
+        {
+          "beat_id": 5,
+          "frame_index": 5,
+          "scene_description": "包子猪被按在案板中央，四蹄悬空，表情惊恐瞪大眼睛",
+          "frame_type": "动作高潮帧",
+          "drama_tension_score": 3.6,
+          "strategy_tag": "[动势组:抓猪]",
+          "visual_anchor": "抓住背带、案板中央",
+          "camera": {
+            "type": "中景",
+            "angle": "平视",
+            "movement": "固定"
+          },
+          "rendering_style": "平涂赛璐璐风格",
+          "style_notes": "诱因事件最高潮，戏剧张力最强帧",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "鲁达发现目标",
+              "drama_tension_score": 1.8,
+              "reason": "动作启动点"
+            },
+            {
+              "frame_type": "动作开始帧",
+              "action": "鲁达伸手抓住包子猪背带",
+              "drama_tension_score": 2.2,
+              "reason": "动作起始"
+            }
+          ]
+        },
+        {
+          "beat_id": 6,
+          "frame_index": 6,
+          "scene_description": "包子猪系好餐巾、亮出刀叉，眼神充满极度期待，兴奋用餐刀叉敲击盘子",
+          "frame_type": "情绪高潮帧",
+          "drama_tension_score": 2.88,
+          "strategy_tag": "[蒙太奇组:变脸]",
+          "visual_anchor": "0.1秒变脸、餐巾刀叉",
+          "camera": {
+            "type": "特写→中景",
+            "angle": "平视",
+            "movement": "推"
+          },
+          "rendering_style": "平涂赛璐璐风格",
+          "style_notes": "中点升级，情绪极值",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "包子猪看着猪肉露出惊恐表情",
+              "drama_tension_score": 1.3,
+              "reason": "惊恐表情"
+            },
+            {
+              "frame_type": "转折帧",
+              "action": "听到给它吃三个字",
+              "drama_tension_score": 1.5,
+              "reason": "情绪转折点"
+            }
+          ]
+        },
+        {
+          "beat_id": 7,
+          "frame_index": 7,
+          "scene_description": "镇关西周身红黑色煞气爆发，双眼怒睁如铜铃，面部肌肉扭曲",
+          "frame_type": "动作高潮帧",
+          "drama_tension_score": 2.6,
+          "strategy_tag": "[动势组:煞气爆发]",
+          "visual_anchor": "红黑色煞气、暴怒表情",
+          "camera": {
+            "type": "中景→全景",
+            "angle": "仰视",
+            "movement": "拉"
+          },
+          "rendering_style": "平涂赛璐璐风格",
+          "style_notes": "氛围转换，煞气爆发",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "镇关西暴怒站起",
+              "drama_tension_score": 1.3,
+              "reason": "动作启动"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grid_id": "board2",
+      "beat_range": [8, 15],
+      "grid_index": 2,
+      "frames": [
+        {
+          "beat_id": 8,
+          "frame_index": 8,
+          "scene_description": "暗物质包子诞生：案板中央悬浮，漆黑如墨，红色闪电缠绕周身，散发引力场",
+          "frame_type": "核心转折帧",
+          "drama_tension_score": 5.0,
+          "strategy_tag": "[长镜头:奇观]",
+          "visual_anchor": "暗物质包子、红色闪电",
+          "camera": {
+            "type": "特写→全景",
+            "angle": "仰视",
+            "movement": "复合运动"
+          },
+          "rendering_style": "MCU电影史诗感",
+          "style_notes": "高潮对抗，暗物质包子诞生，视觉奇观",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "镇关西双手虚空对压",
+              "drama_tension_score": 2.5,
+              "reason": "能量聚集"
+            },
+            {
+              "frame_type": "气劲帧",
+              "action": "气劲消散",
+              "drama_tension_score": 2.8,
+              "reason": "能量释放"
+            }
+          ]
+        },
+        {
+          "beat_id": 9,
+          "frame_index": 9,
+          "scene_description": "镇关西化身为紫肤泰坦，金色纳米战甲覆盖全身，左手指尖绽放无限宝石光芒",
+          "frame_type": "核心转折帧",
+          "drama_tension_score": 3.52,
+          "strategy_tag": "[蒙太奇组:抢包子]",
+          "visual_anchor": "分屏构图、紫肤泰坦",
+          "camera": {
+            "type": "三分屏→全景",
+            "angle": "平视",
+            "movement": "跟拍"
+          },
+          "rendering_style": "MCU电影史诗感",
+          "style_notes": "中点升级，风格转换：墨韵转CG",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "三人同时伸手抢包子",
+              "drama_tension_score": 2.2,
+              "reason": "动作起势"
+            },
+            {
+              "frame_type": "动作帧",
+              "action": "镇关西抢先抓住包子",
+              "drama_tension_score": 2.8,
+              "reason": "抢先抓住"
+            }
+          ]
+        },
+        {
+          "beat_id": 10,
+          "frame_index": 10,
+          "scene_description": "镇关西单手掐住鲁达脖子举在半空，鲁达双脚悬空乱蹬，青筋暴起",
+          "frame_type": "动作帧",
+          "drama_tension_score": 2.8,
+          "strategy_tag": "[动势组:掐颈]",
+          "visual_anchor": "掐颈举空、金甲",
+          "camera": {
+            "type": "中景",
+            "angle": "仰视→俯视",
+            "movement": "摇"
+          },
+          "rendering_style": "MCU电影史诗感",
+          "style_notes": "发展转折",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "镇关西自诩天命",
+              "drama_tension_score": 2.0,
+              "reason": "自诩台词"
+            }
+          ]
+        },
+        {
+          "beat_id": 11,
+          "frame_index": 11,
+          "scene_description": "无限宝石包子亮起紫光，镇关西挥出毁灭性重拳，鲁达交叉双臂格挡",
+          "frame_type": "核心转折帧",
+          "drama_tension_score": 5.0,
+          "strategy_tag": "[长镜头:砸击]",
+          "visual_anchor": "陨石坑、紫光重拳",
+          "camera": {
+            "type": "全景→特写",
+            "angle": "俯视",
+            "movement": "复合运动"
+          },
+          "rendering_style": "MCU电影史诗感",
+          "style_notes": "高潮对抗，生死攸关",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "镇关西将鲁达砸入地面",
+              "drama_tension_score": 3.2,
+              "reason": "砸地动作"
+            },
+            {
+              "frame_type": "气劲帧",
+              "action": "地面被砸出陨石坑",
+              "drama_tension_score": 3.5,
+              "reason": "环境破坏"
+            }
+          ]
+        },
+        {
+          "beat_id": 12,
+          "frame_index": 12,
+          "scene_description": "鲁达身体如炮弹般撞碎外星方尖碑，碎石飞溅，表情痛苦扭曲",
+          "frame_type": "动作帧",
+          "drama_tension_score": 2.55,
+          "strategy_tag": "[蒙太奇组:炸飞]",
+          "visual_anchor": "爆炸、方尖碑碎片",
+          "camera": {
+            "type": "全景",
+            "angle": "俯视",
+            "movement": "跟拍"
+          },
+          "rendering_style": "MCU电影史诗感",
+          "style_notes": "危机低谷",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "鲁达交叉双臂格挡",
+              "drama_tension_score": 1.7,
+              "reason": "格挡动作"
+            },
+            {
+              "frame_type": "结果帧",
+              "action": "被埋在碎石中",
+              "drama_tension_score": 2.2,
+              "reason": "后果状态"
+            }
+          ]
+        },
+        {
+          "beat_id": 13,
+          "frame_index": 13,
+          "scene_description": "包子猪狠咬镇关西手腕獠牙毕露，镇关西吃痛面容扭曲左手松开",
+          "frame_type": "动作帧",
+          "drama_tension_score": 2.34,
+          "strategy_tag": "[动势组:咬腕]",
+          "visual_anchor": "咬合动作、松手",
+          "camera": {
+            "type": "特写",
+            "angle": "平视",
+            "movement": "固定"
+          },
+          "rendering_style": "MCU电影史诗感",
+          "style_notes": "关键决策",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "包子猪悄悄爬上右腿",
+              "drama_tension_score": 1.8,
+              "reason": "突袭准备"
+            },
+            {
+              "frame_type": "结果帧",
+              "action": "包子坠落",
+              "drama_tension_score": 2.0,
+              "reason": "松手后果"
+            }
+          ]
+        },
+        {
+          "beat_id": 14,
+          "frame_index": 14,
+          "scene_description": "包子猪模型闪烁故障，画面撕裂成真实Live Action素材，面部惊恐扭曲",
+          "frame_type": "核心转折帧",
+          "drama_tension_score": 3.2,
+          "strategy_tag": "[蒙太奇组:故障]",
+          "visual_anchor": "故障效果、真实素材",
+          "camera": {
+            "type": "中景→特写",
+            "angle": "平视",
+            "movement": "固定"
+          },
+          "rendering_style": "混合风格",
+          "style_notes": "中点反转，故障艺术",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "镇关西暴怒挥手",
+              "drama_tension_score": 2.0,
+              "reason": "打击起势"
+            },
+            {
+              "frame_type": "动作帧",
+              "action": "拍中猪身",
+              "drama_tension_score": 2.5,
+              "reason": "打击命中"
+            }
+          ]
+        },
+        {
+          "beat_id": 15,
+          "frame_index": 15,
+          "scene_description": "鲁达滑铲姿势舒展，单手精准接住包子，眼神坚定",
+          "frame_type": "动作帧",
+          "drama_tension_score": 1.68,
+          "strategy_tag": "[动势组:滑铲]",
+          "visual_anchor": "滑铲动作、接包子",
+          "camera": {
+            "type": "中景",
+            "angle": "低角度",
+            "movement": "跟拍"
+          },
+          "rendering_style": "混合风格",
+          "style_notes": "结局余韵",
+          "alternative_frames": [
+            {
+              "frame_type": "起势帧",
+              "action": "鲁达从废墟中冲出",
+              "drama_tension_score": 1.4,
+              "reason": "动作启动"
+            }
+          ]
+        },
+        {
+          "beat_id": 0,
+          "frame_index": 16,
+          "scene_description": "【占位格】后续内容待生成",
+          "frame_type": "占位格",
+          "drama_tension_score": 0,
+          "strategy_tag": "[占位]",
+          "visual_anchor": null,
+          "camera": {
+            "type": null,
+            "angle": null,
+            "movement": null
+          },
+          "rendering_style": null,
+          "style_notes": "后续内容待生成",
+          "alternative_frames": []
+        }
+      ]
+    }
+  ],
+  
+  "statistical_summary": {
+    "total_grids": 2,
+    "total_frames": 16,
+    "active_frames": 15,
+    "placeholder_frames": 1,
+    "keyframe_distribution": {
+      "🔴特级": 4,
+      "🟠高级": 5,
+      "🟡中级": 5,
+      "🔵普通": 1,
+      "⚪基础": 0,
+      "占位": 1
+    },
+    "style_distribution": {
+      "国潮动漫风格": 7,
+      "MCU电影史诗感": 8,
+      "像素风格": 0,
+      "混合风格": 1
+    }
+  }
+}

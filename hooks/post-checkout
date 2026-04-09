@@ -1,0 +1,7 @@
+#!/bin/bash
+# post-checkout hook - 切换分支后自动更新项目地图
+# 时机：每次 git checkout 后
+# 目的：切换分支后同步项目地图
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+python3 "$SCRIPT_DIR/scripts/hook_runner.py" post-checkout

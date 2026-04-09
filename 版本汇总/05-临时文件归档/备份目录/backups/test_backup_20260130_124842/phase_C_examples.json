@@ -1,0 +1,98 @@
+{
+  "version": "1.0",
+  "created_at": "2026-01-30",
+  "description": "标准化的影视示例数据，用于分批次处理训练",
+  "examples": [
+    {
+      "id": "example_01",
+      "title": "温馨回忆（剧情片）",
+      "original_content": "## 示例2：温馨回忆（剧情片）\n**模板类型：** 情绪特写\n\n特写，年轻女性的面容。\n她望向雨水划过的窗户，眼中闪着未落的泪光，嘴角却浮现一丝温柔的微笑。手中握着一张老照片，手指轻轻描摹着边缘。\n黄金时段的柔光透过窗户，温暖她的面容，在凌乱的发丝上晕出光晕。\n背景是温馨的客厅和书架，85mm镜头虚化成柔和的色块。\n苦涩而温柔，私密的回忆时刻。",
+      "creative_density": 0.85,
+      "p1_count": 3,
+      "p2_count": -1,
+      "category": "emotional_closeup",
+      "keywords": ["温馨", "回忆", "特写", "情感表达"],
+      "character_count": 120,
+      "word_count": -1
+    },
+    {
+      "id": "example_02",
+      "title": "孤独远景（剧情片）",
+      "original_content": "## 示例3：孤独远景（剧情片）\n**模板类型：** 建立镜头\n\n极远景，无尽的灰色海滩。\n一个孤独的身影站在边缘。阴沉的天空，平坦无色的沙滩，这个人显得无比渺小。远处海浪轻轻拍打海岸。\n阴天散射光，天空与地平线无缝融合。没有其他人，没有鸟，没有生命的迹象。\n大量留白，灰色与淡蓝的低饱和色调。\n安静，沉重，深深的孤独。",
+      "creative_density": 0.75,
+      "p1_count": 2,
+      "p2_count": -1,
+      "category": "establishing_shot",
+      "keywords": ["孤独", "远景", "氛围建立"],
+      "character_count": -1,
+      "word_count": -1
+    },
+    {
+      "id": "example_03",
+      "title": "悬疑揭示（悬疑片）",
+      "original_content": "## 示例5：悬疑揭示（悬疑片）\n**模板类型：** 情绪特写\n\n紧凑特写，侦探的面容。\n恐怖领悟的瞬间。眼睛几乎难以察觉地睁大，瞳孔收缩。一滴汗珠从太阳穴滑落。\n脸的左半隐没在深影中，右侧被单一光源照亮——每一个毛孔、每一道皱纹都清晰可见。身后完全失焦，隐约可辨犯罪现场照片的轮廓。\n浅景深隔离表情，冷淡去饱和的色调，病态的绿与灰。\n蔓延的恐惧，可怕的顿悟。",
+      "creative_density": 0.90,
+      "p1_count": 4,
+      "p2_count": -1,
+      "category": "emotional_closeup",
+      "keywords": ["悬疑", "特写", "揭示", "紧张"],
+      "character_count": -1,
+      "word_count": -1
+    },
+    {
+      "id": "example_04",
+      "title": "世界观建立（奇幻/科幻）",
+      "original_content": "## 示例6：世界观建立（奇幻/科幻）\n**模板类型：** 建立镜头\n\n极远景，黄昏时分的浮空城市。\n巨大石质平台在云间漂浮，由不可思议的长吊桥相连。瀑布从边缘倾泻入下方虚空。数千扇小窗散发温暖的琥珀色光芒，落日将云层染成深紫与燃烧的橙。\n前景，一个旅人的剪影站在悬崖边缘仰望，渺小的身影衬托城市的巨大。体积光穿过云层缝隙。\n惊奇与敬畏，不可能世界中的冒险。",
+      "creative_density": 0.95,
+      "p1_count": 5,
+      "p2_count": -1,
+      "category": "establishing_shot",
+      "keywords": ["世界观", "奇幻", "科幻", "远景"],
+      "character_count": -1,
+      "word_count": -1
+    },
+    {
+      "id": "example_05",
+      "title": "动作场景（动作片）",
+      "original_content": "## 示例1：动作场景（动作片）\n**模板类型：** 动作场景\n\n中景，两名特工在狭窄的巷子里搏斗。\n快速剪辑，拳脚相交，动作流畅而有力。雨水打湿的地面反射霓虹灯光，每一次击打都溅起水花。\n动态构图，倾斜角度增强紧张感。慢动作捕捉关键瞬间，展现力量与技巧。\n肾上腺素飙升，生死对决的紧张时刻。",
+      "creative_density": 0.80,
+      "p1_count": 3,
+      "p2_count": -1,
+      "category": "action_scene",
+      "keywords": ["动作", "搏斗", "紧张", "动态"],
+      "character_count": -1,
+      "word_count": -1
+    },
+    {
+      "id": "example_06",
+      "title": "对话对峙（剧情片）",
+      "original_content": "## 示例4：对话对峙（剧情片）\n**模板类型：** 对话/对峙场景\n\n双人镜头，两人面对面站立。\n紧张的对峙，眼神交锋，微妙的面部表情变化。背景是空旷的会议室，长桌分隔两人。\n顶光营造戏剧性阴影，突出面部轮廓。浅景深聚焦人物，背景虚化。\n无声的较量，未说出口的真相在空气中弥漫。",
+      "creative_density": 0.70,
+      "p1_count": 2,
+      "p2_count": -1,
+      "category": "dialogue_confrontation",
+      "keywords": ["对话", "对峙", "紧张", "冲突"],
+      "character_count": -1,
+      "word_count": -1
+    },
+    {
+      "id": "example_07",
+      "title": "情感高潮（剧情片）",
+      "original_content": "## 示例7：情感高潮（剧情片）\n**模板类型：** 情绪特写\n\n特写，中年男性的面容。\n情感爆发的瞬间，泪水无声滑落，嘴唇颤抖但强忍哭泣。眼神中交织着痛苦、释然与爱。\n柔和的侧光勾勒面部轮廓，背景完全虚化，聚焦于情感表达。缓慢的推镜头，逐渐靠近。\n情感的释放，多年压抑后的解脱时刻。",
+      "creative_density": 0.88,
+      "p1_count": 4,
+      "p2_count": -1,
+      "category": "emotional_closeup",
+      "keywords": ["情感", "高潮", "特写", "释放"],
+      "character_count": -1,
+      "word_count": -1
+    }
+  ],
+  "statistics": {
+    "total_examples": 7,
+    "categories": ["emotional_closeup", "establishing_shot", "action_scene", "dialogue_confrontation"],
+    "total_p1_elements": 23,
+    "average_creative_density": 0.83,
+    "notes": "注：p2_count、character_count、word_count字段值为-1表示需要在实际处理中计算"
+  }
+}

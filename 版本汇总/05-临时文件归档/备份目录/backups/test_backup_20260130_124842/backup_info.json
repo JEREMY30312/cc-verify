@@ -1,0 +1,17 @@
+{
+  "backup_id": "test_backup_20260130_124842",
+  "backup_name": "test_backup",
+  "timestamp": "20260130_124842",
+  "description": "测试备份",
+  "files_backed_up": [
+    "phase_C_examples.json",
+    "batch_processor.py",
+    "batch_validation.py",
+    "monitoring_dashboard.py",
+    "alert_system.py"
+  ],
+  "metadata": {
+    "system_version": "1.0",
+    "backup_type": "manual"
+  }
+}

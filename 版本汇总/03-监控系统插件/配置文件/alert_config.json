@@ -1,0 +1,48 @@
+{
+  "email": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "sender_email": "your-email@gmail.com",
+    "sender_password": "your-app-password",
+    "recipients": ["team-lead@example.com", "qa-team@example.com"]
+  },
+  "slack": {
+    "enabled": false,
+    "webhook_url": "https://hooks.slack.com/services/..."
+  },
+  "alert_thresholds": {
+    "simplification_rate": {
+      "critical_low": 0.04,
+      "critical_high": 0.16,
+      "warning_low": 0.05,
+      "warning_high": 0.15
+    },
+    "p1_preservation": {
+      "critical": 0.98,
+      "warning": 0.99
+    },
+    "p2_preservation": {
+      "critical": 0.80,
+      "warning": 0.85
+    },
+    "quality_degradation": {
+      "critical": 0.15,
+      "warning": 0.10
+    },
+    "error_rate": {
+      "critical": 0.30,
+      "warning": 0.10
+    },
+    "consecutive_failures": {
+      "critical": 5,
+      "warning": 3
+    }
+  },
+  "notification_settings": {
+    "send_immediate_alerts": true,
+    "daily_summary": true,
+    "weekly_report": true,
+    "alert_cooldown_minutes": 30
+  }
+}

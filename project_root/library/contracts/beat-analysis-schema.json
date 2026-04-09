@@ -1,0 +1,21 @@
+> **Description:** 节拍分析输出结构的JSON Schema定义，规范权重计算和策略标签的数据格式
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BeatAnalysisOutput",
+  "type": "object",
+  "required": ["beat_id", "event_type", "final_weight", "keyframe_level"],
+  "properties": {
+    "beat_id": {"type": "string", "description": "节拍唯一标识"},
+    "event_type": {
+      "type": "string",
+      "enum": ["生死攸关", "核心转折", "高强度动作", "情感高潮", "关键决策", "重要对话", "氛围转换", "过渡铺垫"]
+    },
+    "base_weight": {"type": "number", "minimum": 0.5, "maximum": 4.0},
+    "genre_coeff": {"type": "number", "minimum": 0.5, "maximum": 2.0},
+    "final_weight": {"type": "number", "description": "最终权重计算结果"},
+    "keyframe_level": {"type": "string", "enum": ["🔴特级", "🟠高级", "🟡中级", "🔵普通", "⚪基础"]},
+    "strategy_tags": {"type": "array", "items": {"type": "string"}},
+    "suggested_grids": {"type": "integer", "minimum": 1, "maximum": 4}
+  }
+}

@@ -1,0 +1,96 @@
+---
+project: 猪打镇关西
+version: 2.0
+last_updated: 2026-01-20
+
+characters:
+  鲁达:
+    国潮动漫:
+      physical: "身形魁梧，身高九尺，腰阔十围；面圆耳大，满脸络腮虬髯"
+      headwear: "暗青灰色芝麻罗纱头巾，哑光无反光质感"
+      upper_body: "翡翠鹦哥绿朱丝战袍"
+      waist: "鸦青宫绦双股绦带"
+      footwear: "暗黄宋代风格靴子"
+      accessories: null
+      skin: null
+      render_style: "平涂赛璐璐风格，墨线轮廓粗犷遒劲"
+    
+    像素风格:
+      physical: "上半身魁梧健硕，身形微微佝偻，肌肉蓄势待发"
+      headwear: "暗青灰色芝麻罗头巾，长尾随风飘扬"
+      upper_body: "鹦哥绿紧身战术背心，裸露双臂青筋暴起"
+      waist: "弹药腰带（子弹带）"
+      footwear: "黄色格斗战靴"
+      accessories: "红色露指战术手套"
+      skin: null
+      render_style: "拳皇98风格像素美术"
+    
+    MCU电影史诗感:
+      physical: "35岁亚裔男性，魁梧健硕肌肉身材，皮肤毛孔清晰"
+      headwear: "芝麻罗头巾，纱织纹理清晰"
+      upper_body: "翡翠鹦哥长袍，面料质感逼真"
+      waist: null
+      footwear: "暗黄宋代风格靴子"
+      accessories: null
+      skin: null
+      render_style: "虚幻引擎5影视级渲染，8K分辨率，光线追踪"
+
+  镇关西:
+    国潮动漫:
+      physical: "身形肥硕，面露凶相"
+      headwear: "黑色幞头，头发松散束起"
+      upper_body: "褐色交领右衽粗布短衫"
+      waist: "白色麻布围裙（沾满油污血渍）、粗打铁制腰带"
+      footwear: "黑色麻鞋"
+      accessories: "屠夫刀鞘（已磨损陈旧）、粗布护腕"
+      skin: null
+      render_style: "平涂赛璐璐风格，粗布面料与油污形成对比"
+    
+    MCU电影史诗感:
+      physical: "肥硕多肉的人类面庞，眯缝眼，有络腮胡，紫色皮肤"
+      headwear: "丝绸质感黑色头巾"
+      upper_body: "灭霸盔甲"
+      waist: null
+      footwear: null
+      accessories: "无限手套"
+      skin: "紫色皮肤，次表面散射质感"
+      render_style: "虚幻引擎5影视级渲染，光线追踪反射"
+
+  包子猪:
+    国潮动漫:
+      physical: "身材矮胖、身形滚圆，粉色皮肤带细腻纹理"
+      headwear: null
+      upper_body: "白色衬衫，衣料褶皱丰富"
+      waist: "蓝色背带短裤"
+      footwear: null
+      accessories: "蓝色领结"
+      skin: "粉色皮肤带细腻纹理"
+      render_style: "平涂赛璐璐风格"
+    
+    MCU电影史诗感:
+      physical: "银河护卫队风格，粉嫩皮肤带绒毛质感"
+      headwear: null
+      upper_body: "白色衬衫与牛仔背带"
+      waist: null
+      footwear: null
+      accessories: null
+      skin: "粉嫩皮肤带细腻绒毛质感"
+      render_style: "超写实CGI，虚幻引擎5影视级渲染"
+
+scenes:
+  宋代集市: "热闹非凡的传统市集氛围"
+  镇关西肉铺: "案板、红色的精肉金字塔、玄铁杀猪刀"
+  包子铺: "包子猪吃包子的摊位"
+  泰坦废墟: "类似复联3泰坦星战役，破碎卫星残骸、燃烧陨石坑"
+
+rendering_styles:
+  国潮动漫: "平涂赛璐璐风格，墨线轮廓粗犷遒劲，游戏概念风"
+  MCU: "虚幻引擎5影视级，8K分辨率，光线追踪，体积光照明"
+  像素: "拳皇98风格，8-bit故障效果"
+
+style_transitions:
+  - {from: "国潮动漫", to: "MCU", trigger: "暗物质包子出现", beat: 8}
+  - {from: "MCU", to: "像素", trigger: "包子猪被拍飞", beat: 11}
+---
+
+# 【核心概念】

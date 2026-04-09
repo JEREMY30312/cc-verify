@@ -1,0 +1,43 @@
+{
+  "batch_info": {
+    "batch_size_percentage": 10.0,
+    "total_processed": 1,
+    "successful": 1,
+    "failed": 0,
+    "mode": "standard",
+    "timestamp": "2026-01-30"
+  },
+  "metrics": {
+    "average_reduction": 8.2,
+    "average_quality_score": 1.0,
+    "average_p1_preserved": 2.0,
+    "average_p2_preserved": 0.0,
+    "target_reduction": 7.9,
+    "target_quality_drop": 8.0,
+    "target_p1_preservation": 100,
+    "target_p2_preservation": 90
+  },
+  "results": [
+    {
+      "status": "success",
+      "example_id": "example_05",
+      "title": "动作场景（动作片）",
+      "original_content": "## 示例1：动作场景（动作片）\n**模板类型：** 动作场景\n\n中景，两名特工在狭窄的巷子里搏斗。\n快速剪辑，拳脚相交，动作流畅而有力。雨水打湿的地面反射霓虹灯光，每一次击打都溅起水花。\n动态构图，倾斜角度增强紧张感。慢动作捕捉关键瞬间，展现力量与技巧。\n肾上腺素飙升，生死对决的紧张时刻。",
+      "simplified_content": "##示例1：动作场景（动作片）**模板类型：**动作场景中景，两名特工在狭窄巷子里搏斗。快速剪辑，拳脚相交，动作流畅有力。雨水打湿地面反射霓虹灯光，每一次击打都溅起水花。动态构图，倾斜角度增强紧张感。慢动作捕捉关键瞬间，展现力量与技巧。肾上腺素飙升，生死对决紧张时刻。",
+      "original_length": 146,
+      "simplified_length": 134,
+      "reduction_percentage": 8.2,
+      "preserved_p1": 2,
+      "preserved_p2": 0,
+      "quality_score": 1.0,
+      "mode": "standard",
+      "achieved_target": false
+    }
+  ],
+  "validation": {
+    "reduction_target_achieved": false,
+    "quality_target_achieved": true,
+    "p1_target_achieved": false,
+    "p2_target_achieved": false
+  }
+}

@@ -1,0 +1,43 @@
+📋 Starting deployment process...
+
+1. 📦 Backing up existing files...
+  ✅ Backed up: .claude/common/prompt-simplifier.md
+  ✅ Backed up: .claude/skills/film-storyboard-skill/SKILL.md
+
+2. 🔍 Verifying target files...
+  ✅ Verified: .claude/common/prompt-simplifier.md
+  ✅ Verified: .claude/skills/film-storyboard-skill/SKILL.md
+
+3. 🔍 Checking current integration status...
+🔍 Checking SKILL.md integration...
+  ✅ Phase C integration found in SKILL.md
+
+4. 🔍 Checking current P2 keywords...
+🔍 Verifying P2 keywords in prompt-simplifier.md...
+  Found 36 keyword lines
+  Found 5/5 scene type categories
+  ✅ All 5 scene type categories present
+
+5. 🔄 Applying Phase C updates...
+   Note: The actual file updates should be done manually
+   or via the update script. This script only handles
+   backup, verification, and rollback.
+
+6. ✅ Running post-update verification...
+   Running verification script...
+   ⚠️  Verification script not found. Creating it...
+   ✅ Created verification script
+
+7. 🔄 Creating rollback script...
+   ✅ Created rollback script
+
+======================================
+🚀 Deployment preparation completed!
+
+Next steps:
+1. Update .claude/common/prompt-simplifier.md with extended P2 keywords
+2. Verify SKILL.md integration is complete
+3. Run verification: bash verify-phase-c.sh
+4. If issues occur, rollback: bash rollback-phase-c.sh
+
+Backup location: .backups/phase-c-20260130-215755

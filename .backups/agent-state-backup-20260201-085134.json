@@ -1,0 +1,72 @@
+{
+  "version": "4.1",
+  "projectConfig": {
+    "visual_style": "国潮动漫",
+    "target_medium": "漫剧",
+    "aspect_ratio": "16:9横屏",
+    "optimization_config": {
+      "v4_1_enabled": true,
+      "long_beat_split_threshold": 3.5,
+      "strategy_unification": true,
+      "weight_correction": true,
+      "dynamic_template": true,
+      "keyframe_selection": true,
+      "asset_package": true,
+      "visual_thickening": true,
+      "strategy_completion": true,
+      "environment_injection": true,
+      "fission_algorithm": true,
+      "card_layout": true
+    },
+    "strategy_config": {
+      "strategy_tags": ["[单镜]", "[动势组]", "[蒙太奇组]", "[长镜头]", "[环境]", "[特写]", "[全景]", "[中景]", "[推拉]", "[摇移]", "[跟拍]", "[升降]"],
+      "default_strategy": "[蒙太奇组]",
+      "complexity_thresholds": {
+        "low": 2.0,
+        "medium": 3.5,
+        "high": 5.0
+      }
+    },
+    "weight_config": {
+      "type_coefficients": {
+        "action_adventure": 1.5,
+        "suspense_thriller": 1.5,
+        "romance": 0.8,
+        "comedy": 0.9,
+        "horror": 1.3,
+        "art_film": 1.1,
+        "documentary": 0.7
+      },
+      "weight_calculation": "final_weight = (performance_weight × base_weight) × type_coefficient",
+      "keyframe_levels": {
+        "super": 4.0,
+        "high": 3.0,
+        "medium": 2.0,
+        "low": 1.0
+      }
+    }
+  },
+  "phase": "breakdown",
+  "current_episode": "ep01",
+  "subagents": {
+    "storyboard-artist": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created"
+    },
+    "director": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created"
+    },
+    "animator": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created"
+    }
+  },
+  "snapshots": []
+}

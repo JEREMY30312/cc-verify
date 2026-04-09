@@ -1,0 +1,51 @@
+{
+  "name": "真人写实风格",
+  "description": "接近真人演员的电影级写实风格",
+  "config": {
+    "visualStyle": "真人写实",
+    "targetMedium": "电影",
+    "aspectRatio": "16:9",
+    "lightingSystem": {
+      "primary": "自然光",
+      "secondary": "人工补光",
+      "special": "光影对比"
+    },
+    "colorPalette": {
+      "primary": ["自然色调", "低饱和度", "写实色彩"],
+      "accent": "色彩对比",
+      "mood": "真实感或戏剧感"
+    },
+    "renderingStyle": {
+      "technique": "写实渲染",
+      "texture": "真实材质",
+      "linework": "无明显线条"
+    },
+    "characterDesign": {
+      "style": "真人比例",
+      "proportions": "七头身",
+      "details": "真实面部特征"
+    },
+    "environmentDesign": {
+      "style": "实景或写实3D",
+      "atmosphere": "真实氛围",
+      "specialEffects": "真实光影效果"
+    },
+    "cameraStyle": {
+      "movement": "手持或稳定器",
+      "angles": "真人视角",
+      "framing": "电影构图"
+    },
+    "narrativeStyle": {
+      "pace": "真实节奏",
+      "emotion": "自然表达",
+      "emphasis": "真实情感与动作"
+    },
+    "transitions": {
+      "style": "真实转场",
+      "duration": "自然",
+      "effects": "溶解、匹配剪辑"
+    }
+  },
+  "recommendedFor": ["剧情片", "战争片", "历史剧", "现实题材"],
+  "icon": "🎬"
+}

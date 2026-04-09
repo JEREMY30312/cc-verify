@@ -1,0 +1,37 @@
+{
+  "batch_info": {
+    "batch_size": "1/5 (20.0%)",
+    "processed_examples": [
+      "悬疑揭示（悬疑片）"
+    ],
+    "timestamp": "2026-01-30"
+  },
+  "metrics": {
+    "average_reduction": 4.9,
+    "average_p1_preserved": 3.0,
+    "average_p2_preserved": 2.0,
+    "average_quality_score": 0.85,
+    "target_reduction": 7.9,
+    "target_p1": 100,
+    "target_p2": 90,
+    "target_quality": 0.8
+  },
+  "validation": {
+    "reduction_target_achieved": false,
+    "p1_target_achieved": true,
+    "p2_target_achieved": true,
+    "quality_target_achieved": true
+  },
+  "results": [
+    {
+      "example_id": "example_05",
+      "title": "悬疑揭示（悬疑片）",
+      "original_length": 143,
+      "simplified_length": 136,
+      "reduction_percentage": 4.9,
+      "preserved_p1": 3,
+      "preserved_p2": 2,
+      "quality_score": 0.85
+    }
+  ]
+}

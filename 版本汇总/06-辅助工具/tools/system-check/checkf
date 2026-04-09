@@ -1,0 +1,3 @@
+#!/bin/bash
+# 快捷命令：checkf (full)
+./anineo-system-check.sh full

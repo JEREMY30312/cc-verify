@@ -1,0 +1,51 @@
+{
+  "name": "日漫风格",
+  "description": "日本动漫典型视觉风格，擅长表现细腻情感和动态场景",
+  "config": {
+    "visualStyle": "日漫风格",
+    "targetMedium": "漫剧",
+    "aspectRatio": "16:9",
+    "lightingSystem": {
+      "primary": "自然光体系",
+      "secondary": "室内柔光",
+      "special": "特效光效"
+    },
+    "colorPalette": {
+      "primary": ["清新色调", "高饱和度", "渐变处理"],
+      "accent": "对比色点缀",
+      "mood": "青春活力或深沉情感"
+    },
+    "renderingStyle": {
+      "technique": "赛璐璐+渐变",
+      "texture": "光滑表面",
+      "linework": "清晰轮廓线"
+    },
+    "characterDesign": {
+      "style": "大眼睛角色",
+      "proportions": "七头身到八头身",
+      "details": "发型多样，表情丰富"
+    },
+    "environmentDesign": {
+      "style": "写实背景+动漫处理",
+      "atmosphere": "细腻氛围营造",
+      "specialEffects": "速度线、特效光效"
+    },
+    "cameraStyle": {
+      "movement": "快速切换",
+      "angles": "仰视俯视交替",
+      "framing": "特写与远景结合"
+    },
+    "narrativeStyle": {
+      "pace": "节奏张弛有度",
+      "emotion": "细腻表达",
+      "emphasis": "角色内心戏"
+    },
+    "transitions": {
+      "style": "快速切换",
+      "duration": "短",
+      "effects": "速度线、闪白"
+    }
+  },
+  "recommendedFor": ["青春校园", "热血战斗", "科幻冒险", "日常治愈"],
+  "icon": "🎌"
+}

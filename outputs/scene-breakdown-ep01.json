@@ -1,0 +1,387 @@
+{
+  "version": "5.0",
+  "episode_id": "ep01",
+  "project": "猪打镇关西",
+  "visual_style": "国潮动漫风格",
+  "target_medium": "漫剧",
+  "aspect_ratio": "16:9横屏",
+  "narrative_structure": "经典三幕式",
+  "genre": "动作/冒险",
+  
+  "character_settings": {
+    "鲁达": {
+      "国潮动漫风格": {
+        "physical": "身形魁梧，身高九尺，腰阔十围；面圆耳大，满脸络腮虬髯",
+        "headwear": "暗青灰色芝麻罗纱头巾，哑光无反光质感",
+        "upper_body": "翡翠鹦哥绿朱丝战袍",
+        "waist": "鸦青宫绦双股绦带",
+        "footwear": "暗黄宋代风格靴子",
+        "accessories": null,
+        "skin": null,
+        "rendering": "平涂赛璐璐风格，墨线轮廓粗犷遒劲"
+      },
+      "MCU电影史诗感": {
+        "physical": "35岁亚裔男性，魁梧健硕肌肉身材，皮肤毛孔清晰",
+        "headwear": "芝麻罗头巾，纱织纹理清晰",
+        "upper_body": "翡翠鹦哥长袍，面料质感逼真",
+        "waist": null,
+        "footwear": "暗黄宋代风格靴子",
+        "accessories": null,
+        "skin": null,
+        "rendering": "虚幻引擎5影视级渲染，8K分辨率，光线追踪"
+      }
+    },
+    "镇关西": {
+      "国潮动漫风格": {
+        "physical": "身形肥硕，面露凶相",
+        "headwear": "黑色幞头，头发松散束起",
+        "upper_body": "褐色交领右衽粗布短衫",
+        "waist": "白色麻布围裙（沾满油污血渍）、粗打铁制腰带",
+        "footwear": "黑色麻鞋",
+        "accessories": "屠夫刀鞘（已磨损陈旧）、粗布护腕",
+        "skin": null,
+        "rendering": "平涂赛璐璐风格，粗布面料与油污形成对比"
+      },
+      "MCU电影史诗感": {
+        "physical": "肥硕多肉的人类面庞，眯缝眼，有络腮胡，紫色皮肤",
+        "headwear": "丝绸质感黑色头巾",
+        "upper_body": "灭霸盔甲",
+        "waist": null,
+        "footwear": null,
+        "accessories": "无限手套",
+        "skin": "紫色皮肤，次表面散射质感",
+        "rendering": "虚幻引擎5影视级渲染，光线追踪反射"
+      }
+    },
+    "包子猪": {
+      "国潮动漫风格": {
+        "physical": "身材矮胖、身形滚圆，粉色皮肤带细腻纹理",
+        "headwear": null,
+        "upper_body": "白色衬衫，衣料褶皱丰富",
+        "waist": "蓝色背带短裤",
+        "footwear": null,
+        "accessories": "蓝色领结",
+        "skin": "粉色皮肤带细腻纹理",
+        "rendering": "平涂赛璐璐风格"
+      },
+      "MCU电影史诗感": {
+        "physical": "银河护卫队风格，粉嫩皮肤带绒毛质感",
+        "headwear": null,
+        "upper_body": "白色衬衫与牛仔背带",
+        "waist": null,
+        "footwear": null,
+        "accessories": null,
+        "skin": "粉嫩皮肤带细腻绒毛质感",
+        "rendering": "超写实CGI，虚幻引擎5影视级渲染"
+      }
+    }
+  },
+  
+  "style_transitions": [
+    {
+      "trigger": "暗物质包子出现",
+      "beat": 8,
+      "from": "国潮动漫风格",
+      "to": "MCU电影史诗感"
+    },
+    {
+      "trigger": "包子猪被拍飞",
+      "beat": 11,
+      "from": "MCU电影史诗感",
+      "to": "像素风格"
+    }
+  ],
+  
+  "shots": [
+    {
+      "shot_id": "S01",
+      "beat_id": 1,
+      "source_text": "热闹的宋代集市里。镇关西肉铺前，（鲁达）坐在案前的板凳上，双眼紧闭。 一旁镇关西（郑屠）手持厚重的玄铁杀猪刀，脸上挂着汗珠卖力的运刀如风。刀锋划过空气，带出黑色的干枯墨迹残影。案板上，红色的精肉被切成完美的金字塔形状。",
+      "scene_description": "鲁达闭目坐在肉铺前，镇关西挥刀切肉，刀锋带出墨迹残影，案板上的精肉呈完美金字塔形",
+      "ndi": {
+        "score": 1.2,
+        "axis_side": "中景",
+        "visual_anchor": "玄铁杀猪刀、墨迹残影",
+        "motion_type": "static",
+        "transition_type": "起势"
+      },
+      "lens": {
+        "type": "中景",
+        "angle": "平视"
+      }
+    },
+    {
+      "shot_id": "S02",
+      "beat_id": 2,
+      "source_text": "镇关西（郑屠）用唯唯诺诺的语气对着鲁达说道：官爷！您看这行吗？鲁达随后睁眼看了一眼案板上的肉，继续闭上眼回答（挑衅）： 再切十斤精肉，切做臊子，不要半点肥的在上面！",
+      "scene_description": "镇关西卑微询问，鲁达睁眼挑衅，要求再切十斤精肉臊子",
+      "ndi": {
+        "score": 1.5,
+        "axis_side": "正反打",
+        "visual_anchor": "两人对峙表情",
+        "motion_type": "对话",
+        "transition_type": "对话"
+      },
+      "lens": {
+        "type": "双人中景",
+        "angle": "平视"
+      }
+    },
+    {
+      "shot_id": "S03",
+      "beat_id": 3,
+      "source_text": "镇关西心想这位官爷莫不是来找茬！，但也只能咬牙切齿手腕一抖，行云流水般卖力的切着臊子。不一会儿一份精肉臊子出现在了台面上。并挑衅说道：官爷您的精肉臊子一份！",
+      "scene_description": "镇关西心中不忿却只能照做，熟练切好臊子并挑衅回应",
+      "ndi": {
+        "score": 1.3,
+        "axis_side": "镇关西",
+        "visual_anchor": "切肉动作、臊子",
+        "motion_type": "动作",
+        "transition_type": "动作"
+      },
+      "lens": {
+        "type": "近景",
+        "angle": "俯视"
+      }
+    },
+    {
+      "shot_id": "S04",
+      "beat_id": 4,
+      "source_text": "鲁达眯着眼审视案板，试图寻找破绽，但肉切得完美无瑕。眼见没有难住镇关西，他四处张望，目光落在对面街道上的包子猪身上，包子猪正在旁边的包子铺旁吃着包子。",
+      "scene_description": "鲁达审视肉块无破绽，视线转向包子猪，寻找新的刁难对象",
+      "ndi": {
+        "score": 1.0,
+        "axis_side": "鲁达视角",
+        "visual_anchor": "鲁达视线转移",
+        "motion_type": "静态",
+        "transition_type": "过渡"
+      },
+      "lens": {
+        "type": "中景→近景",
+        "angle": "平视→俯视"
+      }
+    },
+    {
+      "shot_id": "S05",
+      "beat_id": 5,
+      "source_text": "突然一只手抓住包子猪的背带，将它从包子铺快速拉走，重重按在案板中央。鲁达（怒喝）但这猪不满意！洒家要你把这几十斤肉全部装进一颗包子里面，给它吃！",
+      "scene_description": "鲁达抓住包子猪按在案板上，怒喝要求将所有肉装进一颗包子给猪吃",
+      "ndi": {
+        "score": 1.8,
+        "axis_side": "动作中心",
+        "visual_anchor": "抓住背带、案板中央",
+        "motion_type": "快速动作",
+        "transition_type": "动作"
+      },
+      "lens": {
+        "type": "中景",
+        "angle": "平视"
+      }
+    },
+    {
+      "shot_id": "S06",
+      "beat_id": 6,
+      "source_text": "包子猪看着案板上的猪肉漏出惊恐的表情。但听到给它吃三个字，包子猪拼命挣扎的动作瞬间静止。 0.1秒变脸： 它极其熟练地掏出餐巾系在脖子上，双手亮出刀叉，眼神从惊恐变为极度的期待，兴奋地用刀叉敲击盘子。",
+      "scene_description": "包子猪从惊恐瞬间变脸为期待，熟练系餐巾拿刀叉，敲击盘子",
+      "ndi": {
+        "score": 2.2,
+        "axis_side": "包子猪特写",
+        "visual_anchor": "0.1秒变脸、餐巾刀叉",
+        "motion_type": "快速变脸",
+        "transition_type": "情绪转折"
+      },
+      "lens": {
+        "type": "特写→中景",
+        "angle": "平视"
+      }
+    },
+    {
+      "shot_id": "S07",
+      "beat_id": 7,
+      "source_text": "镇关西（暴怒）对着鲁达说： 欺人太甚！鲁达（怒喝）：欺你又如何！镇关西（暴怒）但又不敢再说什么：给我……凝！！镇关西周身爆发出红黑色的煞气（气流特效）。",
+      "scene_description": "两人对峙升级，镇关西暴怒却不敢动手，爆发出红黑色煞气",
+      "ndi": {
+        "score": 2.0,
+        "axis_side": "镇关西",
+        "visual_anchor": "红黑色煞气、暴怒表情",
+        "motion_type": "气场爆发",
+        "transition_type": "动作"
+      },
+      "lens": {
+        "type": "中景→全景",
+        "angle": "仰视"
+      }
+    },
+    {
+      "shot_id": "S08",
+      "beat_id": 8,
+      "source_text": "镇关西双手虚空对压，案板上的肉堆在强横的气劲下开始被挤压、变形，周围墨汁飞溅。【视觉奇观】气劲消散。案板中央悬浮着一个拳头大小、漆黑如墨、周围缠绕红色闪电的暗物质包子。",
+      "scene_description": "镇关西气劲压肉，墨汁飞溅，暗物质包子悬浮，黑色缠绕红色闪电",
+      "ndi": {
+        "score": 3.5,
+        "axis_side": "案板中央",
+        "visual_anchor": "暗物质包子、红色闪电",
+        "motion_type": "奇观展现",
+        "transition_type": "高潮"
+      },
+      "lens": {
+        "type": "特写→全景",
+        "angle": "仰视"
+      }
+    },
+    {
+      "shot_id": "S09",
+      "beat_id": 9,
+      "source_text": "三人惊讶的表情分屏出现在画面上。三只手同时伸向包子。镇关西抢先一步抓住了它。 转场（VFX）：水墨线条瞬间被CG渲染取代。镇关西的肥肉硬化为紫色皮肤，金色纳米战甲覆盖全身。包子自动镶嵌在他左手的无限手套上。",
+      "scene_description": "三人同时伸手抢包子，镇关西抢先抓住，风格转换：墨韵转CG，镇关西化身紫肤泰坦",
+      "ndi": {
+        "score": 3.0,
+        "axis_side": "三人分屏",
+        "visual_anchor": "分屏构图、紫肤泰坦",
+        "motion_type": "动作序列",
+        "transition_type": "动作"
+      },
+      "lens": {
+        "type": "三分屏→全景",
+        "angle": "平视"
+      }
+    },
+    {
+      "shot_id": "S10",
+      "beat_id": 10,
+      "source_text": "镇关西（泰坦形态）（低沉混响）我是……天命！镇关西单手掐住写实版鲁达的脖子，将他举在半空。鲁达（写实武僧造型）青筋暴起，试图用腿反踢镇关西的面门，但踢在金甲上发出金属撞击的闷响，毫无作用。",
+      "scene_description": "镇关西自诩天命，单手掐住鲁达举在半空，鲁达踢甲无果",
+      "ndi": {
+        "score": 2.8,
+        "axis_side": "两人对峙",
+        "visual_anchor": "掐颈举空、金甲",
+        "motion_type": "动作",
+        "transition_type": "动作"
+      },
+      "lens": {
+        "type": "中景",
+        "angle": "仰视→俯视"
+      }
+    },
+    {
+      "shot_id": "S11",
+      "beat_id": 11,
+      "source_text": "镇关西眼神冷漠，猛地将鲁达像摔破布娃娃一样砸向地面。 动作：轰！地面被砸出一个陨石坑。 紧接着，镇关西左手无限手套握拳，无限宝石（包子）亮起紫光，一记毁灭性的能量重拳轰下。",
+      "scene_description": "镇关西将鲁达砸入地面，陨石坑形成，再发紫光能量重拳",
+      "ndi": {
+        "score": 3.2,
+        "axis_side": "地面",
+        "visual_anchor": "陨石坑、紫光重拳",
+        "motion_type": "高强度动作",
+        "transition_type": "高潮"
+      },
+      "lens": {
+        "type": "全景→特写",
+        "angle": "俯视"
+      }
+    },
+    {
+      "shot_id": "S12",
+      "beat_id": 12,
+      "source_text": "鲁达交叉双臂格挡，但瞬间被炸飞，身体如炮弹般撞碎了远处的一座外星方尖碑残骸，被埋在碎石中，生死不知。镇关西正要乘胜追击，没有注意到写实版包子猪已经顺着他的右腿甲爬了上来。",
+      "scene_description": "鲁达被炸飞撞碎方尖碑埋入碎石，包子猪悄悄爬上镇关西右腿",
+      "ndi": {
+        "score": 2.5,
+        "axis_side": "战场全景",
+        "visual_anchor": "爆炸、方尖碑碎片",
+        "motion_type": "高强度动作",
+        "transition_type": "动作"
+      },
+      "lens": {
+        "type": "全景",
+        "angle": "俯视"
+      }
+    },
+    {
+      "shot_id": "S13",
+      "beat_id": 13,
+      "source_text": "就在镇关西举起右手准备查看包子时，发现手上挂在包子猪，对着镇关西一笑然后一口狠狠咬在镇关西右臂的手腕护甲缝隙处（肉上）。镇关西吃痛，右手下意识松开。",
+      "scene_description": "包子猪咬住镇关西手腕，镇关西吃痛松手，包子坠落",
+      "ndi": {
+        "score": 2.2,
+        "axis_side": "手腕特写",
+        "visual_anchor": "咬合动作、松手",
+        "motion_type": "突袭动作",
+        "transition_type": "动作"
+      },
+      "lens": {
+        "type": "特写",
+        "angle": "平视"
+      }
+    },
+    {
+      "shot_id": "S14",
+      "beat_id": 14,
+      "source_text": "镇关西（暴怒） 滚！受击与故障 (GLITCH)： 镇关西左手无限手套反手一挥，像拍苍蝇一样重重拍在猪身上。 特效： 巨大的冲击力导致渲染层崩溃。包子猪的写实CG模型瞬间闪烁故障，变成了一段沉重、真实 Live Action 素材，面部惊恐扭曲。",
+      "scene_description": "镇关西暴怒拍飞包子猪，猪从写实CG变成真实Live Action素材",
+      "ndi": {
+        "score": 2.0,
+        "axis_side": "镇关西手掌",
+        "visual_anchor": "故障效果、真实素材",
+        "motion_type": "打击+故障",
+        "transition_type": "高潮"
+      },
+      "lens": {
+        "type": "中景→特写",
+        "angle": "平视"
+      }
+    },
+    {
+      "shot_id": "S15",
+      "beat_id": 15,
+      "source_text": "就在包子即将落地时，一道身影从废墟中冲出。鲁达一个滑铲，在毫厘之间接住了包子。",
+      "scene_description": "鲁达废墟冲出滑铲接住包子",
+      "ndi": {
+        "score": 1.8,
+        "axis_side": "滑铲轨迹",
+        "visual_anchor": "滑铲动作、接包子",
+        "motion_type": "快速动作",
+        "transition_type": "动作"
+      },
+      "lens": {
+        "type": "中景",
+        "angle": "低角度"
+      }
+    }
+  ],
+  
+  "statistical_summary": {
+    "total_shots": 15,
+    "total_beats": 15,
+    "genre": "动作/冒险",
+    "genre_coefficients": {
+      "action": 1.5,
+      "dialogue": 0.8,
+      "emotion": 1.2,
+      "environment": 1.0
+    },
+    "strategy_distribution": {
+      "单镜": 4,
+      "动势组": 6,
+      "蒙太奇组": 3,
+      "长镜头": 2
+    },
+    "acts": {
+      "act1": [1, 2, 3, 4],
+      "act2": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+      "act3": [15]
+    },
+    "keyframe_levels": {
+      "🔴特级": 3,
+      "🟠高级": 5,
+      "🟡中级": 5,
+      "🔵普通": 2,
+      "⚪基础": 0
+    },
+    "weight_analysis": {
+      "highest_weight_beat": "beat_8",
+      "highest_weight_value": 3.5,
+      "avg_weight": 2.07
+    }
+  }
+}

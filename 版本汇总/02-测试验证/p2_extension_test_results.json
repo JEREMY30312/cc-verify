@@ -1,0 +1,204 @@
+{
+  "summary": {
+    "total_examples": 5,
+    "total_original_p2": 8,
+    "total_extended_p2": 64,
+    "average_improvement": 255.0,
+    "test_date": "2026-01-30"
+  },
+  "detailed_results": [
+    {
+      "title": "温馨回忆（剧情片）",
+      "category": "emotional_closeup",
+      "original_p2_count": 4,
+      "extended_p2_count": 11,
+      "improvement_percentage": 175.0,
+      "detected_scenes": [
+        "emotional_closeup"
+      ],
+      "original_p2_found": [
+        "发丝",
+        "虚化",
+        "色块",
+        "光晕"
+      ],
+      "extended_base_p2_found": [
+        "发丝",
+        "虚化",
+        "色块",
+        "光晕"
+      ],
+      "extended_scene_p2_found": [
+        "泪光",
+        "微笑",
+        "面容",
+        "温柔",
+        "苦涩",
+        "私密",
+        "回忆"
+      ]
+    },
+    {
+      "title": "孤独远景（剧情片）",
+      "category": "establishing_shot",
+      "original_p2_count": 0,
+      "extended_p2_count": 10,
+      "improvement_percentage": 0,
+      "detected_scenes": [
+        "establishing_shot"
+      ],
+      "original_p2_found": [],
+      "extended_base_p2_found": [],
+      "extended_scene_p2_found": [
+        "远景",
+        "地平线",
+        "天空",
+        "沙滩",
+        "海浪",
+        "身影",
+        "渺小",
+        "留白",
+        "色调",
+        "孤独"
+      ]
+    },
+    {
+      "title": "动作场景（动作片）",
+      "category": "action_scene",
+      "original_p2_count": 0,
+      "extended_p2_count": 17,
+      "improvement_percentage": 0,
+      "detected_scenes": [
+        "action_scene",
+        "suspense_scene"
+      ],
+      "original_p2_found": [],
+      "extended_base_p2_found": [],
+      "extended_scene_p2_found": [
+        "快速剪辑",
+        "慢动作",
+        "动态构图",
+        "倾斜角度",
+        "拳脚相交",
+        "击打",
+        "水花",
+        "霓虹灯",
+        "地面反射",
+        "肾上腺素",
+        "生死对决",
+        "力量",
+        "技巧",
+        "搏斗",
+        "紧张",
+        "对决",
+        "紧张"
+      ]
+    },
+    {
+      "title": "对话对峙（剧情片）",
+      "category": "dialogue_confrontation",
+      "original_p2_count": 2,
+      "extended_p2_count": 19,
+      "improvement_percentage": 850.0,
+      "detected_scenes": [
+        "emotional_closeup",
+        "dialogue_confrontation",
+        "suspense_scene"
+      ],
+      "original_p2_found": [
+        "虚化",
+        "阴影"
+      ],
+      "extended_base_p2_found": [
+        "虚化",
+        "阴影"
+      ],
+      "extended_scene_p2_found": [
+        "眼神",
+        "轮廓",
+        "对峙",
+        "紧张",
+        "眼神交锋",
+        "面部表情",
+        "会议室",
+        "长桌",
+        "顶光",
+        "轮廓",
+        "浅景深",
+        "较量",
+        "真相",
+        "空气",
+        "弥漫",
+        "无声",
+        "紧张"
+      ]
+    },
+    {
+      "title": "悬疑揭示（悬疑片）",
+      "category": "emotional_closeup",
+      "original_p2_count": 2,
+      "extended_p2_count": 7,
+      "improvement_percentage": 250.0,
+      "detected_scenes": [
+        "emotional_closeup",
+        "suspense_scene"
+      ],
+      "original_p2_found": [
+        "瞳孔",
+        "汗珠"
+      ],
+      "extended_base_p2_found": [
+        "瞳孔",
+        "汗珠"
+      ],
+      "extended_scene_p2_found": [
+        "面容",
+        "滑落",
+        "轮廓",
+        "恐惧",
+        "恐惧"
+      ]
+    }
+  ],
+  "scene_statistics": {
+    "emotional_closeup": {
+      "count": 3,
+      "total_improvement": 1275.0,
+      "examples": [
+        "温馨回忆（剧情片）",
+        "对话对峙（剧情片）",
+        "悬疑揭示（悬疑片）"
+      ]
+    },
+    "establishing_shot": {
+      "count": 1,
+      "total_improvement": 0,
+      "examples": [
+        "孤独远景（剧情片）"
+      ]
+    },
+    "action_scene": {
+      "count": 1,
+      "total_improvement": 0,
+      "examples": [
+        "动作场景（动作片）"
+      ]
+    },
+    "suspense_scene": {
+      "count": 3,
+      "total_improvement": 1100.0,
+      "examples": [
+        "动作场景（动作片）",
+        "对话对峙（剧情片）",
+        "悬疑揭示（悬疑片）"
+      ]
+    },
+    "dialogue_confrontation": {
+      "count": 1,
+      "total_improvement": 850.0,
+      "examples": [
+        "对话对峙（剧情片）"
+      ]
+    }
+  }
+}

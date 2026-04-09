@@ -1,0 +1,51 @@
+{
+  "name": "皮克斯风格",
+  "description": "皮克斯动画电影级别的高质量3D CG风格",
+  "config": {
+    "visualStyle": "皮克斯",
+    "targetMedium": "电影",
+    "aspectRatio": "16:9",
+    "lightingSystem": {
+      "primary": "柔和自然光",
+      "secondary": "环境光遮蔽",
+      "special": "次表面散射"
+    },
+    "colorPalette": {
+      "primary": ["温暖色调", "高饱和度", "丰富色彩"],
+      "accent": "高光点缀",
+      "mood": "温馨欢乐或感人至深"
+    },
+    "renderingStyle": {
+      "technique": "3D渲染+手绘质感",
+      "texture": "皮克斯表面材质",
+      "linework": "柔和无明显线条"
+    },
+    "characterDesign": {
+      "style": "可爱卡通角色",
+      "proportions": "大头小身",
+      "details": "圆润线条，大眼睛"
+    },
+    "environmentDesign": {
+      "style": "3D建模场景",
+      "atmosphere": "充满想象力",
+      "specialEffects": "毛发、流体、粒子"
+    },
+    "cameraStyle": {
+      "movement": "流畅运镜",
+      "angles": "多机位拍摄",
+      "framing": "电影感构图"
+    },
+    "narrativeStyle": {
+      "pace": "节奏把控精准",
+      "emotion": "笑中带泪",
+      "emphasis": "角色成长与情感"
+    },
+    "transitions": {
+      "style": "流畅转场",
+      "duration": "适中",
+      "effects": "溶解、擦除"
+    }
+  },
+  "recommendedFor": ["家庭电影", "冒险故事", "科幻奇幻", "温情喜剧"],
+  "icon": "🏠"
+}

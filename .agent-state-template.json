@@ -1,0 +1,59 @@
+{
+  "version": "2.0",
+  "projectConfig": {
+    "visual_style": "真人写实",
+    "target_medium": "短剧",
+    "aspect_ratio": "16:9",
+    "project_name": "项目名称",
+    "project_description": "项目描述"
+  },
+  "phase": "breakdown",
+  "current_episode": "ep01",
+  "episodes": {
+    "ep01": {
+      "status": "pending",
+      "start_time": null,
+      "end_time": null,
+      "breakdown_status": "pending",
+      "beatboard_status": "pending",
+      "sequence_status": "pending",
+      "motion_status": "pending"
+    }
+  },
+  "subagents": {
+    "storyboard-artist": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created",
+      "task_history": []
+    },
+    "director": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created",
+      "task_history": []
+    },
+    "animator": {
+      "agentId": null,
+      "last_task": null,
+      "last_used": null,
+      "status": "not_created",
+      "task_history": []
+    }
+  },
+  "snapshots": [],
+  "statistics": {
+    "total_episodes": 1,
+    "completed_episodes": 0,
+    "total_duration": null,
+    "last_activity": null
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "system",
+    "notes": "ANINEO 状态管理文件 - 请勿手动修改"
+  }
+}

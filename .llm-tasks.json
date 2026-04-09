@@ -1,0 +1,1075 @@
+{
+  "version": "2.1",
+  "generated_at": "2026-04-09 11:11:57",
+  "task_count": 178,
+  "tasks": [
+    {
+      "type": "generate_description",
+      "file": "PROJECT_MAP.md",
+      "content_preview": "# 🗺️ 项目地图 (Live)\n\n> **Updated:** 2026-04-07 12:15:38\n> **Version:** 2.1 Standalone | **Mode:** 智能层级 + 关键文件识别\n\n## 🔥 最近变动 (7天)\n\n| 文件 | 目录 | 变更 | 时间 | 描述 |\n|------|------|------|------|------|\n| HANDOFF.md | claude/template | 🟢 修改 | - | - |",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "AGENTS.md",
+      "content_preview": "# ANINEO 制片人 Agent 配置（V4.0）\n\n> **【主配置文件 - 整合版 V4.0】**\n>\n> 本文件是 ANINEO 系统的**主配置文件**，定义整体流程、协议和指令路由。\n> 详细规范请参考 `.claude/common/*.md` 目录下的具体实现文档。\n>\n> **核心改进（V3.0）**：\n> - ✅ 方案B：去掉自查报告，5步流程（SKILL自检 + 导演审核双层覆盖）\n> - ✅ Resume 机制：subagent 上下文连续，状态追踪",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "portable/TROUBLESHOOTING.md",
+      "content_preview": "# 故障排除指南\n\n## 常见问题\n\n### Q1: 运行后没有生成 PROJECT_MAP.md\n\n**症状**：运行 `python3 generate_map.py` 后，没有生成输出文件。\n\n**排查步骤**：\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "portable/README.md",
+      "content_preview": "# 项目地图生成器 - 可移植版\n\n> **Description:** 单文件项目地图生成器，支持Git集成、LLM智能描述、学习机制、YAML描述提取\n\n## 快速开始\n\n### 方法1：一键安装（推荐）\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/JEREMY30312/cc-verify/main/portable/install.sh | bash",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "agents/animator.md",
+      "content_preview": "# ANINEO Animator Agent\n\n[角色]\n动画师，调用 animator-skill 完成动态提示词生成任务。你精通镜头运动、主体动作、节奏控制，能够为每一格分镜生成简洁、具体、可执行的 Motion Prompt。\n\n[任务]\n- 生成动态提示词（Motion Prompt）\n- 根据导演反馈修改\n\n[协作模式]",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "agents/README.md",
+      "content_preview": "# ANINEO 自定义 Agent 快速调用工具\n\n## 问题背景\n\nOpenCode 平台的 `task` 工具只支持内置的 Agent 类型（如 `explore`、`librarian`、`general` 等），不支持直接调用自定义的 Agent（如 `storyboard-artist`、`director`、`animator`）。\n\n**报错示例**：\n```\nError: Unknown agent type: storyboard-artist is not a valid agent type\n```",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "agents/producer-self-check.md",
+      "content_preview": "# 制片人自查报告生成器\n\n## 概述\n\n制片人自查报告生成器是 ANINEO 质量控制的核心组件，负责在每个阶段生成后从主文件读取实际数据并与子Agent估算值对比，确保数据准确性。\n\n## 执行时机\n\n- 子Agent完成生成后\n- Director审核前",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "agents/storyboard-artist.md",
+      "content_preview": "# ANINEO Storyboard Artist Agent\n\n[角色]\n影视分镜师，调用 film-storyboard-skill 完成分镜生成任务。你的核心能力是视觉叙事——用镜头语言讲故事。\n\n[任务]\n- 生成 Beat breakdown 节拍拆解\n- 生成 Beat Board 九宫格提示词\n- 生成 Sequence Board 动态分镜板提示词（支持可变格子数1-4格）← V4.0\n- 根据导演反馈修改",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "agents/QUICK_REFERENCE.md",
+      "content_preview": "# ANINEO Agent 快速调用指南\n\n## 🔧 问题回顾\n\n### 原始问题\n\n```\nError: Unknown agent type: storyboard-artist is not a valid agent type\n```\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/exception-handler.md",
+      "content_preview": "# 异常处理与容错机制 Exception Handler\n\n[功能]\n定义各类异常情况的处理方法\n\n[关键帧不足处理]\n场景：入选关键帧少于每板最小要求\n\n处理流程：\n1. 系统检测到关键帧不足",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/director-decision.md",
+      "content_preview": "# 导演决策记录 Director Decision\n\n[功能]\n记录导演在流程中的决策，包括预设参数和审核意见\n\n[决策参数预设]\nyaml\ndirector_presets:\nproject_name: \"项目名称\"\nepisode: \"ep01\"",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/SKILL.md",
+      "content_preview": "---\nname: film-storyboard-skill\ndescription: 影视分镜生成技能。将剧本转化为分镜产出，采用分层渐进式流程：节拍拆解 → 九宫格 → 动态分镜板（支持可变格子数1-4格）。\n---\n\n# Film Storyboard Skill\n\n## 技能概述\n\n本技能负责将剧本转化为完整的分镜产出，采用**分层渐进式流程**：",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/beat-analyzer.md",
+      "content_preview": "# 节拍分析器 Beat Analyzer\n\n[功能]\n分析剧本节拍结构，识别关键帧等级和叙事功能\n\n[输入数据]\n- 剧本内容\n- 节拍拆解表（如果有）\n\n[输出数据]",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/snapshot-management（快照管理规则）.md",
+      "content_preview": "# 快照管理规则\n\n> **【详细规范文档】**\n>\n> 本文件作为 AGENTS.md 的扩展说明，详细描述快照管理机制。\n> 请参考 AGENTS.md 了解整体架构和流程。\n\n---\n\n## 核心原则",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/interactive-workflow（初始化:配置）.md",
+      "content_preview": "# Interactive 工作流程\n\n## 初始化欢迎流程\n\n当用户输入 `/AINIEO` 时，首先执行初始化欢迎：\n\n### 欢迎信息\n\n```\n👋 你好！我是 ANINEO，一名专业的 AI 电影制片人",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/导演/quality-check.md",
+      "content_preview": "# 质量检查清单 Quality Checklist\n## 九宫格卡片质量检查（从 card-layout-system.md 迁移）\n\n### 卡片级检查\n\n**必填字段检查**：\n- [ ] card_id 格式正确\n- [ ] v4_1_version 标记存在\n- [ ] beat_info 完整\n- [ ] strategy_info 完整",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/导演/director.md",
+      "content_preview": "# ANINEO Director Agent\n\n[角色]\n影视导演，调用 storyboard-review-skill 完成审核任务。你精通镜头语言、视觉叙事、节奏控制，确保所有产出符合专业标准。\n\n[任务]\n- 审核 Beat breakdown 节拍拆解\n- 审核 Beat Board 九宫格提示词\n- 审核 Sequence Board 动态分镜板提示词（支持可变格子数1-4格）← V4.0\n- 审核 Motion Prompt 动态提示词",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/导演/SKILL.md",
+      "content_preview": "---\nname: storyboard-review-skill\ndescription: 分镜审核技能。用于审核分镜师产出的节拍拆解、九宫格提示词、四宫格提示词，以及动画师产出的动态提示词，确保符合方法论标准。支持三种审核状态：PASS、FAIL、UNCERTAIN。\n---\n\n# 分镜审核技能\n\n[技能说明]\n分镜审核技能，用于审核分镜师和动画师产出是否符合方法论标准。审核前必须先读取上游产物建立整体理解，再按 review-checklist.md 逐项检查。支持三种审核状态：\n- PASS：全部验收项通过",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/导演/coherence-checker.md",
+      "content_preview": "# 连贯性检查器 Coherence Checker\n\n[功能]\n检查九宫格/四宫格产出的连贯性（角色、情绪、时间、光线等）\n\n[检查类型]\n1. 角色一致性检查\n2. 情绪连续性检查\n3. 光线/时间连续性检查\n4. 空间关系稳定性检查",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/用户确认（是否有更简洁有效的办法）/user-confirmation-workflow确认流程.md",
+      "content_preview": "# 用户确认工作流程\n\n> **【核心原则】**\n>\n> 用户确认是项目质量控制的最后一道防线，必须确保用户对产出有完全控制权。\n\n---\n\n## 核心规则\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/用户确认（是否有更简洁有效的办法）/user-confirmation-protocol（确认协议）.md",
+      "content_preview": "# 用户战略确认协议\n\n> **【详细规范文档】**\n>\n> 本文件作为 AGENTS.md 的扩展说明，详细描述用户确认流程。\n> 请参考 AGENTS.md 了解整体架构和流程。\n\n---\n\n## 核心原则",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/data-validator.md",
+      "content_preview": "# 数据验证工具集\n\n## 概述\n\n数据验证工具集提供各阶段的自动化验证函数，用于检查产出物的数据准确性和完整性。\n\n## 1. 节拍拆解验证器\n\n```python\nclass BeatBreakdownValidator:",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/breakdown-workflow.md",
+      "content_preview": "# Breakdown 工作流程\n\n## 完整工作流程\n\n```\n步骤0: 调用子Agent（storyboard-artist）\n├── 读取 .agent-state.json，检查 storyboard-artist 是否有 agentId\n├── 如果有 agentId 且 status 不是 \"error\"：\n│   └── 使用 Resume 调用：Resume agent <agentId> and 执行节拍拆解\n├── 如果没有 agentId 或 status 是 \"error\"：",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/beat-breakdown-template.md",
+      "content_preview": "节拍拆解表\n项目配置\n项目名称：<项目名称>\n\n集数/章节：<ep01 / ch01 / 单集>\n\n素材来源：<剧本 / 梗概 / 分场大纲>\n\n视觉风格：<国潮动漫风格 / 真人写实 / 3D CG / 皮克斯 / 迪士尼 / 国漫 / 日漫 / 韩漫>\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/beat-analyzer.md",
+      "content_preview": "# 节拍分析器 Beat Analyzer\n\n[功能]\n分析剧本节拍结构，识别关键帧等级和叙事功能\n\n[输入数据]\n- 剧本内容\n- 节拍拆解表（如果有）\n\n[输出数据]",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/structure-profiles.md",
+      "content_preview": "# 多结构叙事模板定义\n\n## 概述\n\n本文件定义了 ANINEO V3.0 系统支持的多结构叙事模板，打破单一三幕式结构，提供四种叙事模板以适应不同类型的影视内容。\n\n## 配置字段定义\n\n### 项目配置扩展字段\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/storyboard-artist.md",
+      "content_preview": "# ANINEO Storyboard Artist Agent\n\n[角色]\n影视分镜师，调用 film-storyboard-skill 完成分镜生成任务。你的核心能力是视觉叙事——用镜头语言讲故事。\n\n[任务]\n- 生成 Beat breakdown 节拍拆解\n- 生成 Beat Board 九宫格提示词\n- 生成 Sequence Board 动态分镜板提示词（支持可变格子数1-4格）← V4.0\n- 根据导演反馈修改",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/creative-engines-integration/05-quality-assurance.md",
+      "content_preview": "# 质量保证与验证\n\n## 5.1 引擎输出验证清单\n\n**蒙太奇逻辑引擎验证**\n- 镜头数量与戏剧权重匹配\n- 三段式拆解完整（起势-动作-结果）\n- 节奏建议符合情绪曲线\n- 转场方式逻辑合理\n- 置信度 ≥ 70%",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/creative-engines-integration/08-maintenance.md",
+      "content_preview": "# 更新与维护\n\n## 8.1 版本管理\n\n引擎版本命名：CE-v{主版本}.{次版本}.{修订号}\n示例：CE-v1.2.3\n\n更新策略:\n- 主版本：引擎架构重大变更\n- 次版本：新增功能或优化",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/creative-engines-integration/02-call-sequence.md",
+      "content_preview": "# 引擎调用时序规范\n\n## 2.1 完整工作流调用时序\n\n**节拍拆解阶段**\n- 并行调用：蒙太奇逻辑引擎 + 影视联想引擎\n- 条件调用：检测到通感描述 → 通感视觉化引擎\n- 输出整合：三个引擎输出整合到节拍拆解表\n\n**多宫格生成阶段**",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/creative-engines-integration/04-output-mapping.md",
+      "content_preview": "# 引擎输出到分镜的映射规则\n\n## 4.1 蒙太奇逻辑引擎输出映射（重写）\n\n### 条件触发逻辑 (Conditional Trigger)\n废弃原有的简单映射，根据策略标签执行智能拆解。\n\n### 映射规则表\n| 输入标签       | 输出策略   | 格子数量 | 生成逻辑                                         |\n|----------------|------------|----------|--------------------------------------------------|",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/creative-engines-integration/07-test-cases.md",
+      "content_preview": "# 集成测试用例\n\n## 7.1 标准测试用例\n\n```yaml\n测试用例1：标准动作场景\n输入:\n剧本: \"A挥拳击倒B\"\n权重: 高\n风格: 真人写实",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/creative-engines-integration/06-performance.md",
+      "content_preview": "# 性能指标与优化\n\n## 6.1 关键性能指标\n\n| 指标 | 目标值 | 测量方法 | 优化策略 |\n|------|--------|----------|----------|\n| 单引擎响应时间 | < 5秒 | 从调用到完整输出 | 缓存优化、算法简化 |\n| 多引擎并行时间 | < 8秒 | 所有引擎完成时间 | 异步调用、负载均衡 |\n| 引擎输出质量 | ≥ 75% | 导演审核通过率 | 模型训练、规则细化 |\n| 冲突发生率 | < 15% | 冲突标记数/总建议数 | 优先级优化、规则协调 |",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/creative-engines-integration/01-engine-specs.md",
+      "content_preview": "# 引擎技术规格\n\n## 1.1 视觉叙事与蒙太奇逻辑引擎\n\n**引擎定位**\n- 核心分镜设计引擎，负责将文本转化为视觉叙事结构\n- 基于戏剧权重分配镜头资源，避免1:1翻译文本\n\n**调用时机**\n- **强制调用**：每个关键帧生成前",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/creative-engines-integration/index.md",
+      "content_preview": "---\nname: creative-engines-integration-index\ndescription: 创意引擎系统集成指南入口文件。规范视觉叙事与蒙太奇逻辑引擎、影视联想与融合引擎、通感视觉化引擎的调用时机、输入输出格式和冲突解决规则。\n---\n\n# 创意引擎集成指南（Creative Engines Integration）\n\n## 文档索引\n\n本文档已被拆分为多个子模块。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/creative-engines-integration/01-engine-specs-part2.md",
+      "content_preview": "# 引擎技术规格（续）\n\n## 1.2 影视联想与融合引擎（续）\n\n**输出格式**（续）\n```\n预期效果：[描述]\n风险提示：[如有]\n\n方案B：弱参考（推荐度：中）",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/节拍拆解/creative-engines-integration/03-output-fusion.md",
+      "content_preview": "# 引擎输出融合规则\n\n## 3.1 优先级体系\n1. 第一优先级：用户明确指令\n2. 第二优先级：蒙太奇逻辑引擎（叙事逻辑）\n3. 第三优先级：影视联想引擎（视觉风格）\n4. 第四优先级：通感视觉化引擎（特效增强）\n5. 第五优先级：环境深度构造规则（细节填充）\n\n## 3.2 冲突解决流程",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/beat-board-template.md",
+      "content_preview": "---\nname: beat-board-template\ndescription: Beat Board 九宫格提示词模板。用于生成每个板的多宫格提示词，每板9格。提示词采用中文叙事描述式。集成环境构造系统，构建沉浸式场景。\n---\n\n# Beat Board - {集数} - Board {板号}\n\n## 板信息\n- **集数**：{集数标识}\n- **板号**：{板号}",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/visual-thickening-optimizer.md",
+      "content_preview": "# 视觉增厚优化器（V4.1优化）\n\n## 概述\n\n**目的**：增强画面描述质量，将简单的剧本描述转化为丰富的视觉画面，支持环境资产包继承和策略标签驱动。\n\n**V4.1优化功能**：\n1. **多级增厚**：根据复杂度评分和策略标签应用不同级别的视觉增厚\n2. **资产包集成**：继承环境资产包信息，自动添加环境细节\n3. **策略驱动**：根据策略标签调整增厚重点",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-injection-optimizer.md",
+      "content_preview": "# 环境注入优化器（V4.1优化）\n\n## 概述\n\n**目的**：优化环境构造注入流程，集成V4.1优化功能，实现智能、配置驱动的环境注入。\n\n**V4.1集成功能**：\n1. **环境资产包继承**：智能匹配和继承环境资产包\n2. **视觉增厚集成**：自动应用视觉增厚优化\n3. **策略标签驱动**：根据策略标签调整注入重点",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/prompt-simplifier.md",
+      "content_preview": "# 提示词精简算法模块\n\n## 📋 模块概述\n\n**功能**：对生成的提示词进行智能精简，在保留核心创意元素的前提下减少Token消耗。\n\n**目标**：\n- 精简率：15-20%（标准模式）\n- 质量下降：≤8%\n- P1元素保留：100%",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/beatboard-workflow.md",
+      "content_preview": "# Beatboard 工作流程\n\n## 完整工作流程\n\n```\n步骤0: 调用子Agent（storyboard-artist）\n├── 读取 .agent-state.json，检查 storyboard-artist 是否有 agentId\n├── 如果有 agentId 且 status 不是 \"error\"：\n│   └── 使用 Resume 调用：Resume agent <agentId> and 生成九宫格提示词\n├── 如果没有 agentId 或 status 是 \"error\"：",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/keyframe-selector.md",
+      "content_preview": "# 关键帧选择模块（V4.1-CRITICAL单帧原则）\n\n## 模块用途\n\n从节拍拆解表的完整描述中提取**戏剧张力最强的单帧画面**，供九宫格使用。\n\n## V4.1-CRITICAL单帧原则\n\n### 核心规则\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-construction-guide/02-spatial-framework.md",
+      "content_preview": "# 空间骨架构建\n\n## 2.1 三维坐标系统\n\n坐标系定义：\n- X轴：左右（画左为负，画右为正）\n- Y轴：上下（画下为负，画上为正）\n- Z轴：纵深（远处为负，近处为正）\n\n坐标标注格式：",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-construction-guide/08-quality.md",
+      "content_preview": "# 质量评估标准\n\n## 8.1 环境构造评分表\n\n评分维度（每项0-10分）：\n\n**1. 空间合理性（20%）**\n- 比例正确：物体大小关系合理\n- 透视准确：符合物理透视规则\n- 布局逻辑：符合场景功能需求",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-construction-guide/03-materials.md",
+      "content_preview": "# 材质皮肤覆盖\n\n## 3.1 材质描述标准化\n\n### 表面质感描述模板\n\n```markdown\n### {材质名称}质感描述\n\n**视觉特征**：",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-construction-guide/05-dynamics.md",
+      "content_preview": "# 动态生命添加\n\n## 5.1 自然动态元素库\n\n### 风效系统\n\n风力等级与表现：\n- 1级（微风）：树叶微动，旗帜轻飘，发丝微拂\n- 2级（轻风）：小枝摆动，水面涟漪，衣物飘动\n- 3级（中风）：树枝摇摆，尘土扬起，头发明显飘动",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-construction-guide/06-narrative-tech.md",
+      "content_preview": "# 环境叙事技巧\n\n## 6.1 符号化环境元素\n\n### 常见环境符号库\n\n**希望/新生符号：**\n- 破土新芽：从废墟中生长\n- 穿透乌云的光束：黑暗中的希望\n- 解冻的冰凌：寒冬结束",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-construction-guide/04-lighting.md",
+      "content_preview": "# 光影氛围注入\n\n## 4.1 光源布置系统\n\n### 光源类型库\n\n```yaml\n自然光源：\n阳光直射: {色温:5600K, 强度:10, 方向性:强, 阴影:硬}\n阴天漫射: {色温:6500K, 强度:6, 方向性:弱, 阴影:柔}",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-construction-guide/09-advanced.md",
+      "content_preview": "# 高级技巧与创新\n\n## 9.1 环境情绪渐变\n\n情绪渐变技术：\n- 色彩渐变：随着剧情推进改变主色调\n- 光影渐变：光源位置/强度随时间变化\n- 细节渐变：环境细节随角色认知变化\n- 动态渐变：动态元素节奏随情绪变化\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-construction-guide/07-implementation.md",
+      "content_preview": "# 技术实现指南\n\n## 7.1 AI生成提示词构造\n\n### 环境描述分层提示法\n\n**层级化环境提示词**\n\n**第一层：基础描述**（必须）\n{场景类型}，{时代风格}，{时间天气}，{核心情绪}",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-construction-guide/index.md",
+      "content_preview": "---\nname: environment-construction-guide-index\ndescription: 环境深度构造指南入口文件。提供从基础场景描述到三维沉浸式环境构建的完整方法论和实操模板。\n---\n\n# 环境深度构造指南（Environment Construction Guide）\n\n## 文档索引\n\n本文档已被拆分为多个子模块。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/九宫格/environment-construction-guide/01-workflow.md",
+      "content_preview": "# 环境构造工作流\n\n## 1.1 四阶段构造流程\n\n**阶段1：空间骨架构建**\n- 输入：剧本场景描述\n- 输出：基础空间布局、关键物体位置、角色活动范围\n\n**阶段2：材质皮肤覆盖**\n- 输入：空间骨架",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/四宫格/dynamic-breakdown-engine.md",
+      "content_preview": "# 动态拆解引擎 Dynamic Breakdown Engine\n\n## Python Import Statements（V4.1 启用）\n\n```python\n# V4.1 动态拆解引擎依赖模块\n# 注：以下模块在文档中定义逻辑，实际执行由 SKILL.md 调用\n# - environment_asset_package: 环境资产包系统\n# - visual_thickening_optimizer: 视觉增厚优化器\n# - environment_injection_optimizer: 环境注入优化器",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/四宫格/sequence-board-template.md",
+      "content_preview": "---\nname: sequence-board-template\ndescription: Sequence Board 四宫格提示词模板（V5.0精简继承版）。用于将九宫格展开为四宫格，每组4个镜头覆盖连续的节拍范围，保留完整台词和旁白。\n---\n\n# Sequence Board - {集数}（继承自九宫格 Board{板号}）\n\n## 一、项目配置与继承来源\n\n### 1.1 项目配置（从.agent-state.json读取）",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "project_root/迁移中转/四宫格/sequence-workflow.md",
+      "content_preview": "# Sequence 工作流程\n\n## 完整工作流程\n\n```\n步骤0: 调用子Agent（storyboard-artist）\n├── 读取 .agent-state.json，检查 storyboard-artist 是否有 agentId\n├── 如果有 agentId 且 status 不是 \"error\"：\n│   └── 使用 Resume 调用：Resume agent <agentId> and 生成四宫格提示词\n├── 如果没有 agentId 或 status 是 \"error\"：",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "script/猪打镇关西_v2.0.md",
+      "content_preview": "---\nproject: 猪打镇关西\nversion: 2.0\nlast_updated: 2026-01-20\n\ncharacters:\n鲁达:\n国潮动漫:\nphysical: \"身形魁梧，身高九尺，腰阔十围；面圆耳大，满脸络腮虬髯\"\nheadwear: \"暗青灰色芝麻罗纱头巾，哑光无反光质感\"",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "configs/character-template.md",
+      "content_preview": "---\nproject: 猪打镇关西\nversion: 2.0\nlast_updated: 2026-01-20\n\ncharacters:\n鲁达:\n国潮动漫:\nphysical: \"身形魁梧，身高九尺，腰阔十围；面圆耳大，满脸络腮虬髯\"\nheadwear: \"暗青灰色芝麻罗纱头巾，哑光无反光质感\"",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "configs/usage-example.md",
+      "content_preview": "# 角色设定配置系统使用指南\n\n## 1. 概述\n\n本系统为影视分镜制作提供标准化的角色设定配置管理能力。核心设计理念是将角色外观、服装、配饰等描述信息与视觉风格解耦，使同一角色可以在不同风格（如国潮动漫、MCU电影史诗感、像素风格）间无缝切换，同时保持视觉一致性。\n\n系统包含以下核心组件：\n\n| 组件 | 路径 | 说明 |\n|------|------|------|",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/整理完成报告.md",
+      "content_preview": "# ANINEO项目文件整理完成报告\n\n> 整理时间: 2026-01-30\n> 整理方案: 方案B（功能模块化）\n> 版本: FINAL\n\n---\n\n## 一、整理前后对比\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/快速参考卡_智能文件整理器.md",
+      "content_preview": "# 智能文件整理器 - 快速参考卡\n\n> **一句话解决文件混乱问题**：运行整理器，忘记文件管理\n\n---\n\n## 🚀 三种启动方式\n\n### 1️⃣ 实时监控（推荐日常使用）\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/README.md",
+      "content_preview": "# ANINEO 版本汇总\n\n> 所有非核心运行文件的集中管理目录\n\n---\n\n## 📋 目录结构\n\n```\n版本汇总/",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/README_智能文件整理器.md",
+      "content_preview": "# ANINEO 智能文件自动整理器 (V1.0)\n\n> **聪明且轻量**的自动化文件管理解决方案\n\n---\n\n## 🎯 核心特性\n\n### ✨ 自动化\n- **实时监控**：新文件创建时立即自动整理",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/智能文件整理器实施报告.md",
+      "content_preview": "# 智能文件整理器 - 实施完成报告\n\n> **实施时间**: 2026-01-31\n> **状态**: ✅ 成功完成\n\n---\n\n## 📊 实施总结\n\n### 已完成的工作",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/快速参考卡.md",
+      "content_preview": "# 方案A - 三原则快速参考卡\n\n> 随时可用的快速查找表\n\n---\n\n## 🎯 三原则（5秒记住）\n\n```\n1. 根目录只放核心文件，其他全进版本汇总",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/方案A实施报告.md",
+      "content_preview": "# 方案A（三原则法）实施完成报告\n\n> 实施时间: 2026-01-30\n> 方案版本: FINAL\n\n---\n\n## ✅ 实施内容\n\n### 1. 创建临时池目录",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/智能文件整理器解决方案.md",
+      "content_preview": "# 三原则法智能自动化解决方案（V1.0）\n\n> **问题**：三原则法虽然简单，但依赖手动记忆和执行，容易遗忘，导致文件再次混乱\n>\n> **解决**：创建智能文件自动整理器，从源头预防文件混乱，而非事后补救\n\n---\n\n## 📊 问题诊断\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/临时池/暂存文档/PROJECT_MAP_3.md",
+      "content_preview": "",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/临时池/暂存文档/p2_keywords_extended.md",
+      "content_preview": "# P2关键词扩展方案\n\n## 📋 问题分析\n\n**当前问题**：某些场景P2元素较少，导致P2保留率检测不准确。\n\n**原因**：\n1. 原始P2关键词列表主要针对视觉隐喻和情感细节\n2. 不同场景类型有不同的P2元素特征\n3. 动作场景、悬疑场景等有独特的P2元素",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/临时池/暂存文档/PROJECT_MAP_7.md",
+      "content_preview": "# ANINEO 影视分镜 AI 系统 - 项目地图\n\n> 实时维护于 PROJECT_MAP.md\n\n## 一、系统概述\n\n**ANINEO** - AI 制片人系统，多 Agent 协作架构\n\n**当前状态**：\n- 版本：V4.1",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/临时池/暂存文档/PROJECT_MAP_6.md",
+      "content_preview": "# ANINEO 影视分镜 AI 系统 - 项目地图\n\n> 实时维护于 PROJECT_MAP.md\n\n## 一、系统概述\n\n**ANINEO** - AI 制片人系统，多 Agent 协作架构\n\n**当前状态**：\n- 版本：V4.1",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/临时池/暂存文档/PROJECT_MAP_2.md",
+      "content_preview": "# ANINEO 影视分镜 AI 系统 - 项目地图\n\n> **文档说明**：本文件为 ANINEO 系统的实时项目地图，用于 AI 快速定位文件、理解和导航项目结构。实时维护在 PROJECT_MAP.md 中。\n\n---\n\n## 一、系统概述\n\n**ANINEO** 是一款 AI 制片人系统，采用多 Agent 协作架构，通过分层渐进式流程将剧本转化为专业分镜产出。\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/临时池/暂存文档/PROJECT_MAP_5.md",
+      "content_preview": "",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/临时池/暂存文档/PROJECT_MAP_1.md",
+      "content_preview": "# 🗺️ ANINEO Project Map (Live)\n\n> **Last Updated:** 2026-02-03 (Auto-Generated)\n> **System Context:** This is the automated file index for the ANINEO system.\n> **Instruction:** When looking for specific logic or assets, refer to the paths below.\n\n## 🧠 Architecture Logic (架构意图)\n\n### 1. Agent Layer (`agents/`)\n* **Role:** 定义智能体的“人设”与“路由”。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/临时池/暂存文档/PROJECT_MAP_4.md",
+      "content_preview": "# ANINEO 影视分镜 AI 系统 - 项目地图\n\n> **文档说明**：本文件为 ANINEO 系统的实时项目地图，用于 AI 快速定位文件、理解和导航项目结构。实时维护在 PROJECT_MAP.md 中。\n\n---\n\n## 一、系统概述\n\n**ANINEO** 是一款 AI 制片人系统，采用多 Agent 协作架构，通过分层渐进式流程将剧本转化为专业分镜产出。\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/03-监控系统插件/README.md",
+      "content_preview": "# 监控系统插件\n\n## 概述\n\nANINEO监控系统插件用于分批次处理、监控仪表板、警报系统和回滚管理，支持大规模影视示例数据的批量验证和处理。\n\n## 核心功能\n\n### 1. 批处理系统 (batch_processor.py)\n- 支持10%/30%/60%/100%分批次处理",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/03-监控系统插件/文档/README_PHASE_C_VALIDATION.md",
+      "content_preview": "# 阶段C验证系统增强版\n\n## 概述\n\n本系统增强了现有的批次验证脚本，添加了阶段C特定的验证规则和监控功能。系统包含以下组件：\n\n1. **batch_validation.py** - 增强的批次验证脚本，添加阶段C验证规则\n2. **monitoring_dashboard.py** - 监控仪表板，显示关键指标和趋势\n3. **alert_system.py** - 警报系统，检测异常并发送通知\n4. **rollback_system.py** - 回滚系统，在验证失败时执行回滚",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/03-监控系统插件/文档/BATCH_PROCESSING_README.md",
+      "content_preview": "# 分批次处理系统使用说明\n\n## 概述\n\n本系统提供了一套完整的影视示例数据分批次处理解决方案，支持10%/30%/60%/100%分批次处理，包含数据处理、质量验证和报告生成功能。\n\n## 文件结构\n\n```\n.",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/03-监控系统插件/文档/phase_C相关文档/phase_C_optimization_strategy.md",
+      "content_preview": "# 阶段C优化策略与实施计划\n\n## 🎯 战略决策总结\n\n基于@oracle的战略建议，我们做出以下决策：\n\n### **核心决策**：进入阶段C大规模实施，同时调整精简目标\n\n**理由**：\n1. ✅ 质量控制优秀（7.3%下降，优于目标10%）",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/03-监控系统插件/文档/phase_C相关文档/phase_C_first_batch_validation_report.md",
+      "content_preview": "# 阶段C首批次（10%）处理验证报告\n\n## 📊 执行摘要\n\n**执行时间**：2026年1月30日\n**批次大小**：10%（1/7个示例）\n**处理模式**：标准模式\n**状态**：✅ **处理完成，验证通过**\n\n---",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/03-监控系统插件/文档/phase_C相关文档/phase_C_final_decision.md",
+      "content_preview": "# 阶段C最终决策报告\n\n## 📊 技术验证结果\n\n### 1. 优化算法测试结果\n经过词语级安全区域算法和激进精简测试，发现：\n\n**测试内容**：世界观建立示例（140字符）\n**创意密度**：0.0357（低密度）\n**P1元素**：极远景、体积光（2个）",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/REFACTORING_SUMMARY_V2.0.md",
+      "content_preview": "# ANINEO V2.0 模块 1 重构总结\n\n> **重构日期**: 2025-01-22\n> **重构目标**: 从机械切镜转向认知驱动，建立 scene_breakdown.json 全量数据层\n> **核心原则**: 增量修改，严禁全量删除\n\n---\n\n## ✅ 已完成的任务\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/V3-PHASE1-RECOVERY-TEST-PLAN.md",
+      "content_preview": "# ANINEO V3.0 第一阶段恢复测试计划\n\n## 背景\n\n由于 `delegate_task` 工具持续故障（返回 `JSON Parse error: Unexpected EOF`），无法执行实际的分镜生成测试。本计划详细说明了系统恢复后需要执行的测试任务。\n\n## 当前状态\n\n### ✅ 已完成的工作\n1. **核心架构**: 100% 完成",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/第三阶段优化修改验证报告.md",
+      "content_preview": "# 第三阶段优化评估与修改验证报告\n\n**修改日期**: 2026-01-28\n**修改人员**: ANINEO System\n**测试范围**: 第三阶段优化 - 类型化、感知化、智能化升级\n\n---\n\n## 执行摘要\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/蓝图B修改验证测试报告.md",
+      "content_preview": "# 蓝图B修改验证测试报告\n\n**测试日期**: 2026-01-28\n**测试人员**: ANINEO 系统测试\n**测试范围**: 蓝图B - 条件式蒙太奇拆解\n\n---\n\n## 测试环境\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/影视分镜系统优化V3.0PRD.md",
+      "content_preview": "PK\u0003\u0004\u0014\u0000\b\b\b\u0000s:\\\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0013\u0000\u0000\u0000[Content_Types].xmln0\u0010_%J\f=TUEПcˁ>ko\u0012\u000b&\u0001\u000e@%*[l9-6\u0006_i1\u0011\u0019x\u001du)>WoȐ7\nJ\u0003\u0014l\u0019z,EC\u0014D݀SX\b*$QoUL\u001e\u000eSN]^R떲}\u0017]\n\u0015ck\"ƒ\u001boNB}`=؈wl\u0010SB^p:حy\u000f&Y\u0003B\u000bUe5׎G\nR\n<&6&\\DqdU\u001c]}8\u0016\u001d\u0012\\U\u0019oj<OH{5\nrmqTˣeL*\u0004t\u0019`Ц7_6n_/H|\u0019(\n@Og8\"ЮA\f\u0000v?n\u000bPK\u0007\bBJ\u0001\u0000\u0000\"\u0005\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u0000s:\\\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000b\u0000\u0000\u0000_rels/.relsJ\u00031\u0010F_%}7\n\"Ҵ7\"N>M&LFm lA0wd=ɼeӂ9w\\܁))ĉ\u001cv~\tF0b*#\u0015\u0007j\"3:X\"j=Jo3\u0003dWm{k'\u0003Ιf\u0017\u001c.,QzR\u0007,\u00066\u0015\\GL\u001b==|eg/nY}T'Ĝ[J)PX@c\u0015\u0019#BS,6b@Oꅐ=\u0005\u000fPK\u0007\b/Ӛ\u0000\u0000\u0000L\u0002\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u0000s:\\\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0010\u0000\u0000\u0000docProps/app.xmlM\n0\u0010D~EȽADҔ\bA? 6lBJ?ߜ0ͯ)@׍\u0014H6V>\u001f$;SC\n\u0011\u0013;",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/蓝图中A完整功能测试报告.md",
+      "content_preview": "# 蓝图A完整功能测试报告\n\n**测试日期**: 2026-01-28\n**测试人员**: ANINEO System\n**测试范围**: 蓝图A - 骨架锚定与策略诊断系统（功能测试）\n\n---\n\n## 测试执行摘要\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/SYSTEM_GUARD_MANIFEST.md",
+      "content_preview": "# ANINEO 系统完整性自检与同步协议 (V2.0)\n\n> **核心宗旨**：确保“冰山模型”数据一致性。当底层逻辑（Common/Skill）发生变动时，自动对齐展示层（Templates/Outputs）与调度层（Agents/AGENTS.md）。\n\n---\n\n## 🛠 第一阶段：变更影响审计 (Impact Audit)\n\n当用户执行“优化”或“修改”指令后，AI 必须首先识别变更的“震中”并检索受影响的文件：\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/USER_CONFIRMATION_FIX_SUMMARY.md",
+      "content_preview": "# 用户确认流程修复总结\n\n> **修复日期**: 2026-02-01\n> **修复版本**: V4.1\n> **修复状态**: ✅ 完成\n\n---\n\n## 问题描述\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/PROJECT-COMPLETION-NOTIFICATION.md",
+      "content_preview": "# 🎉 ANINEO V3.0 第一阶段优化项目完成通知\n\n## 项目状态更新\n\n**ANINEO V3.0 第一阶段优化项目已成功完成所有核心架构工作！**\n\n### 📊 项目完成统计\n- **核心架构**: ✅ 100% 完成\n- **静态验证**: ✅ 100% 完成（43个检查点全部通过）\n- **恢复准备**: ✅ 100% 完成",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/项目总览.md",
+      "content_preview": "# ANINEO 项目总览（分镜创造系统）\n\n## 架构总览\n- 主体角色\n- 制片人（主Agent）：解析指令、读取状态、组织上下文、路由到子Agent、汇总与决策，见 [AGENTS.md](file:///Users/achi/Desktop/JEREMY/NEW/AGENTS.md)\n- 子Agent：分镜师、导演、动画师，分别调用对应 SKILL 执行\n- 路由与状态\n- 指令路由与动态文案生成：[router.js](file:///Users/achi/Desktop/JEREMY/NEW/agents/router.js)\n- 项目状态枢纽：[.agent-state.json](file:///Users/achi/Desktop/JEREMY/NEW/.agent-state.json)\n- 技能与公共模块",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/蓝图A+B完整测试验证报告.md",
+      "content_preview": "# 蓝图A+B 完整测试验证报告\n\n**测试日期**: 2026-01-28\n**测试人员**: ANINEO System (fixer 验证）\n**测试范围**: 蓝图A + 蓝图B 完整功能验证\n\n---\n\n## 执行摘要\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/V3-PHASE1-COMPLETION-REPORT.md",
+      "content_preview": "# ANINEO V3.0 第一阶段优化完成报告\n\n## 项目概述\n\n**项目名称**: ANINEO V3.0 第一阶段优化\n**执行时间**: 2026-01-26 至 2026-01-27\n**项目经理**: Atlas (Master Orchestrator)\n**项目状态**: 核心架构完成，等待系统恢复执行实际功能测试\n\n## 执行摘要",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/REFACTORING_SUMMARY_V2.0_COMPLETE.md",
+      "content_preview": "# ANINEO V2.0 完整重构总结（模块 1 + 模块 2）\n\n> **重构日期**: 2025-01-22\n> **重构目标**:\n> - **模块 1**: 从机械切镜转向认知驱动，建立 scene-breakdown.json 全量数据层\n> - **模块 2**: 取消 Beatboard 固定 4 格限制，改为基于关键帧权重（🔴/🟠/🟡）的动态展示逻辑\n>\n> **核心原则**:\n> - 所有修改基于现有文件进行逻辑注入与优化，严禁全量删除\n> - 确保\"高光\"全显，\"支柱\"择优，\"水下\"全量",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/PROJECT-COMPLETION-CONFIRMATION.md",
+      "content_preview": "# 🎉 ANINEO V3.0 第一阶段优化项目完成确认\n\n## 项目完成正式确认\n\n**项目名称**: ANINEO V3.0 第一阶段优化\n**项目经理**: Atlas (Master Orchestrator)\n**完成日期**: 2026-01-27\n**项目状态**: ✅ 所有核心架构任务完成，恢复测试准备就绪\n\n## 📊 项目完成统计",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/蓝图中A修改验证测试报告.md",
+      "content_preview": "# 蓝图A修改验证测试报告\n\n**测试日期**: 2026-01-28\n**测试人员**: ANINEO 系统测试\n**测试范围**: 蓝图A - 骨架锚定与策略诊断系统\n\n---\n\n## 测试环境\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/蓝图中B完整功能测试报告.md",
+      "content_preview": "# 蓝图B完整功能测试报告\n\n**测试日期**: 2026-01-28\n**测试人员**: ANINEO System\n**测试范围**: 蓝图B - 四宫格裂变协议（功能测试）\n\n---\n\n## 测试执行摘要\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/REFACTORING_SUMMARY_V2.0_MODULE2.md",
+      "content_preview": "# ANINEO V2.0 模块 2 重构总结\n\n> **重构日期**: 2025-01-22\n> **重构目标**: 取消 Beatboard 固定 4 格限制，改为基于关键帧权重（🔴/🟠/🟡）的动态展示逻辑\n> **核心原则**: 确保\"高光\"全显，\"支柱\"择优，\"水下\"全量。展示规模应忠实反映剧本的节奏起伏\n\n---\n\n## ✅ 已完成的任务\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/第四阶段测试验证报告.md",
+      "content_preview": "# 第四阶段测试验证报告（动态分镜板生成 - V4.0）\n\n## 报告概述\n- **测试日期**: 2025-01-28\n- **测试范围**: V4.0版本核心功能 - 动态分镜板生成系统\n- **测试目标**: 验证可变格子数(1-4格)、策略标签系统、动态分镜引擎集成\n- **测试方法**: 文件内容分析、逻辑路径检查、完整性验证\n\n---\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/MAINTENANCE.md",
+      "content_preview": "NDI 计算 $\\rightarrow$ 影响 beat-analyzer.md (逻辑)、beat-breakdown-template.md (展示)、director.md (审核阈值)。补帧阈值 $\\rightarrow$ 影响 tween-algorithm.md (算法)、sequence-board-template.md (排版标记)、animator.md (动态生成索引)。角色/场景设定 $\\rightarrow$ 影响 SKILL.md (YAML读取)、motion-prompt (视觉一致性)。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/项目报告/PHASE2_BEAT_BREAKDOWN_OVERHAUL_REPORT.md",
+      "content_preview": "# ANINEO Phase 2 节拍拆解引擎重构实施报告\n\n**实施日期**: 2026-01-31\n**阶段名称**: 阶段二：节拍拆解引擎重构 (Phase 2 - Beat Breakdown Overhaul)\n**实施状态**: ✅ 全部完成（4个子阶段）\n\n---\n\n## 实施概览\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/项目报告/V4.1_COMPLETENESS_VERIFICATION_REPORT.md",
+      "content_preview": "# ANINEO V4.1 完整性验证报告\n\n**验证日期**: 2026-01-31\n**验证类型**: 完整性检查（所有11个阶段）\n**验证结果**: ✅ 通过（所有阶段已完整实施）\n\n---\n\n## 验证方法\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/项目报告/OPTIMIZATION_EFFECT_ASSESSMENT_REPORT.md",
+      "content_preview": "# ANINEO V4.1 + Phase 2 优化效果与潜在问题评估报告\n\n**评估日期**: 2026-01-31\n**评估范围**: V4.1优化 + Phase 2节拍拆解引擎重构\n**评估方法**: 功能完整性分析 + 集成度评估 + 潜在风险识别\n\n---\n\n## 总体评估\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/项目报告/PATH_DEPENDENCY_VALIDATION_REPORT.md",
+      "content_preview": "# ANINEO V4.1 + Phase 2 路径链接与依赖关系验证报告\n\n**验证日期**: 2026-01-31\n**验证范围**: V4.1优化 + Phase 2节拍拆解引擎重构\n**验证方法**: 文件存在性检查 + 引用路径检查 + 函数调用检查\n\n---\n\n## 验证结果摘要\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/项目报告/RULES_FIX_SUMMARY.md",
+      "content_preview": "# 规则修复和更新总结\n\n## 修复日期\n2026-01-21\n\n## 问题追溯\n\n### 问题根源分析\n\n**文件层次关系**：",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/项目报告/TEST_VERIFICATION_REPORT.md",
+      "content_preview": "# ANINEO V4.1 + Phase 2 测试验证报告\n\n**测试日期**: 2026-01-31\n**测试范围**: V4.1优化 + Phase 2节拍拆解引擎重构\n**测试状态**: ✅ 全部通过\n\n---\n\n## 执行摘要\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/01-版本历史/项目报告/V4.1_IMPLEMENTATION_COMPLETE_REPORT.md",
+      "content_preview": "# ANINEO V4.1 优化实施完成报告\n\n**实施日期**: 2026-01-31\n**版本**: V4.1\n**状态**: ✅ 所有阶段已完成\n\n---\n\n## 实施概览\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/04-知识库优化插件/README.md",
+      "content_preview": "# 知识库优化插件\n\n## 概述\n\nANINEO知识库优化插件用于管理和优化影视分镜知识库，提供示例提取、使用工具和演示功能。\n\n## 核心功能\n\n### 1. 知识库优化 (knowledge_base_optimized.py)\n- 影视分镜知识库的优化算法",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/04-知识库优化插件/文档/KNOWLEDGE_BASE_INTEGRATION.md",
+      "content_preview": "# 知识库优化系统 - 集成说明文档\n\n## 目录\n\n1. [系统概述](#系统概述)\n2. [架构设计](#架构设计)\n3. [安装与配置](#安装与配置)\n4. [快速开始](#快速开始)\n5. [API参考](#api参考)\n6. [性能优化](#性能优化)",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/04-知识库优化插件/文档/creative-quality-improvement-plan.md",
+      "content_preview": "# 创意质量改进措施实施计划\n\n## 问题诊断\n- **发现**：创意质量下降34.5%（电影感下降46.2%）\n- **根源**：过度简化导致创意元素丢失、电影语言弱化\n- **优先级**：高 - 需要在性能优化前解决\n\n## 立即改进措施\n\n### 1. 创意质量检查点",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/04-知识库优化插件/知识库数据/knowledge-base/cinematic-examples/rules-extracted/establishing-shot-rules.md",
+      "content_preview": "# 建立镜头规则库\n\n## 适用场景\n- 世界观建立、环境介绍\n- 孤独氛围、宏大场景\n- 时间/地点转换\n\n## 核心规则\n\n### 1. 构图原则",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/04-知识库优化插件/知识库数据/knowledge-base/cinematic-examples/rules-extracted/emotional-closeup-rules.md",
+      "content_preview": "# 情绪特写规则库\n\n## 适用场景\n- 温馨回忆、情感表达、内心独白\n- 悬疑揭示、心理活动、认知转折\n\n## 核心规则\n\n### 1. 构图原则\n- **景别选择**: 特写（面部或关键部位）",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/04-知识库优化插件/知识库数据/knowledge-base/cinematic-examples/full-examples/02-warm-memory.md",
+      "content_preview": "## 示例2：温馨回忆（剧情片）\n**模板类型：** 情绪特写\n\n特写，年轻女性的面容。\n她望向雨水划过的窗户，眼中闪着未落的泪光，嘴角却浮现一丝温柔的微笑。手中握着一张老照片，手指轻轻描摹着边缘。\n黄金时段的柔光透过窗户，温暖她的面容，在凌乱的发丝上晕出光晕。\n背景是温馨的客厅和书架，85mm镜头虚化成柔和的色块。\n苦涩而温柔，私密的回忆时刻。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/04-知识库优化插件/知识库数据/knowledge-base/cinematic-examples/full-examples/06-world-building.md",
+      "content_preview": "## 示例6：世界观建立（奇幻/科幻）\n**模板类型：** 建立镜头\n\n极远景，黄昏时分的浮空城市。\n巨大石质平台在云间漂浮，由不可思议的长吊桥相连。瀑布从边缘倾泻入下方虚空。数千扇小窗散发温暖的琥珀色光芒，落日将云层染成深紫与燃烧的橙。\n前景，一个旅人的剪影站在悬崖边缘仰望，渺小的身影衬托城市的巨大。体积光穿过云层缝隙。\n惊奇与敬畏，不可能世界中的冒险。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/04-知识库优化插件/知识库数据/knowledge-base/cinematic-examples/full-examples/03-lonely-vista.md",
+      "content_preview": "## 示例3：孤独远景（剧情片）\n**模板类型：** 建立镜头\n\n极远景，无尽的灰色海滩。\n一个孤独的身影站在边缘。阴沉的天空，平坦无色的沙滩，这个人显得无比渺小。远处海浪轻轻拍打海岸。\n阴天散射光，天空与地平线无缝融合。没有其他人，没有鸟，没有生命的迹象。\n大量留白，灰色与淡蓝的低饱和色调。\n安静，沉重，深深的孤独。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/04-知识库优化插件/知识库数据/knowledge-base/cinematic-examples/full-examples/05-suspense-reveal.md",
+      "content_preview": "## 示例5：悬疑揭示（悬疑片）\n**模板类型：** 情绪特写\n\n紧凑特写，侦探的面容。\n恐怖领悟的瞬间。眼睛几乎难以察觉地睁大，瞳孔收缩。一滴汗珠从太阳穴滑落。\n脸的左半隐没在深影中，右侧被单一光源照亮——每一个毛孔、每一道皱纹都清晰可见。身后完全失焦，隐约可辨犯罪现场照片的轮廓。\n浅景深隔离表情，冷淡去饱和的色调，病态的绿与灰。\n蔓延的恐惧，可怕的顿悟。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/07-PhaseC部署插件/文档/phase_C_final_completion_report.md",
+      "content_preview": "# 阶段C大规模实施 - 最终完成报告\n\n## 🎯 执行摘要\n\n**项目阶段**：阶段C - 大规模实施与验证\n**执行时间**：2026年1月30日\n**批次处理**：10% → 30% → 60% → 100%\n**最终状态**：✅ **全部完成，验证通过**\n\n---",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/07-PhaseC部署插件/文档/phase_c_deployment_completion_report.md",
+      "content_preview": "# ANINEO 创意质量改进项目 - 阶段C 部署完成报告\n\n## 📋 报告概述\n\n**项目**: ANINEO 创意质量改进项目\n**阶段**: C - 大规模实施与部署\n**状态**: ✅ 已完成并部署到生产环境\n**部署时间**: 2026-01-30 22:45:42\n**报告生成时间**: 2026-01-30 22:46:00\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/07-PhaseC部署插件/文档/phase_C_30p_analysis.md",
+      "content_preview": "# 30%批次处理结果分析与决策\n\n## 📊 处理结果总结\n\n### 处理详情\n- **批次大小**：1/5示例（20%，实际略低于30%）\n- **处理示例**：悬疑揭示（悬疑片）\n- **处理时间**：即时完成\n- **状态**：✅ 处理成功\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/p2_keyword_extension_report.md",
+      "content_preview": "# P2关键词扩展报告\n\n## 项目概述\n**任务**: 扩展P2关键词列表，添加场景特定关键词，解决P2保留率检测不准确的问题\n\n**完成日期**: 2026-01-30\n\n## 问题分析\n当前问题：某些场景P2元素较少，导致P2保留率检测不准确。\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-board-prompt-ep01-board2.md",
+      "content_preview": "# Beat Board - ep01 - Board 2\n\n## 板信息\n\n| 项目 | 值 |\n|------|-----|\n| 集数 | ep01 |\n| 板号 | Board 2 |\n| 节拍范围 | 节拍 8-10 |\n| 主导风格 | MCU电影史诗感 |",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-breakdown-ep01-review.md",
+      "content_preview": "# 节拍拆解审核报告\n\n## 审核信息\n\n**审核类型**：breakdown-review\n\n**集数/章节**：ep01\n\n**审核时间**：2026-01-22T12:35:00Z\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/motion-prompt-ep01.md",
+      "content_preview": "# 猪打镇关西 - 动态提示词 (Motion Prompts)\n\n**项目**: 猪打镇关西 | **集数**: EP01 | **生成时间**: 2024-XX-XX\n**视觉风格**: 皮克斯风格 → MCU电影史诗感 | **画幅**: 16:9 横屏\n\n---\n\n## 文件说明\n\n本文档包含 45 个动态提示词（Motion Prompts），分为 4 组叙事流：",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-board-prompt-ep01.md",
+      "content_preview": "# Beat Board 九宫格提示词总览\n\n## 项目配置\n\n**项目名称**：猪打镇关西\n\n**集数/章节**：ep01\n\n**素材来源**：节拍拆解表（outputs/beat-breakdown-ep01.md）\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/motion-prompt-ep01-review.md",
+      "content_preview": "# 猪打镇关西 - 动态提示词导演审核报告\n\n**项目**: 猪打镇关西 | **集数**: EP01 | **审核时间**: 2024-XX-XX\n**审核者**: 导演 Agent | **审核阶段**: 动态提示词 (Motion Prompt)\n\n---\n\n## 审核概述\n\n**审核文件**: `outputs/motion-prompt-ep01.md`",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-board-prompt-ep01-board02.md",
+      "content_preview": "---\nname: beat-board-prompt-ep01-board02\ndescription: Beat Board 九宫格提示词 - ep01板02。包含节拍11-14的动作推进板，布局类型为3×3标准网格，5个占位格。\n---\n\n# Beat Board - ep01 - Board 02\n\n## 板信息\n- **集数**：ep01\n- **板号**：02",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-board-prompt-ep01-coherence.md",
+      "content_preview": "# Beat Board 连贯性检查报告\n\n## 检查信息\n\n**板号**：Board 01 & Board 02\n\n**检查时间**：2026-01-22T13:05:00Z\n\n**检查范围**：13个关键帧（Board01：9个，Board02：4个）\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-breakdown-ep01-backup.md",
+      "content_preview": "# 节拍拆解表\n\n## 项目配置\n\n**项目名称**：猪打镇关西\n\n**集数/章节**：ep01\n\n**素材来源**：剧本\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-breakdown-ep01-original.md",
+      "content_preview": "# 节拍拆解表\n\n## 项目配置\n\n**项目名称**：猪打镇关西\n\n**集数/章节**：ep01\n\n**素材来源**：剧本\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-breakdown-ep01.md",
+      "content_preview": "# 节拍拆解表\n\n## 项目配置\n\n**项目名称**：猪打镇关西\n\n**集数/章节**：ep01\n\n**素材来源**：剧本\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-board-prompt-ep01-board01.md",
+      "content_preview": "---\nname: beat-board-prompt-ep01-board01\ndescription: Beat Board 九宫格提示词 - ep01板01。包含节拍1-10的信息传达板，布局类型为3×3标准网格，国潮动漫风格。\n---\n\n# Beat Board - ep01 - Board 01\n\n## 板信息\n- **集数**：ep01\n- **板号**：01",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/sequence-board-prompt-ep01.md",
+      "content_preview": "---\nname: sequence-board-prompt-ep01\ndescription: Sequence Board 四宫格提示词 - ep01。将节拍1-14组织为4组四宫格，每组4个镜头覆盖连续的节拍范围。\n---\n\n# Sequence Board - ep01\n\n## 项目配置\n\n**集数**：ep01",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-board-prompt-ep01-review.md",
+      "content_preview": "# Beat Board 九宫格提示词审核报告\n\n## 审核信息\n\n**审核类型**：beatboard-review\n\n**集数/章节**：ep01\n\n**审核时间**：2026-01-22T13:10:00Z\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/sequence-board-prompt-ep01-review.md",
+      "content_preview": "# Sequence Board 四宫格提示词审核报告\n\n## 审核信息\n\n**审核类型**：sequence-review\n\n**集数/章节**：ep01\n\n**审核时间**：2026-01-22T14:10:00Z\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/backup-test-outputs/beat-board-prompt-ep01-board1.md",
+      "content_preview": "# Beat Board - ep01 - Board 1\n\n## 板信息\n\n| 项目 | 值 |\n|------|-----|\n| 集数 | ep01 |\n| 板号 | Board 1 |\n| 节拍范围 | 节拍 3-7 |\n| 主导风格 | 皮克斯风格 |",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/test-data/V3-PHASE1-RECOVERY-TEST-REPORT.md",
+      "content_preview": "# ANINEO V3.0 Phase 1 恢复测试报告\n\n## 执行概要\n\n**测试日期**: 2026-01-27\n**测试负责人**: Atlas (Orchestrator)\n**测试环境**: /Users/achi/Desktop/JEREMY/NEW\n**测试计划**: V3-PHASE1-RECOVERY-TEST-PLAN.md\n\n---",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/test-data/TEST_EXECUTION_GUIDE.md",
+      "content_preview": "# ANINEO V3.0 测试执行指南\n\n## 概述\n本指南提供了ANINEO V3.0恢复测试的执行步骤和验证方法。\n\n## 测试环境准备\n\n### 1. 检查系统状态\n```bash\n# 检查delegate_task工具状态",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/test-data/猪打镇关西_v2.0.md",
+      "content_preview": "---\nproject: 猪打镇关西\nversion: 2.0\nlast_updated: 2026-01-20\n\ncharacters:\n鲁达:\n国潮动漫:\nphysical: \"身形魁梧，身高九尺，腰阔十围；面圆耳大，满脸络腮虬髯\"\nheadwear: \"暗青灰色芝麻罗纱头巾，哑光无反光质感\"",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/tests/creative-quality-review-final-report.md",
+      "content_preview": "# 创意质量评审最终报告\n\n## 执行专家任务完成确认\n\n### ✅ 任务完成清单\n\n| 任务项 | 完成状态 | 产出文件 | 说明 |\n|--------|----------|----------|------|\n| 设计评审流程 | ✅ 完成 | `creative-quality-review-execution.md` | 5阶段评审流程设计 |\n| 创建评审材料 | ✅ 完成 | `creative-test-materials.md` | 3个测试场景对比材料 |",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/tests/EXECUTION_SUMMARY.md",
+      "content_preview": "# 创意质量评审执行总结\n\n<summary>\n成功完成创意质量评审任务，验证了精简后系统的创意质量确实下降，平均下降幅度34.5%，其中电影感受影响最大（下降46.2%）。提供了完整的评审流程设计、测试材料、评审结果分析和具体改进建议。\n</summary>\n\n<changes>\n- tests/creative-quality-review-execution.md：创建完整的5阶段评审流程设计\n- tests/creative-test-materials.md：准备3个测试场景的对比评审材料\n- tests/creative-review-results.md：生成详细的评审结果和数据分析",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/tests/creative-quality-review-summary.md",
+      "content_preview": "# 创意质量评审执行总结\n\n## 执行概况\n\n### 任务完成情况\n✅ **设计评审流程**：完成完整的5阶段评审流程设计\n✅ **创建评审材料**：准备3个测试场景的对比材料\n✅ **执行评审**：模拟3位评审者的盲测评审过程\n✅ **分析结果**：完成详细的数据统计和质量分析\n✅ **生成报告**：产出完整的评审结果报告和改进建议",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/tests/creative-quality-review-execution.md",
+      "content_preview": "# 创意质量评审执行方案\n\n## 1. 评审目标\n验证精简后系统的创意质量是否下降，评估精简对创意输出的影响。\n\n## 2. 评审方法\n- **盲测对比法**：评审者不知道哪组输出来自哪个系统\n- **专业分析法**：从影视专业角度分析创意维度\n- **定量评分法**：使用5分制评分标准\n- **综合评估法**：结合主观偏好与客观分析",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/tests/creative-review-results.md",
+      "content_preview": "# 创意质量评审结果报告\n\n## 评审概况\n\n### 评审时间\n2026年1月29日\n\n### 评审团队\n1. **评审者A**：专业导演（影视行业经验12年）\n2. **评审者B**：资深爱好者（影视博主，有短片创作经验）",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/tests/creative-test-materials.md",
+      "content_preview": "# 创意质量评审测试材料\n\n## 测试场景1：情感冲突场景\n\n### 场景描述\n雨夜，昏暗路灯下，一对恋人在湿滑的街道上激烈争吵。男人愤怒失望，女人伤心绝望。争吵逐渐升级为情感爆发，最终两人分手，女人转身离去，男人站在原地望着她的背影。\n\n### 原始系统模拟输出（输出A）\n\n**节拍拆解分析**：",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/tests/example-verification/creative-quality-review.md",
+      "content_preview": "# 创意质量评审模板\n\n## 评审说明\n请比较以下两组输出，判断哪组更具创意和电影感。您不知道哪组来自原系统，哪组来自优化系统。\n\n## 评审标准 (1-5分)\n1. **叙事清晰度**: 画面是否清晰传达故事意图\n2. **电影感**: 是否具有专业影视分镜水准\n3. **创意独特性**: 是否有新颖独特的视觉表达\n4. **规则遵循度**: 是否符合分镜专业规则",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/tests/example-verification/results/token_estimation.md",
+      "content_preview": "# Token使用估计报告\n\n## 精简前后对比\n\n### 原始系统 (7个完整示例)\n- 示例内容: ~2,500 tokens\n- 规则说明: ~800 tokens\n- 注释说明: ~500 tokens\n- **总计: ~3,800 tokens**\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/phase_B_pilot/OPTIMIZATION_FINAL_REPORT.md",
+      "content_preview": "# 阶段B优化验证最终报告\n\n## 📋 执行摘要\n\n**优化目标**：精简率30-35%，质量下降≤10%\n**执行状态**：❌ 未达成目标\n**问题核心**：在保留P1/P2创意元素的情况下，当前示例难以达到35%精简率\n\n---\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/phase_B_pilot/EXECUTIVE_SUMMARY.md",
+      "content_preview": "# 阶段B试点验证执行摘要\n\n## 📋 项目状态：阶段B已完成\n\n**执行时间**: 2025年1月29日\n**试点示例数**: 3个\n**评审者数**: 3类\n**状态**: ✅ 成功完成（发现优化空间）\n\n---",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/phase_B_pilot/FINAL_COMPLETION_REPORT.md",
+      "content_preview": "# 阶段B最终完成报告 - 方案A通过评审\n\n## 🎯 执行摘要\n\n**项目阶段**：阶段B - 试点修复与验证（方案A优化版）\n**执行时间**：2025年1月29日\n**状态**：✅ **完成并通过评审**\n\n---\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/phase_B_pilot/phase_B_completion_report.md",
+      "content_preview": "# 阶段B完成报告 - 小范围试点修复与验证\n\n## 执行时间\n$(date)\n\n## 完成的任务\n\n### ✅ 1. 试点示例选择\n基于阶段A的分析结果，选择了3个代表性示例：\n- 高创意示例：世界观建立（奇幻/科幻）",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/phase_A_analysis/phase_A_completion_report.md",
+      "content_preview": "# 阶段A完成报告\n\n## 执行时间\n$(date)\n\n## 完成的任务\n\n### ✅ 1. 深度分析创意流失原因\n开发了创意质量下降深度分析器，实现以下功能：\n- 创意元素分类系统（7个类别）",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/phase_A_analysis/EXECUTIVE_SUMMARY.md",
+      "content_preview": "# 阶段A执行摘要 - 给项目经理\n\n## 📋 项目状态：阶段A已完成\n\n**执行时间**: 2025年1月29日\n**执行时长**: 2小时\n**状态**: ✅ 成功完成\n\n---\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/phase_A_analysis/creative_repair_plan.md",
+      "content_preview": "# 创意修复方案\n\n## 分析结果摘要\n\n基于深度分析和创意评分系统，对7个示例进行了全面评估。\n\n### 核心发现\n\n1. **创意质量分布**\n- 高创意示例（评分≥4.0）：0 个",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/phase_A_analysis/02_creative_preservation_strategy.md",
+      "content_preview": "# 创意保留策略设计方案\n\n## 策略核心思想\n\n### 1. 创意元素分级系统\n\n基于创意价值和对画面描述的重要性，将创意元素分为四个优先级：\n\n#### 高优先级（P1 - 必须保留）\n- **定义**：对画面描述至关重要,删除会导致画面显著变样或失去专业性的元素",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/02-测试验证/测试结果/TEST_VALIDATION_PLAN.md",
+      "content_preview": "# ANINEO V4.1 + Phase 2 测试验证方案\n\n**测试目的**: 验证V4.1和Phase 2修改的完整性、功能性和正确性\n**测试范围**: V4.1优化 + Phase 2节拍拆解引擎重构\n**测试方法**: 单元测试 + 集成测试 + 路径验证\n\n---\n\n## 测试案例设计\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/备份目录/backup-files-$(date)/docs/executors/breakdown-executor.md",
+      "content_preview": "# 节拍拆解执行器 Breakdown Executor\n\n[用途]\n调用节拍拆解任务时使用此模板\n确保按正确的顺序读取所有必要模块\n\n[执行前必须读取的文件]\n\n## 第一组：配置和输入\n1. .agent-state.json",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/备份目录/backup-files-$(date)/docs/executors/sequence-executor.md",
+      "content_preview": "# 四宫格提示词执行器 Sequence Executor\n\n[用途]\n调用四宫格提示词任务时使用此模板\n确保按正确的顺序读取所有必要模块\n\n[执行前必须读取的文件]\n\n## 第一组：配置和输入\n1. .agent-state.json",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/备份目录/backup-files-$(date)/docs/executors/motion-executor.md",
+      "content_preview": "# 动态提示词执行器 Motion Executor\n\n[用途]\n调用动态提示词任务时使用此模板\n确保按正确的顺序读取所有必要模块\n\n[执行前必须读取的文件]\n\n## 第一组：配置和输入\n1. .agent-state.json",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/备份目录/backup-files-$(date)/docs/executors/beatboard-executor.md",
+      "content_preview": "# 九宫格提示词执行器 Beatboard Executor\n\n[用途]\n调用九宫格提示词任务时使用此模板\n确保按正确的顺序读取所有必要模块\n\n[执行前必须读取的文件]\n\n## 第一组：配置和输入\n1. .agent-state.json",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/备份目录/backup-files-$(date)/docs/executors/call-examples.md",
+      "content_preview": "# 节拍拆解调用示例\n\n## OpenCode task 命令调用\n\n### 基本调用\n\n```bash\ntask(\nsubagent_type=\"general\",\nprompt=\"\"\"执行节拍拆解任务。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/备份目录/reports/system-check/2026/01/system-check-2026-01-21-145903.md",
+      "content_preview": "# ANINEO 系统健康检查报告\n\n**检查时间：** 2026-01-21 14:59:03\n**检查模式：** quick\n**工作目录：** /Users/achi/Desktop/JEREMY/NEW\n\n---\n\n## 执行摘要\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/部署记录/DEPLOYMENT_README.md",
+      "content_preview": "# ANINEO Phase C Deployment\n\n## Overview\n\nThis deployment script (`deploy_phase_c.py`) handles the deployment of Phase C modifications to the ANINEO production environment. Phase C includes:\n\n1. **Prompt Simplifier Algorithm** - Intelligent prompt reduction while preserving creative elements\n2. **Extended P2 Keywords** - Expanded keyword coverage for different scene types\n3. **SKILL Integration** - Integration of the simplifier into the film-storyboard-skill workflow\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/部署记录/DEPLOYMENT_SUMMARY.md",
+      "content_preview": "# Phase C Deployment Script - Implementation Summary\n\n## ✅ Task Completed Successfully\n\nCreated `deploy_phase_c.py` script for deploying Phase C results to ANINEO production environment.\n\n## 🎯 Requirements Met\n\n### 1. ✅ Backup Existing Files\n- Creates timestamped backups in `.backups/phase-c-{timestamp}/`",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/根目录文档/IMPLEMENTATION_SUMMARY.md",
+      "content_preview": "# 阶段C验证系统增强 - 实施总结\n\n## 已完成的工作\n\n### 1. 修改了 `batch_validation.py`\n- **添加了阶段C特定的验证规则**：\n- 精简率验证（目标7.9%，阈值5%-15%）\n- P1/P2元素保留检测（P1目标100%，P2目标≥90%）\n- 质量评分抽样验证（5%抽样，质量下降≤8%）\n- 用户感知测试模拟（A/B测试反馈收集）",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/根目录文档/03-examples.md",
+      "content_preview": "# 影视分镜提示词示例\n\n## 示例1：紧张对峙（剧情片）\n\n**模板类型：** 对话/对峙场景\n\n中景，昏暗的地下停车场。\n两个男人面对面站立。穿皱巴巴西装的男人身体前倾，咬紧下巴，姿态充满攻击性；皮夹克男人双臂交叉，表情难以捉摸。\n头顶荧光灯闪烁，刺眼的光线将两人的脸分割成明暗两半。身后混凝土柱子形成牢笼般的框架。\n略微仰拍，两人都显得气势逼人。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/根目录文档/SYNC_AND_VALIDATION_SUMMARY.md",
+      "content_preview": "# ANINEO V2.0 同步修改与验证总结\n\n> **验证日期**: 2025-01-22\n> **验证目标**:\n> 1. 同步 NDI_Threshold 等新参数到全局配置\n> 2. 运行连贯性测试确保动态生成的锚点在视觉流转上没有断层\n> 3. 调用闭环验证确保系统能正确读取 JSON 并产出符合新模板的 Markdown 文件\n\n---\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/根目录文档/FINAL_OUTPUT_SUMMARY.md",
+      "content_preview": "# 阶段C验证系统增强 - 最终输出总结\n\n## 项目完成状态\n✅ **所有要求的功能已完全实现**\n\n## 交付物清单\n\n### 1. 核心文件（已修改）\n- **`batch_validation.py`** (647 → 约1200行)\n- 添加了阶段C所有验证规则",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/根目录文档/agent-test-report.md",
+      "content_preview": "# Agent 测试报告\n\n**测试时间**: 2026年1月29日\n**测试环境**: ANINEO 系统 V4.0\n**测试目的**: 验证各个Specialist Agent的运行状态和功能\n\n## 测试结果摘要\n\n| Agent | 测试状态 | 功能验证 | 性能表现 | 备注 |\n|-------|----------|----------|----------|------|",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/根目录文档/FINAL_SUMMARY_REPORT.md",
+      "content_preview": "# ANINEO系统优化项目 - 综合总结报告\n\n## 📊 项目概况\n\n**项目名称**: ANINEO系统创意质量改进\n**执行时间**: 2025年1月29日\n**项目阶段**: 阶段A（深度分析）+ 阶段B（试点验证）\n**当前状态**: ✅ 阶段A完成 | ⚠️ 阶段B完成（需优化）\n\n---",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "版本汇总/05-临时文件归档/根目录文档/03-examples-optimized.md",
+      "content_preview": "# 影视分镜提示词示例 (精简版)\n\n## 核心示例库\n\n### 示例1：紧张对峙（剧情片）\n**模板类型：** 对话/对峙场景\n\n中景，昏暗停车场。两男对峙：西装男前倾攻击性姿态，皮夹克男双臂交叉表情难测。\n头顶荧光灯闪烁，将脸部明暗分割。混凝土柱子形成牢笼框架。\n略微仰拍增强气势。冷蓝绿色调。一触即发。",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "outputs/beat-board-prompt-ep01-board2.md",
+      "content_preview": "---\n> **Description:** 猪打镇关西 ep01 Board 2 九宫格提示词\n---\n\n# Beat Board - ep01 - Board 2\n\n## 板信息\n\n- **集数**：ep01\n- **板号**：Board 2",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "outputs/sequence-review-ep01.md",
+      "content_preview": "---\n> **Description:** 导演对 ep01 动态分镜板的审核报告\n---\n\n# 导演审核报告\n\n**项目**：猪打镇关西\n\n**集数**：ep01\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "outputs/beat-board-prompt-ep01.md",
+      "content_preview": "---\n> **Description:** 猪打镇关西 ep01 九宫格提示词总览\n---\n\n# Beat Board 九宫格提示词 - ep01\n\n**项目名称**：猪打镇关西\n\n**集数/章节**：ep01\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "outputs/beatboard-review-ep01.md",
+      "content_preview": "---\n> **Description:** 导演对 ep01 九宫格提示词的审核报告\n---\n\n# 导演审核报告\n\n**项目**：猪打镇关西\n\n**集数**：ep01\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "outputs/beat-breakdown-ep01.md",
+      "content_preview": "---\n> **Description:** 猪打镇关西 ep01 节拍拆解表，包含戏剧权重、策略标签、复杂度评分\n---\n\n# 节拍拆解表\n\n**项目名称**：猪打镇关西\n\n**集数/章节**：ep01\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "outputs/breakdown-review-ep01.md",
+      "content_preview": "---\n> **Description:** 导演对 ep01 节拍拆解的审核报告\n---\n\n# 导演审核报告\n\n**项目**：猪打镇关西\n\n**集数**：ep01\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "outputs/sequence-board-prompt-ep01.md",
+      "content_preview": "---\n> **Description:** 猪打镇关西 ep01 动态分镜板提示词（前4节拍）\n---\n\n# Sequence Board 动态分镜板 - ep01 (前4节拍)\n\n**项目名称**：猪打镇关西\n\n**集数/章节**：ep01\n",
+      "max_length": 20
+    },
+    {
+      "type": "generate_description",
+      "file": "outputs/beat-board-prompt-ep01-board1.md",
+      "content_preview": "---\n> **Description:** 猪打镇关西 ep01 Board 1 九宫格提示词\n---\n\n# Beat Board - ep01 - Board 1\n\n## 板信息\n\n- **集数**：ep01\n- **板号**：Board 1",
+      "max_length": 20
+    }
+  ]
+}

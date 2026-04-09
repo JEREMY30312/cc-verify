@@ -1,0 +1,15 @@
+{
+  "total_batches": 1,
+  "batches": [
+    "batch_10percent_1769751298"
+  ],
+  "summary_by_batch": {
+    "batch_10percent_1769751298": {
+      "batch_size": 1,
+      "duration": 0.0,
+      "avg_processing_time": 0.0,
+      "quality_score": 0.93
+    }
+  },
+  "overall_statistics": {}
+}

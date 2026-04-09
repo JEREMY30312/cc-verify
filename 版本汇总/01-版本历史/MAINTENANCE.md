@@ -1,0 +1,1 @@
+NDI 计算 $\rightarrow$ 影响 beat-analyzer.md (逻辑)、beat-breakdown-template.md (展示)、director.md (审核阈值)。补帧阈值 $\rightarrow$ 影响 tween-algorithm.md (算法)、sequence-board-template.md (排版标记)、animator.md (动态生成索引)。角色/场景设定 $\rightarrow$ 影响 SKILL.md (YAML读取)、motion-prompt (视觉一致性)。

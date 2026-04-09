@@ -1,0 +1,51 @@
+{
+  "name": "赛博朋克风格",
+  "description": "高科技与低生活结合的科幻未来风格",
+  "config": {
+    "visualStyle": "赛博朋克",
+    "targetMedium": "短剧",
+    "aspectRatio": "16:9",
+    "lightingSystem": {
+      "primary": "霓虹灯光",
+      "secondary": "全息投影",
+      "special": "激光效果"
+    },
+    "colorPalette": {
+      "primary": ["霓虹粉", "电光蓝", "荧光绿", "暗紫色"],
+      "accent": "高对比度光效",
+      "mood": "未来感与压抑感并存"
+    },
+    "renderingStyle": {
+      "technique": "高清渲染+光效叠加",
+      "texture": "金属与玻璃质感",
+      "linework": "发光线条"
+    },
+    "characterDesign": {
+      "style": "未来科技装束",
+      "proportions": "七头身",
+      "details": "机械义肢、发光纹身"
+    },
+    "environmentDesign": {
+      "style": "未来都市",
+      "atmosphere": "密集、潮湿、霓虹闪烁",
+      "specialEffects": "全息广告、数据流、雨夜光效"
+    },
+    "cameraStyle": {
+      "movement": "快速穿梭",
+      "angles": "广角仰视",
+      "framing": "充满张力"
+    },
+    "narrativeStyle": {
+      "pace": "紧凑刺激",
+      "emotion": "紧张压迫",
+      "emphasis": "动作与科技展示"
+    },
+    "transitions": {
+      "style": "数字转场",
+      "duration": "短",
+      "effects": "故障效果、数据传输"
+    }
+  },
+  "recommendedFor": ["科幻动作", "赛博犯罪", "未来都市", "人工智能"],
+  "icon": "🤖"
+}

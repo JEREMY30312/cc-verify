@@ -1,0 +1,44 @@
+{
+  "batch_id": "batch_10percent_1769751298",
+  "batch_size": 1,
+  "total_examples": 7,
+  "start_time": "2026-01-30 13:34:58",
+  "end_time": "2026-01-30 13:34:58",
+  "duration_seconds": 0.0,
+  "results": [
+    {
+      "example_id": "example_03",
+      "original_length": 180,
+      "processed_length": 180,
+      "p1_elements_preserved": 4,
+      "p2_elements_preserved": 4,
+      "quality_score": 0.93,
+      "processing_time": 0.0,
+      "errors": []
+    }
+  ],
+  "summary": {
+    "total_examples": 1,
+    "successful_examples": 1,
+    "failed_examples": 0,
+    "length_preservation": {
+      "avg_ratio": 1.0,
+      "min_ratio": 1.0,
+      "max_ratio": 1.0,
+      "std_dev": 0.0
+    },
+    "element_preservation": {},
+    "quality_scores": {
+      "avg_score": 0.93,
+      "min_score": 0.93,
+      "max_score": 0.93,
+      "scores_distribution": {
+        "excellent_90+": 1,
+        "good_70_89": 0,
+        "fair_50_69": 0,
+        "poor_below_50": 0
+      }
+    },
+    "recommendations": []
+  }
+}

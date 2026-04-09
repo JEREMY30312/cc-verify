@@ -1,0 +1,855 @@
+#!/usr/bin/env node
+
+/**
+ * ANINEO 自定义 Agent 快速调用工具 v2.0
+ * 
+ * 解决 OpenCode 平台无法直接调用自定义 Agent 的问题
+ * 通过读取 agent 配置文件 + 自动构建 prompt 来实现快速调用
+ * 完整支持 SKILL.md 定义的模块依赖和协议文件
+ * 
+ * 使用方式：
+ *   node caller.js storyboard-artist --task breakdown --script <script_path>
+ *   node caller.js director --task review --file <file_path>
+ *   node caller.js animator --task motion --script <script_path>
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+// 配置
+const CONFIG = {
+    agentsDir: path.join(__dirname, '..'),
+    projectDir: path.join(__dirname, '..', '..'),
+    skillsDir: path.join(__dirname, '..', 'skills'),
+    outputsDir: path.join(__dirname, '..', 'outputs'),
+    commonDir: path.join(__dirname, '..', 'common')
+};
+
+// 协议文件配置
+const PROTOCOL_FILES = {
+    userConfirmation: 'common/user-confirmation-protocol.md',
+    snapshotManagement: 'common/snapshot-management.md',
+    informationFlow: 'common/信息传递机制.md',
+    collaborationMode: 'common/协作模式.md'
+};
+
+/**
+ * 读取 agent 配置文件
+ */
+function loadAgentConfig(agentName) {
+    const configPath = path.join(CONFIG.agentsDir, `${agentName}.md`);
+    
+    if (!fs.existsSync(configPath)) {
+        throw new Error(`Agent 配置文件不存在: ${configPath}`);
+    }
+    
+    const content = fs.readFileSync(configPath, 'utf-8');
+    
+    // 解析 YAML front matter
+    const frontMatterMatch = content.match(/^---\n([\s\S]+?)\n---/);
+    const frontMatter = frontMatterMatch ? parseYAML(frontMatterMatch[1]) : {};
+    
+    // 提取角色定义
+    const roleMatch = content.match(/\[角色\]([\s\S]+?)(?=\n\[|\n---)/);
+    const role = roleMatch ? roleMatch[1].trim() : '';
+    
+    const taskMatch = content.match(/\[任务\]([\s\S]+?)(?=\n\[|\n---)/);
+    const tasks = taskMatch ? parseList(taskMatch[1]) : [];
+    
+    const outputMatch = content.match(/\[输出规范\]([\s\S]+?)(?=\n\[|\n---)/);
+    const outputSpec = outputMatch ? parseList(outputMatch[1]) : [];
+    
+    const collabMatch = content.match(/\[协作模式\]([\s\S]+?)(?=\n\[|\n---)/);
+    const collabMode = collabMatch ? collabMatch[1].trim() : '';
+    
+    // 新增：提取自动加载模块
+    const autoLoadMatch = content.match(/\[自动加载模块\]([\s\S]+?)(?=\n\[|\n---|\n##)/);
+    const autoLoadModules = autoLoadMatch ? autoLoadMatch[1].trim() : '';
+    
+    return {
+        name: frontMatter.name || agentName,
+        description: frontMatter.description || '',
+        skills: frontMatter.skills || '',
+        model: frontMatter.model || 'opus',
+        color: frontMatter.color || 'gray',
+        role,
+        tasks,
+        outputSpec,
+        collabMode,
+        autoLoadModules  // 新增字段
+    };
+}
+
+/**
+ * 解析 YAML 片段
+ */
+function parseYAML(yamlStr) {
+    const result = {};
+    yamlStr.split('\n').forEach(line => {
+        const match = line.match(/^(\s*)(\w+):\s*(.*)$/);
+        if (match) {
+            const key = match[2];
+            const value = match[3].trim();
+            result[key] = value || true;
+        }
+    });
+    return result;
+}
+
+/**
+ * 解析列表项
+ */
+function parseList(str) {
+    return str.split('\n')
+        .map(line => line.replace(/^[·\-\*]\s*/, '').trim())
+        .filter(line => line.length > 0);
+}
+
+/**
+ * 读取 context 文件
+ */
+function loadContextFiles(contextFiles) {
+    if (!contextFiles || contextFiles.length === 0) return '';
+    
+    let context = '';
+    contextFiles.forEach(file => {
+        const filePath = path.isAbsolute(file) ? file : path.join(CONFIG.projectDir, file);
+        if (fs.existsSync(filePath)) {
+            const content = fs.readFileSync(filePath, 'utf-8');
+            context += `\n\n## ${path.basename(file)}\n${content}`;
+        }
+    });
+    return context;
+}
+
+/**
+ * 构建完整的 prompt
+ * v2.0: 新增自动加载模块和协议文件读取
+ */
+function buildPrompt(agentConfig, task, options = {}) {
+    const {
+        contextFiles = [],
+        projectConfig = {},
+        userPreferences = {},
+        taskSpecificData = ''
+    } = options;
+    
+    let prompt = '';
+    
+    // 角色设定
+    prompt += `[角色设定 - ${agentConfig.name}]
+${agentConfig.role}
+
+[任务类型]
+${task}
+
+`;
+    
+    // 任务列表
+    if (agentConfig.tasks.length > 0) {
+        prompt += `[可用任务]
+${agentConfig.tasks.map(t => `- ${t}`).join('\n')}
+
+`;
+    }
+    
+    // 项目配置
+    prompt += `[项目配置]
+- 视觉风格：${projectConfig.visualStyle || '默认'}
+- 目标媒介：${projectConfig.targetMedium || '默认'}
+- 画幅比例：${projectConfig.aspectRatio || '默认'}
+- 集数标识：${projectConfig.episode || '单集'}
+
+`;
+    
+    // 用户偏好
+    if (Object.keys(userPreferences).length > 0) {
+        prompt += `[用户偏好]
+${JSON.stringify(userPreferences, null, 2)}
+
+`;
+    }
+    
+    // Context 文件
+    const contextContent = loadContextFiles(contextFiles);
+    if (contextContent) {
+        prompt += `[前置产物]
+${contextContent}
+
+`;
+    }
+    
+    // 任务特定数据
+    if (taskSpecificData) {
+        prompt += `[任务数据]
+${taskSpecificData}
+
+`;
+    }
+    
+    // 【v2.0新增】自动加载模块
+    if (agentConfig.autoLoadModules) {
+        prompt += `[自动加载模块]
+${agentConfig.autoLoadModules}
+
+`;
+    }
+    
+    // 输出规范
+    if (agentConfig.outputSpec.length > 0) {
+        prompt += `[输出规范]
+${agentConfig.outputSpec.map(s => `- ${s}`).join('\n')}
+
+`;
+    }
+    
+    // 协作模式
+    if (agentConfig.collabMode) {
+        prompt += `[协作模式]
+${agentConfig.collabMode}
+
+`;
+    }
+    
+    // 【v2.0新增】协议文件引用
+    prompt += `[协议文件]
+- 用户确认协议: ${PROTOCOL_FILES.userConfirmation}
+- 快照管理规则: ${PROTOCOL_FILES.snapshotManagement}
+- 信息传递机制: ${PROTOCOL_FILES.informationFlow}
+- 协作模式: ${PROTOCOL_FILES.collaborationMode}
+
+[执行要求]
+1. 执行前必须读取 [自动加载模块] 中列出的所有文件
+2. 按模块依赖顺序执行任务
+3. 执行完成后必须调用导演审核
+4. 审核通过后执行用户确认（${PROTOCOL_FILES.userConfirmation}）
+5. 根据用户选择创建对应类型快照（${PROTOCOL_FILES.snapshotManagement}）
+6. 更新 .agent-state.json 记录状态
+
+`;
+    
+    return prompt;
+}
+
+/**
+ * 调用 OpenCode API 执行任务
+ * 注意：这个函数需要在 OpenCode 环境中运行
+ */
+function callAgent(prompt) {
+    // 在 OpenCode 环境中，使用 task 工具调用 general agent
+    // 这里我们返回构建好的 prompt，实际调用由外部处理
+    
+    return {
+        prompt,
+        // 这个 prompt 可以在 OpenCode 中使用以下方式调用：
+        // task(subagent_type="general", prompt=prompt, ...)
+        note: '需要在 OpenCode 环境中使用 task 工具调用'
+    };
+}
+
+/**
+ * 保存输出文件
+ */
+function saveOutput(fileName, content) {
+    const outputPath = path.join(CONFIG.outputsDir, fileName);
+    
+    // 确保目录存在
+    const dir = dirname(outputPath);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+    
+    fs.writeFileSync(outputPath, content);
+    console.log(`✅ 输出文件已保存: ${outputPath}`);
+    return outputPath;
+}
+
+/**
+ * 打印 Agent 信息
+ */
+function printAgentInfo(agentConfig) {
+    console.log(`
+┌─────────────────────────────────────────┐
+│  Agent: ${agentConfig.name.padEnd(39)}│
+├─────────────────────────────────────────┤
+│  描述: ${(agentConfig.description || '').substring(0, 41).padEnd(41)}│
+│  技能: ${(agentConfig.skills || '无').padEnd(41)}│
+│  模型: ${agentConfig.model.padEnd(41)}│
+└─────────────────────────────────────────┘
+    `);
+}
+
+/**
+ * 主函数 - 处理命令行参数
+ */
+function main() {
+    const args = process.argv.slice(2);
+    
+    if (args.length === 0 || args[0] === '--help' || args[0] === '-h') {
+        printHelp();
+        return;
+    }
+    
+    const agentName = args[0].replace(/^--/, '');
+    const task = extractArg(args, ['--task', '-t']) || 'default';
+    const scriptPath = extractArg(args, ['--script', '-s']);
+    const filePath = extractArg(args, ['--file', '-f']);
+    const outputFile = extractArg(args, ['--output', '-o']);
+    const verbose = args.includes('--verbose') || args.includes('-v');
+    
+    try {
+        // 加载 Agent 配置
+        const agentConfig = loadAgentConfig(agentName);
+        
+        if (verbose) {
+            printAgentInfo(agentConfig);
+        }
+        
+        // 加载项目配置
+        const agentStatePath = path.join(CONFIG.projectDir, '.agent-state.json');
+        let projectConfig = {};
+        let userPreferences = {};
+        let contextFiles = [];
+        
+        if (fs.existsSync(agentStatePath)) {
+            const state = JSON.parse(fs.readFileSync(agentStatePath, 'utf-8'));
+            projectConfig = state.project_config || {};
+            userPreferences = state.user_preferences || {};
+            contextFiles = state.context_files || [];
+        }
+        
+        // 构建任务特定数据
+        let taskSpecificData = '';
+        if (scriptPath) {
+            if (fs.existsSync(scriptPath)) {
+                const scriptContent = fs.readFileSync(scriptPath, 'utf-8');
+                taskSpecificData = `[原始剧本]\n${scriptContent}`;
+            } else {
+                console.warn(`⚠️ 剧本文件不存在: ${scriptPath}`);
+            }
+        }
+        if (filePath) {
+            if (fs.existsSync(filePath)) {
+                const fileContent = fs.readFileSync(filePath, 'utf-8');
+                taskSpecificData = `[待审核文件]\n${fileContent}`;
+            } else {
+                console.warn(`⚠️ 文件不存在: ${filePath}`);
+            }
+        }
+        
+        // 构建完整 prompt
+        const prompt = buildPrompt(agentConfig, task, {
+            contextFiles,
+            projectConfig,
+            userPreferences,
+            taskSpecificData
+        });
+        
+        if (verbose) {
+            console.log('\n📝 构建的 Prompt 长度:', prompt.length, '字符\n');
+            if (agentConfig.autoLoadModules) {
+                console.log('✅ 已包含自动加载模块配置\n');
+            }
+        }
+        
+        // 输出 prompt 或保存文件
+        if (outputFile) {
+            saveOutput(outputFile, prompt);
+        } else {
+            // 在 OpenCode 环境中，返回 prompt 供 task 工具使用
+            const result = callAgent(prompt);
+            
+            console.log(`
+┌─────────────────────────────────────────┐
+│  ✅ Prompt 构建成功 (v2.0)              │
+├─────────────────────────────────────────┤
+│  Agent: ${agentConfig.name}
+│  Task: ${task}
+│  Length: ${prompt.length} chars
+│  Auto-load Modules: ${agentConfig.autoLoadModules ? '✅' : '❌'}
+└─────────────────────────────────────────┘
+
+在 OpenCode 中使用以下方式调用：
+
+task(
+    subagent_type="general",
+    prompt=\`
+${prompt.replace(/`/g, '\\`')}
+\`
+);
+
+或者使用已封装的快捷命令。
+            `);
+        }
+        
+    } catch (error) {
+        console.error(`❌ 错误: ${error.message}`);
+        process.exit(1);
+    }
+}
+
+/**
+ * 从参数列表提取值
+ */
+function extractArg(args, keys) {
+    for (let i = 0; i < args.length; i++) {
+        if (keys.includes(args[i])) {
+            return args[i + 1] || '';
+        }
+    }
+    return null;
+}
+
+/**
+ * 获取目录部分（兼容不同 Node 版本）
+ */
+function dirname(filePath) {
+    return path.dirname(filePath);
+}
+
+/**
+ * 打印帮助信息
+ */
+function printHelp() {
+    console.log(`
+╔════════════════════════════════════════════════════════════════════════╗
+║  ANINEO 自定义 Agent 快速调用工具 v2.0                                  ║
+╠════════════════════════════════════════════════════════════════════════╣
+║  完整支持 SKILL.md 模块依赖和协议文件                                   ║
+║                                                                ║
+║  用法:                                                          ║
+║    node caller.js <agent> [选项]                               ║
+║                                                                ║
+║  可用 Agent:                                                    ║
+║    • storyboard-artist  - 分镜师                               ║
+║    • director           - 导演                                 ║
+║    • animator           - 动画师                               ║
+║                                                                ║
+║  通用选项:                                                      ║
+║    --task, -t <任务>     指定任务类型                          ║
+║    --script, -s <路径>   剧本文件路径                          ║
+║    --file, -f <路径>     待审核文件路径                        ║
+║    --output, -o <文件>   输出到文件                            ║
+║    --verbose, -v         详细输出                              ║
+║    --help, -h            显示帮助                              ║
+║                                                                ║
+║  v2.0 新特性:                                                    ║
+║    • 自动读取 [自动加载模块] 配置                               ║
+║    • 自动引用协议文件（用户确认、快照管理）                     ║
+║    • 完整的执行流程说明                                         ║
+║                                                                ║
+║  示例:                                                          ║
+║    # 生成节拍拆解                                               ║
+║    node caller.js storyboard-artist --task breakdown \\          ║
+║      --script script/"猪"打镇关西_v2.0"                        ║
+║                                                                ║
+║    # 审核节拍拆解表                                             ║
+║    node caller.js director --task review \\                     ║
+║      --file outputs/beat-breakdown-ep01.md                     ║
+║                                                                ║
+║    # 生成九宫格提示词（保存到文件）                             ║
+║    node caller.js storyboard-artist --task beatboard \\         ║
+║      --output beat-board-prompt-build.md                       ║
+║                                                                ║
+║  集成到 OpenCode:                                               ║
+║    此工具构建的 prompt 可直接在 OpenCode 中使用 task 工具调用  ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════════════╝
+    `);
+}
+
+// 导出供其他模块使用
+module.exports = {
+    loadAgentConfig,
+    buildPrompt,
+    saveOutput,
+    callAgent,
+    loadContextFiles,
+    PROTOCOL_FILES
+};
+
+// 如果直接运行
+if (require.main === module) {
+    main();
+}
+    
+    const content = fs.readFileSync(configPath, 'utf-8');
+    
+    // 解析 YAML front matter
+    const frontMatterMatch = content.match(/^---\n([\s\S]+?)\n---/);
+    const frontMatter = frontMatterMatch ? parseYAML(frontMatterMatch[1]) : {};
+    
+    // 提取角色定义
+    const roleMatch = content.match(/\[角色\]([\s\S]+?)(?=\n\[|\n---)/);
+    const role = roleMatch ? roleMatch[1].trim() : '';
+    
+    const taskMatch = content.match(/\[任务\]([\s\S]+?)(?=\n\[|\n---)/);
+    const tasks = taskMatch ? parseList(taskMatch[1]) : [];
+    
+    const outputMatch = content.match(/\[输出规范\]([\s\S]+?)(?=\n\[|\n---)/);
+    const outputSpec = outputMatch ? parseList(outputMatch[1]) : [];
+    
+    const collabMatch = content.match(/\[协作模式\]([\s\S]+?)(?=\n\[|\n---)/);
+    const collabMode = collabMatch ? collabMatch[1].trim() : '';
+    
+    return {
+        name: frontMatter.name || agentName,
+        description: frontMatter.description || '',
+        skills: frontMatter.skills || '',
+        model: frontMatter.model || 'opus',
+        color: frontMatter.color || 'gray',
+        role,
+        tasks,
+        outputSpec,
+        collabMode
+    };
+}
+
+/**
+ * 解析 YAML 片段
+ */
+function parseYAML(yamlStr) {
+    const result = {};
+    yamlStr.split('\n').forEach(line => {
+        const match = line.match(/^(\s*)(\w+):\s*(.*)$/);
+        if (match) {
+            const key = match[2];
+            const value = match[3].trim();
+            result[key] = value || true;
+        }
+    });
+    return result;
+}
+
+/**
+ * 解析列表项
+ */
+function parseList(str) {
+    return str.split('\n')
+        .map(line => line.replace(/^[·\-\*]\s*/, '').trim())
+        .filter(line => line.length > 0);
+}
+
+/**
+ * 读取 context 文件
+ */
+function loadContextFiles(contextFiles) {
+    if (!contextFiles || contextFiles.length === 0) return '';
+    
+    let context = '';
+    contextFiles.forEach(file => {
+        const filePath = path.isAbsolute(file) ? file : path.join(CONFIG.projectDir, file);
+        if (fs.existsSync(filePath)) {
+            const content = fs.readFileSync(filePath, 'utf-8');
+            context += `\n\n## ${path.basename(file)}\n${content}`;
+        }
+    });
+    return context;
+}
+
+/**
+ * 构建完整的 prompt
+ */
+function buildPrompt(agentConfig, task, options = {}) {
+    const {
+        contextFiles = [],
+        projectConfig = {},
+        userPreferences = {},
+        taskSpecificData = ''
+    } = options;
+    
+    let prompt = '';
+    
+    // 角色设定
+    prompt += `[角色设定 - ${agentConfig.name}]
+${agentConfig.role}
+
+[任务类型]
+${task}
+
+`;
+    
+    // 任务列表
+    if (agentConfig.tasks.length > 0) {
+        prompt += `[可用任务]
+${agentConfig.tasks.map(t => `- ${t}`).join('\n')}
+
+`;
+    }
+    
+    // 项目配置
+    prompt += `[项目配置]
+- 视觉风格：${projectConfig.visualStyle || '默认'}
+- 目标媒介：${projectConfig.targetMedium || '默认'}
+- 画幅比例：${projectConfig.aspectRatio || '默认'}
+- 集数标识：${projectConfig.episode || '单集'}
+
+`;
+    
+    // 用户偏好
+    if (Object.keys(userPreferences).length > 0) {
+        prompt += `[用户偏好]
+${JSON.stringify(userPreferences, null, 2)}
+
+`;
+    }
+    
+    // Context 文件
+    const contextContent = loadContextFiles(contextFiles);
+    if (contextContent) {
+        prompt += `[前置产物]
+${contextContent}
+
+`;
+    }
+    
+    // 任务特定数据
+    if (taskSpecificData) {
+        prompt += `[任务数据]
+${taskSpecificData}
+
+`;
+    }
+    
+    // 输出规范
+    if (agentConfig.outputSpec.length > 0) {
+        prompt += `[输出规范]
+${agentConfig.outputSpec.map(s => `- ${s}`).join('\n')}
+
+`;
+    }
+    
+    // 协作模式
+    if (agentConfig.collabMode) {
+        prompt += `[协作模式]
+${agentConfig.collabMode}
+`;
+    }
+    
+    return prompt;
+}
+
+/**
+ * 调用 OpenCode API 执行任务
+ * 注意：这个函数需要在 OpenCode 环境中运行
+ */
+function callAgent(prompt) {
+    // 在 OpenCode 环境中，使用 task 工具调用 general agent
+    // 这里我们返回构建好的 prompt，实际调用由外部处理
+    
+    return {
+        prompt,
+        // 这个 prompt 可以在 OpenCode 中使用以下方式调用：
+        // task(subagent_type="general", prompt=prompt, ...)
+        note: '需要在 OpenCode 环境中使用 task 工具调用'
+    };
+}
+
+/**
+ * 保存输出文件
+ */
+function saveOutput(fileName, content) {
+    const outputPath = path.join(CONFIG.outputsDir, fileName);
+    
+    // 确保目录存在
+    const dir = path.dirname(outputPath);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+    
+    fs.writeFileSync(outputPath, content);
+    console.log(`✅ 输出文件已保存: ${outputPath}`);
+    return outputPath;
+}
+
+/**
+ * 打印 Agent 信息
+ */
+function printAgentInfo(agentConfig) {
+    console.log(`
+┌─────────────────────────────────────────┐
+│  Agent: ${agentConfig.name.padEnd(39)}│
+├─────────────────────────────────────────┤
+│  描述: ${(agentConfig.description || '').substring(0, 41).padEnd(41)}│
+│  技能: ${(agentConfig.skills || '无').padEnd(41)}│
+│  模型: ${agentConfig.model.padEnd(41)}│
+└─────────────────────────────────────────┘
+    `);
+}
+
+/**
+ * 主函数 - 处理命令行参数
+ */
+function main() {
+    const args = process.argv.slice(2);
+    
+    if (args.length === 0 || args[0] === '--help' || args[0] === '-h') {
+        printHelp();
+        return;
+    }
+    
+    const agentName = args[0].replace(/^--/, '');
+    const task = extractArg(args, ['--task', '-t']) || 'default';
+    const scriptPath = extractArg(args, ['--script', '-s']);
+    const filePath = extractArg(args, ['--file', '-f']);
+    const outputFile = extractArg(args, ['--output', '-o']);
+    const verbose = args.includes('--verbose') || args.includes('-v');
+    
+    try {
+        // 加载 Agent 配置
+        const agentConfig = loadAgentConfig(agentName);
+        
+        if (verbose) {
+            printAgentInfo(agentConfig);
+        }
+        
+        // 加载项目配置
+        const agentStatePath = path.join(CONFIG.projectDir, '.agent-state.json');
+        let projectConfig = {};
+        let userPreferences = {};
+        let contextFiles = [];
+        
+        if (fs.existsSync(agentStatePath)) {
+            const state = JSON.parse(fs.readFileSync(agentStatePath, 'utf-8'));
+            projectConfig = state.project_config || {};
+            userPreferences = state.user_preferences || {};
+            contextFiles = state.context_files || [];
+        }
+        
+        // 构建任务特定数据
+        let taskSpecificData = '';
+        if (scriptPath) {
+            if (fs.existsSync(scriptPath)) {
+                const scriptContent = fs.readFileSync(scriptPath, 'utf-8');
+                taskSpecificData = `[原始剧本]\n${scriptContent}`;
+            } else {
+                console.warn(`⚠️ 剧本文件不存在: ${scriptPath}`);
+            }
+        }
+        if (filePath) {
+            if (fs.existsSync(filePath)) {
+                const fileContent = fs.readFileSync(filePath, 'utf-8');
+                taskSpecificData = `[待审核文件]\n${fileContent}`;
+            } else {
+                console.warn(`⚠️ 文件不存在: ${filePath}`);
+            }
+        }
+        
+        // 构建完整 prompt
+        const prompt = buildPrompt(agentConfig, task, {
+            contextFiles,
+            projectConfig,
+            userPreferences,
+            taskSpecificData
+        });
+        
+        if (verbose) {
+            console.log('\n📝 构建的 Prompt 长度:', prompt.length, '字符\n');
+        }
+        
+        // 输出 prompt 或保存文件
+        if (outputFile) {
+            saveOutput(outputFile, prompt);
+        } else {
+            // 在 OpenCode 环境中，返回 prompt 供 task 工具使用
+            const result = callAgent(prompt);
+            
+            console.log(`
+┌─────────────────────────────────────────┐
+│  ✅ Prompt 构建成功                      │
+├─────────────────────────────────────────┤
+│  Agent: ${agentConfig.name}
+│  Task: ${task}
+│  Length: ${prompt.length} chars
+└─────────────────────────────────────────┘
+
+在 OpenCode 中使用以下方式调用：
+
+task(
+    subagent_type="general",
+    prompt=\`
+${prompt.replace(/`/g, '\\`')}
+\`
+);
+
+或者使用已封装的快捷命令。
+            `);
+        }
+        
+    } catch (error) {
+        console.error(`❌ 错误: ${error.message}`);
+        process.exit(1);
+    }
+}
+
+/**
+ * 从参数列表提取值
+ */
+function extractArg(args, keys) {
+    for (let i = 0; i < args.length; i++) {
+        if (keys.includes(args[i])) {
+            return args[i + 1] || '';
+        }
+    }
+    return null;
+}
+
+/**
+ * 打印帮助信息
+ */
+function printHelp() {
+    console.log(`
+╔════════════════════════════════════════════════════════════════╗
+║  ANINEO 自定义 Agent 快速调用工具 v1.0                          ║
+╠════════════════════════════════════════════════════════════════╣
+║                                                                ║
+║  用法:                                                          ║
+║    node caller.js <agent> [选项]                               ║
+║                                                                ║
+║  可用 Agent:                                                    ║
+║    • storyboard-artist  - 分镜师                               ║
+║    • director           - 导演                                 ║
+║    • animator           - 动画师                               ║
+║                                                                ║
+║  通用选项:                                                      ║
+║    --task, -t <任务>     指定任务类型                          ║
+║    --script, -s <路径>   剧本文件路径                          ║
+║    --file, -f <路径>     待审核文件路径                        ║
+║    --output, -o <文件>   输出到文件                            ║
+║    --verbose, -v         详细输出                              ║
+║    --help, -h            显示帮助                              ║
+║                                                                ║
+║  示例:                                                          ║
+║    # 生成节拍拆解                                               ║
+║    node caller.js storyboard-artist --task breakdown \\          ║
+║      --script script/"猪"打镇关西_v2.0"                        ║
+║                                                                ║
+║    # 审核节拍拆解表                                             ║
+║    node caller.js director --task review \\                     ║
+║      --file outputs/beat-breakdown-ep01.md                     ║
+║                                                                ║
+║    # 生成九宫格提示词（保存到文件）                             ║
+║    node caller.js storyboard-artist --task beatboard \\         ║
+║      --output beat-board-prompt-build.md                       ║
+║                                                                ║
+║  集成到 OpenCode:                                               ║
+║    此工具构建的 prompt 可直接在 OpenCode 中使用 task 工具调用  ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+    `);
+}
+
+// 导出供其他模块使用
+module.exports = {
+    loadAgentConfig,
+    buildPrompt,
+    saveOutput,
+    callAgent,
+    loadContextFiles
+};
+
+// 如果直接运行
+if (require.main === module) {
+    main();
+}

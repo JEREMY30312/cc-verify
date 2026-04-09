@@ -1,0 +1,177 @@
+# 动态提示词执行器 Motion Executor
+
+[用途]
+    调用动态提示词任务时使用此模板
+    确保按正确的顺序读取所有必要模块
+
+[执行前必须读取的文件]
+
+    ## 第一组：配置和输入
+    1. .agent-state.json
+       - 位置：项目根目录
+       - 作用：获取 visual_style, target_medium, aspect_ratio, episode_id
+
+    2. 四宫格提示词
+       - 位置：outputs/sequence-board-prompt-{集数}.md
+       - 作用：动态生成的基础
+
+    3. 九宫格总览
+       - 位置：outputs/beat-board-prompt-{集数}.md
+       - 作用：视觉风格参考
+
+    4. 节拍拆解表
+       - 位置：outputs/beat-breakdown-{集数}.md
+       - 作用：情绪曲线参考
+
+    ## 第二组：核心分析模块
+    5. animator-skill/motion-prompt-methodology/index.md ← 【必读】
+       - 作用：动态提示词方法论
+       - 五模块构造：
+         * 镜头运动模块（1-2种运动）
+         * 主体动作模块（1-2种动作）
+         * 环境动态模块（必须包含）
+         * 节奏控制模块
+         * 氛围强化模块
+
+    6. animator-skill/physics-verification-rules.md ← 【必读】
+       - 作用：物理验证规则
+       - 检查项：
+         * 重力影响检查
+         * 惯性表现检查
+         * 材质反应检查
+         * 能量守恒检查
+         * 流体动力学检查
+
+    7. animator-skill/templates/motion-prompt-template.md ← 【必读】
+       - 作用：输出格式模板
+       - 必须按模板结构生成
+
+[执行步骤]
+
+    步骤1: 读取项目配置
+    ```
+    读取 .agent-state.json
+    提取：visual_style, target_medium, aspect_ratio, episode_id
+    ```
+
+    步骤2: 读取前置产物
+    ```
+    读取 outputs/sequence-board-prompt-{集数}.md（四宫格）
+    读取 outputs/beat-board-prompt-{集数}.md（九宫格）
+    读取 outputs/beat-breakdown-{集数}.md（节拍拆解）
+    继承：画面内容、情绪曲线、视觉风格
+    ```
+
+    步骤3: 读取分析模块
+    ```
+    读取 animator-skill/motion-prompt-methodology/index.md
+    理解五模块构造规则
+    读取 animator-skill/physics-verification-rules.md
+    理解物理验证规则
+    读取 animator-skill/templates/motion-prompt-template.md
+    理解输出格式要求
+    ```
+
+    步骤4: 执行五模块构造
+    ```
+    按 motion-prompt-methodology 规则构造每个 Motion Prompt：
+
+    1. 镜头运动模块（1-2种运动）
+       - 选择与情绪匹配的运动类型
+       - 检查运动组合不超过2种
+       - 示例：Slow dolly in with subtle tilt up
+
+    2. 主体动作模块（1-2种动作）
+       - 主要动作（必须）
+       - 次要动作（可选）
+       - 示例：Turns head while reaching out hand
+
+    3. 环境动态模块（必须包含）
+       - 根据场景选择适当的环境动态
+       - 检查动态是否服务叙事
+       - 示例：Dust particles floating in sunbeam
+
+    4. 节奏控制模块
+       - 设计速度梯度：缓入/匀速/爆发/衰减
+       - 分配时间比例
+       - 设置节奏点
+       - 示例：Gradual acceleration over 2s, hold for 1s...
+
+    5. 氛围强化模块
+       - 通过运动强化情绪
+       - 添加风格化运动效果
+       - 设置技术参数
+       - 示例：Cinematic 24fps with subtle handheld shake
+    ```
+
+    步骤5: 执行物理合理性检查
+    ```
+    按 physics-verification-rules.md 逐项检查：
+    □ 重力影响：运动是否符合重力规律？
+    □ 惯性表现：动作是否有惯性质感？
+    □ 材质反应：不同材质的碰撞反应是否正确？
+    □ 能量守恒：能量转换是否合理？
+    □ 流体动力学：流体运动是否符合物理？
+
+    标记结果：
+    - ✅ 合理：通过检查
+    - ⚠️ 轻微异常：艺术化处理，需标注
+    - ❌ 物理错误：必须修正
+    ```
+
+    步骤6: 占位格特殊处理
+    ```
+    识别九宫格中的占位格（PH-标记）
+    对占位格生成"建议动态方案"：
+    [PH-1-5]: [镜头运动]，[主体动作]，
+              [动态建议]，[节奏]，[氛围]
+    （明确标注"待用户确认"）
+    ```
+
+    步骤7: 保存输出
+    ```
+    输出文件：outputs/motion-prompt-{集数}.md
+    每组5个 Motion Prompt（1关键帧 + 4四宫格）
+    共9组，总计45个
+    ```
+
+[Prompt 模板]
+
+    ## 动态提示词 Prompt 模板
+
+    你是一名专业的动画师，请执行动态提示词生成任务。
+
+    **项目配置**（来自 .agent-state.json）：
+    - 视觉风格：{visual_style}
+    - 目标媒介：{target_medium}
+    - 画幅比例：{aspect_ratio}
+    - 集数：{episode_id}
+
+    **执行前必须读取以下文件**：
+    1. animator-skill/motion-prompt-methodology/index.md ← 核心方法论
+    2. animator-skill/physics-verification-rules.md ← 物理验证
+    3. animator-skill/templates/motion-prompt-template.md ← 输出格式
+
+    **前置产物**：
+    - 四宫格提示词：{四宫格提示词内容}
+    - 九宫格总览：{九宫格内容}
+    - 节拍拆解：{节拍拆解内容}
+
+    **执行要求**：
+    1. 读取并理解 motion-prompt-methodology 的五模块构造规则
+    2. 读取 physics-verification-rules.md 的物理验证规则
+    3. 为每个四宫格生成 Motion Prompt：
+       - 镜头运动模块（1-2种运动）
+       - 主体动作模块（1-2种动作）
+       - 环境动态模块（必须包含）
+       - 节奏控制模块
+       - 氛围强化模块
+    4. 执行 physics-verification-rules.md 物理合理性检查
+    5. 对占位格生成"建议动态方案"
+    6. 每组包含5个 Motion Prompt（1关键帧 + 4四宫格）
+    7. 共9组，总计45个
+
+    **输出文件**：
+    outputs/motion-prompt-{集数}.md
+
+    请开始执行动态提示词生成。

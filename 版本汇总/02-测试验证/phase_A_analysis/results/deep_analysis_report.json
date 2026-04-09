@@ -1,0 +1,571 @@
+{
+  "analysis_date": "2025-01-29",
+  "summary": {
+    "total_creative_loss": "37.5%",
+    "most_affected_dimension": "narrative_clarity (-50.0%)",
+    "highest_priority_issue": "关键问题: narrative_clarity 下降 -50.0%"
+  },
+  "example_analyses": [
+    {
+      "title": "紧张对峙",
+      "original": {
+        "title": "紧张对峙",
+        "total_creative_elements": 14,
+        "category_counts": {
+          "visual_metaphors": {
+            "count": 2,
+            "matched_keywords": [
+              "牢笼",
+              "闪烁"
+            ]
+          },
+          "emotional_details": {
+            "count": 1,
+            "matched_keywords": [
+              "咬紧"
+            ]
+          },
+          "environmental_details": {
+            "count": 1,
+            "matched_keywords": [
+              "闪烁"
+            ]
+          },
+          "cinematic_techniques": {
+            "count": 2,
+            "matched_keywords": [
+              "仰拍",
+              "中景"
+            ]
+          },
+          "lighting_effects": {
+            "count": 2,
+            "matched_keywords": [
+              "荧光灯",
+              "明暗"
+            ]
+          },
+          "color_grading": {
+            "count": 3,
+            "matched_keywords": [
+              "色调",
+              "蓝绿",
+              "冷蓝绿"
+            ]
+          },
+          "atmosphere_creation": {
+            "count": 3,
+            "matched_keywords": [
+              "一触即发",
+              "爆发",
+              "难以捉摸"
+            ]
+          }
+        },
+        "quality_scores": {
+          "cinematic_quality": {
+            "raw_score": 1,
+            "normalized_score": 0.07142857142857142,
+            "weight": 1.0,
+            "weighted_score": 0.07142857142857142
+          },
+          "emotional_depth": {
+            "raw_score": 1,
+            "normalized_score": 0.07142857142857142,
+            "weight": 0.9,
+            "weighted_score": 0.06428571428571428
+          },
+          "visual_richness": {
+            "raw_score": 2,
+            "normalized_score": 0.14285714285714285,
+            "weight": 0.8,
+            "weighted_score": 0.11428571428571428
+          },
+          "narrative_clarity": {
+            "raw_score": 2,
+            "normalized_score": 0.16666666666666666,
+            "weight": 0.7,
+            "weighted_score": 0.11666666666666665
+          }
+        },
+        "missing_categories": [],
+        "creative_density": 95.23809523809523,
+        "word_count": 147,
+        "creative_per_100_words": 9.523809523809524
+      },
+      "simplified": {
+        "title": "紧张对峙",
+        "total_creative_elements": 8,
+        "category_counts": {
+          "visual_metaphors": {
+            "count": 1,
+            "matched_keywords": [
+              "闪烁"
+            ]
+          },
+          "emotional_details": {
+            "count": 1,
+            "matched_keywords": [
+              "咬紧"
+            ]
+          },
+          "environmental_details": {
+            "count": 1,
+            "matched_keywords": [
+              "闪烁"
+            ]
+          },
+          "cinematic_techniques": {
+            "count": 2,
+            "matched_keywords": [
+              "仰拍",
+              "中景"
+            ]
+          },
+          "lighting_effects": {
+            "count": 0,
+            "matched_keywords": []
+          },
+          "color_grading": {
+            "count": 1,
+            "matched_keywords": [
+              "色调"
+            ]
+          },
+          "atmosphere_creation": {
+            "count": 2,
+            "matched_keywords": [
+              "一触即发",
+              "爆发"
+            ]
+          }
+        },
+        "quality_scores": {
+          "cinematic_quality": {
+            "raw_score": 1,
+            "normalized_score": 0.07142857142857142,
+            "weight": 1.0,
+            "weighted_score": 0.07142857142857142
+          },
+          "emotional_depth": {
+            "raw_score": 1,
+            "normalized_score": 0.07142857142857142,
+            "weight": 0.9,
+            "weighted_score": 0.06428571428571428
+          },
+          "visual_richness": {
+            "raw_score": 2,
+            "normalized_score": 0.14285714285714285,
+            "weight": 0.8,
+            "weighted_score": 0.11428571428571428
+          },
+          "narrative_clarity": {
+            "raw_score": 2,
+            "normalized_score": 0.16666666666666666,
+            "weight": 0.7,
+            "weighted_score": 0.11666666666666665
+          }
+        },
+        "missing_categories": [
+          "lighting_effects"
+        ],
+        "creative_density": 85.1063829787234,
+        "word_count": 94,
+        "creative_per_100_words": 8.51063829787234
+      },
+      "differences": {
+        "total_elements_change": -6,
+        "total_elements_percentage": -42.857142857142854,
+        "word_count_change": -53,
+        "word_count_percentage": -36.054421768707485,
+        "creative_density_change": -10.131712259371824,
+        "creative_density_percentage": -10.638297872340416,
+        "category_changes": {
+          "visual_metaphors": {
+            "original": 2,
+            "simplified": 1,
+            "change": -1,
+            "percentage": -50.0
+          },
+          "emotional_details": {
+            "original": 1,
+            "simplified": 1,
+            "change": 0,
+            "percentage": 0.0
+          },
+          "environmental_details": {
+            "original": 1,
+            "simplified": 1,
+            "change": 0,
+            "percentage": 0.0
+          },
+          "cinematic_techniques": {
+            "original": 2,
+            "simplified": 2,
+            "change": 0,
+            "percentage": 0.0
+          },
+          "lighting_effects": {
+            "original": 2,
+            "simplified": 0,
+            "change": -2,
+            "percentage": -100.0
+          },
+          "color_grading": {
+            "original": 3,
+            "simplified": 1,
+            "change": -2,
+            "percentage": -66.66666666666666
+          },
+          "atmosphere_creation": {
+            "original": 3,
+            "simplified": 2,
+            "change": -1,
+            "percentage": -33.33333333333333
+          }
+        },
+        "quality_dimension_changes": {
+          "cinematic_quality": {
+            "original": 0.07142857142857142,
+            "simplified": 0.07142857142857142,
+            "change": 0.0,
+            "percentage": 0.0
+          },
+          "emotional_depth": {
+            "original": 0.06428571428571428,
+            "simplified": 0.06428571428571428,
+            "change": 0.0,
+            "percentage": 0.0
+          },
+          "visual_richness": {
+            "original": 0.11428571428571428,
+            "simplified": 0.11428571428571428,
+            "change": 0.0,
+            "percentage": 0.0
+          },
+          "narrative_clarity": {
+            "original": 0.11666666666666665,
+            "simplified": 0.11666666666666665,
+            "change": 0.0,
+            "percentage": 0.0
+          }
+        },
+        "lost_elements": [
+          "难以捉摸",
+          "冷蓝绿",
+          "牢笼",
+          "荧光灯",
+          "明暗",
+          "蓝绿"
+        ]
+      }
+    },
+    {
+      "title": "温馨回忆",
+      "original": {
+        "title": "温馨回忆",
+        "total_creative_elements": 18,
+        "category_counts": {
+          "visual_metaphors": {
+            "count": 2,
+            "matched_keywords": [
+              "光晕",
+              "晕出"
+            ]
+          },
+          "emotional_details": {
+            "count": 6,
+            "matched_keywords": [
+              "泪光",
+              "嘴角",
+              "发丝",
+              "微笑",
+              "描摹",
+              "望向"
+            ]
+          },
+          "environmental_details": {
+            "count": 2,
+            "matched_keywords": [
+              "虚化",
+              "色块"
+            ]
+          },
+          "cinematic_techniques": {
+            "count": 3,
+            "matched_keywords": [
+              "85mm",
+              "特写",
+              "镜头"
+            ]
+          },
+          "lighting_effects": {
+            "count": 3,
+            "matched_keywords": [
+              "柔光",
+              "黄金时段",
+              "光晕"
+            ]
+          },
+          "color_grading": {
+            "count": 0,
+            "matched_keywords": []
+          },
+          "atmosphere_creation": {
+            "count": 2,
+            "matched_keywords": [
+              "苦涩而温柔",
+              "私密"
+            ]
+          }
+        },
+        "quality_scores": {
+          "cinematic_quality": {
+            "raw_score": 1,
+            "normalized_score": 0.07142857142857142,
+            "weight": 1.0,
+            "weighted_score": 0.07142857142857142
+          },
+          "emotional_depth": {
+            "raw_score": 5,
+            "normalized_score": 0.35714285714285715,
+            "weight": 0.9,
+            "weighted_score": 0.32142857142857145
+          },
+          "visual_richness": {
+            "raw_score": 3,
+            "normalized_score": 0.21428571428571427,
+            "weight": 0.8,
+            "weighted_score": 0.17142857142857143
+          },
+          "narrative_clarity": {
+            "raw_score": 2,
+            "normalized_score": 0.16666666666666666,
+            "weight": 0.7,
+            "weighted_score": 0.11666666666666665
+          }
+        },
+        "missing_categories": [
+          "color_grading"
+        ],
+        "creative_density": 127.6595744680851,
+        "word_count": 141,
+        "creative_per_100_words": 12.76595744680851
+      },
+      "simplified": {
+        "title": "温馨回忆",
+        "total_creative_elements": 12,
+        "category_counts": {
+          "visual_metaphors": {
+            "count": 1,
+            "matched_keywords": [
+              "光晕"
+            ]
+          },
+          "emotional_details": {
+            "count": 5,
+            "matched_keywords": [
+              "嘴角",
+              "发丝",
+              "微笑",
+              "描摹",
+              "望向"
+            ]
+          },
+          "environmental_details": {
+            "count": 1,
+            "matched_keywords": [
+              "虚化"
+            ]
+          },
+          "cinematic_techniques": {
+            "count": 3,
+            "matched_keywords": [
+              "85mm",
+              "特写",
+              "镜头"
+            ]
+          },
+          "lighting_effects": {
+            "count": 2,
+            "matched_keywords": [
+              "柔光",
+              "光晕"
+            ]
+          },
+          "color_grading": {
+            "count": 0,
+            "matched_keywords": []
+          },
+          "atmosphere_creation": {
+            "count": 0,
+            "matched_keywords": []
+          }
+        },
+        "quality_scores": {
+          "cinematic_quality": {
+            "raw_score": 1,
+            "normalized_score": 0.07142857142857142,
+            "weight": 1.0,
+            "weighted_score": 0.07142857142857142
+          },
+          "emotional_depth": {
+            "raw_score": 4,
+            "normalized_score": 0.2857142857142857,
+            "weight": 0.9,
+            "weighted_score": 0.2571428571428571
+          },
+          "visual_richness": {
+            "raw_score": 2,
+            "normalized_score": 0.14285714285714285,
+            "weight": 0.8,
+            "weighted_score": 0.11428571428571428
+          },
+          "narrative_clarity": {
+            "raw_score": 0,
+            "normalized_score": 0.0,
+            "weight": 0.7,
+            "weighted_score": 0.0
+          }
+        },
+        "missing_categories": [
+          "color_grading",
+          "atmosphere_creation"
+        ],
+        "creative_density": 142.85714285714286,
+        "word_count": 84,
+        "creative_per_100_words": 14.285714285714285
+      },
+      "differences": {
+        "total_elements_change": -6,
+        "total_elements_percentage": -33.33333333333333,
+        "word_count_change": -57,
+        "word_count_percentage": -40.42553191489361,
+        "creative_density_change": 15.197568389057764,
+        "creative_density_percentage": 11.904761904761916,
+        "category_changes": {
+          "visual_metaphors": {
+            "original": 2,
+            "simplified": 1,
+            "change": -1,
+            "percentage": -50.0
+          },
+          "emotional_details": {
+            "original": 6,
+            "simplified": 5,
+            "change": -1,
+            "percentage": -16.666666666666664
+          },
+          "environmental_details": {
+            "original": 2,
+            "simplified": 1,
+            "change": -1,
+            "percentage": -50.0
+          },
+          "cinematic_techniques": {
+            "original": 3,
+            "simplified": 3,
+            "change": 0,
+            "percentage": 0.0
+          },
+          "lighting_effects": {
+            "original": 3,
+            "simplified": 2,
+            "change": -1,
+            "percentage": -33.33333333333333
+          },
+          "color_grading": {
+            "original": 0,
+            "simplified": 0,
+            "change": 0,
+            "percentage": 0
+          },
+          "atmosphere_creation": {
+            "original": 2,
+            "simplified": 0,
+            "change": -2,
+            "percentage": -100.0
+          }
+        },
+        "quality_dimension_changes": {
+          "cinematic_quality": {
+            "original": 0.07142857142857142,
+            "simplified": 0.07142857142857142,
+            "change": 0.0,
+            "percentage": 0.0
+          },
+          "emotional_depth": {
+            "original": 0.32142857142857145,
+            "simplified": 0.2571428571428571,
+            "change": -0.06428571428571433,
+            "percentage": -20.000000000000014
+          },
+          "visual_richness": {
+            "original": 0.17142857142857143,
+            "simplified": 0.11428571428571428,
+            "change": -0.05714285714285715,
+            "percentage": -33.333333333333336
+          },
+          "narrative_clarity": {
+            "original": 0.11666666666666665,
+            "simplified": 0.0,
+            "change": -0.11666666666666665,
+            "percentage": -100.0
+          }
+        },
+        "lost_elements": [
+          "泪光",
+          "黄金时段",
+          "色块",
+          "苦涩而温柔",
+          "晕出",
+          "私密"
+        ]
+      }
+    }
+  ],
+  "overall_statistics": {
+    "total_examples": 2,
+    "total_creative_elements_lost": 12,
+    "average_creative_loss_percentage": 37.5,
+    "quality_dimension_impacts": {
+      "cinematic_quality": {
+        "original_total": 0.14,
+        "simplified_total": 0.14,
+        "impact_percentage": 0.0,
+        "severity": "low"
+      },
+      "emotional_depth": {
+        "original_total": 0.39,
+        "simplified_total": 0.32,
+        "impact_percentage": -16.7,
+        "severity": "medium"
+      },
+      "visual_richness": {
+        "original_total": 0.29,
+        "simplified_total": 0.23,
+        "impact_percentage": -20.0,
+        "severity": "high"
+      },
+      "narrative_clarity": {
+        "original_total": 0.23,
+        "simplified_total": 0.12,
+        "impact_percentage": -50.0,
+        "severity": "critical"
+      }
+    }
+  },
+  "key_findings": [
+    "创意元素平均流失 37.5%",
+    "narrative_clarity 受影响严重程度: 严重 (-50.0%)",
+    "visual_richness 受影响严重程度: 高 (-20.0%)",
+    "emotional_depth 受影响严重程度: 中 (-16.7%)",
+    "最常丢失的创意元素: 难以捉摸(1次), 冷蓝绿(1次), 牢笼(1次), 荧光灯(1次), 明暗(1次)"
+  ],
+  "recommendations": [
+    "保护视觉质感词汇：虚化、色块、纹理、光晕等",
+    "保留光影效果：丁达尔效应、色温、色调等",
+    "建立创意元素优先级系统：高价值元素优先保留",
+    "动态Token分配：为高创意密度内容预留更多空间"
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "report_info": {
+    "batch_size": "100%",
+    "total_examples": 5,
+    "successful_examples": 5,
+    "failed_examples": 0,
+    "processing_time_seconds": 0.001,
+    "timestamp": "2026-01-30T20:34:13.900669",
+    "phase": "C",
+    "version": "1.0"
+  },
+  "overall_metrics": {
+    "average_reduction": 4.8,
+    "average_p1_preserved": 2.2,
+    "average_p2_preserved": 10.2,
+    "average_quality_score": 1.0,
+    "target_reduction": 7.9,
+    "target_p1": 100,
+    "target_p2": 90,
+    "target_quality": 0.8
+  },
+  "scene_analysis": {
+    "emotional": {
+      "count": 1,
+      "avg_reduction": 7.3,
+      "avg_p1": 2.0,
+      "avg_p2": 13.0,
+      "avg_quality": 1.0
+    },
+    "dialogue": {
+      "count": 1,
+      "avg_reduction": 3.5,
+      "avg_p1": 2.0,
+      "avg_p2": 9.0,
+      "avg_quality": 1.0
+    },
+    "establishing": {
+      "count": 1,
+      "avg_reduction": 5.7,
+      "avg_p1": 2.0,
+      "avg_p2": 10.0,
+      "avg_quality": 1.0
+    },
+    "action": {
+      "count": 1,
+      "avg_reduction": 2.7,
+      "avg_p1": 2.0,
+      "avg_p2": 8.0,
+      "avg_quality": 1.0
+    },
+    "suspense": {
+      "count": 1,
+      "avg_reduction": 4.9,
+      "avg_p1": 3.0,
+      "avg_p2": 11.0,
+      "avg_quality": 1.0
+    }
+  },
+  "validation": {
+    "reduction_target_achieved": false,
+    "p1_target_achieved": true,
+    "p2_target_achieved": true,
+    "quality_target_achieved": true,
+    "all_examples_processed": true,
+    "processing_time_acceptable": true
+  },
+  "results": [
+    {
+      "example_id": "example_01",
+      "title": "温馨回忆（剧情片）",
+      "category": "emotional_closeup",
+      "detected_scene": "emotional",
+      "original_length": 137,
+      "simplified_length": 127,
+      "reduction_percentage": 7.3,
+      "preserved_p1": 2,
+      "preserved_p2": 13,
+      "quality_score": 1.0,
+      "status": "success",
+      "timestamp": "2026-01-30T20:34:13.900407"
+    },
+    {
+      "example_id": "example_02",
+      "title": "紧张对峙（剧情片）",
+      "category": "dialogue_confrontation",
+      "detected_scene": "dialogue",
+      "original_length": 143,
+      "simplified_length": 138,
+      "reduction_percentage": 3.5,
+      "preserved_p1": 2,
+      "preserved_p2": 9,
+      "quality_score": 1.0,
+      "status": "success",
+      "timestamp": "2026-01-30T20:34:13.900492"
+    },
+    {
+      "example_id": "example_03",
+      "title": "世界观建立（奇幻/科幻）",
+      "category": "establishing_shot",
+      "detected_scene": "establishing",
+      "original_length": 140,
+      "simplified_length": 132,
+      "reduction_percentage": 5.7,
+      "preserved_p1": 2,
+      "preserved_p2": 10,
+      "quality_score": 1.0,
+      "status": "success",
+      "timestamp": "2026-01-30T20:34:13.900549"
+    },
+    {
+      "example_id": "example_04",
+      "title": "动作场景（动作片）",
+      "category": "action_scene",
+      "detected_scene": "action",
+      "original_length": 110,
+      "simplified_length": 107,
+      "reduction_percentage": 2.7,
+      "preserved_p1": 2,
+      "preserved_p2": 8,
+      "quality_score": 1.0,
+      "status": "success",
+      "timestamp": "2026-01-30T20:34:13.900591"
+    },
+    {
+      "example_id": "example_05",
+      "title": "悬疑揭示（悬疑片）",
+      "category": "suspense_reveal",
+      "detected_scene": "suspense",
+      "original_length": 143,
+      "simplified_length": 136,
+      "reduction_percentage": 4.9,
+      "preserved_p1": 3,
+      "preserved_p2": 11,
+      "quality_score": 1.0,
+      "status": "success",
+      "timestamp": "2026-01-30T20:34:13.900642"
+    }
+  ]
+}
