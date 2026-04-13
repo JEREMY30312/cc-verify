@@ -769,7 +769,7 @@ def generate_tree(dir_path, prefix="", depth=0, files_info=None):
             max_depth = get_max_depth(entry)
             if entry in COLLAPSE_FOLDERS:
                 result.append(f"{prefix}{pointer[1]}└── ...")
-            elif depth >= max_depth:
+            elif depth + 1 >= max_depth:
                 result.append(f"{prefix}{pointer[1]}└── ...")
             else:
                 result.extend(

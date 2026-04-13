@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generated_at": "2026-04-09T11:14:07.668098",
+    "generated_at": "2026-04-13T14:11:12.892288",
     "generator_version": "2.0",
-    "total_files": 412,
-    "total_directories": 78,
+    "total_files": 416,
+    "total_directories": 79,
     "time_range_hours": 168
   },
   "project_profile": {
@@ -30,12 +30,13 @@
         ]
       },
       "portable": {
-        "count": 4,
+        "count": 8,
         "files": [
+          "PROJECT_FINGERPRINT.json",
+          "PROJECT_MAP.md",
           "standalone.py",
           "TROUBLESHOOTING.md",
-          "install.sh",
-          "README.md"
+          "install.sh"
         ]
       },
       "agents": {
@@ -123,12 +124,25 @@
       }
     },
     "file_type_distribution": {
-      ".md": 178
+      ".md": 181
     }
   },
   "temporal_analysis": {
     "recent_changes_count": 0,
-    "hot_directories": []
+    "hot_directories": [
+      [
+        "portable",
+        2
+      ],
+      [
+        "根目录",
+        1
+      ],
+      [
+        "portable/generate-descriptions",
+        1
+      ]
+    ]
   },
   "ai_optimized_index": {
     "quick_answers": {
@@ -140,6 +154,7 @@
     "search_shortcuts": {
       "JSON配置": [
         "PROJECT_FINGERPRINT.json",
+        "portable/PROJECT_FINGERPRINT.json",
         "project_root/library/contracts/beat-analysis-schema.json",
         "project_root/library/contracts/shot-board-schema.json",
         "project_root/library/examples/beat-analysis-examples.json",
@@ -210,8 +225,11 @@
       "Markdown文档": [
         "PROJECT_MAP.md",
         "AGENTS.md",
+        "portable/PROJECT_MAP.md",
         "portable/TROUBLESHOOTING.md",
         "portable/README.md",
+        "portable/generate-descriptions/opencode.md",
+        "portable/generate-descriptions/claude.md",
         "agents/animator.md",
         "agents/README.md",
         "agents/producer-self-check.md",
@@ -488,8 +506,21 @@
         "modules/llm_task_generator.py"
       ]
     },
-    "hot_directories": [],
-    "file_count": 412,
-    "git_change_count": 0
+    "hot_directories": [
+      [
+        "portable",
+        2
+      ],
+      [
+        "根目录",
+        1
+      ],
+      [
+        "portable/generate-descriptions",
+        1
+      ]
+    ],
+    "file_count": 416,
+    "git_change_count": 4
   }
 }

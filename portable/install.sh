@@ -4,7 +4,7 @@
 
 set -e
 
-echo "🗺️  项目地图生成器 V2.0 - 安装中..."
+echo "🗺️  项目地图生成器 V2.2 - 安装中..."
 echo ""
 
 # 1. 下载主程序
@@ -19,8 +19,33 @@ cat > .project-map-config.json << 'EOF'
   "time_range_hours": 168,
   "max_description_length": 20,
   "max_tree_depth": 3,
-  "shallow_folders": ["backups", "版本汇总", "logs", "tests", "dist", "__pycache__", "临时池", "暂存数据"],
-  "ignore_list": [".git", "node_modules", "__pycache__", ".DS_Store", "dist", "build", ".idea", ".vscode"],
+  "shallow_folders": [
+    "backups",
+    "版本汇总",
+    "logs",
+    "tests",
+    "dist",
+    "__pycache__",
+    "临时池",
+    "暂存数据",
+    "playwright-report",
+    "coverage",
+    ".nyc_output"
+  ],
+  "ignore_list": [
+    ".git",
+    "node_modules",
+    "__pycache__",
+    ".DS_Store",
+    "dist",
+    "build",
+    ".idea",
+    ".vscode",
+    ".sisyphus",
+    ".opencode",
+    ".backup",
+    ".backups"
+  ],
   "collapse_folders": ["backups", ".strategic-snapshots", "版本汇总", ".backup"],
   "hooks": {
     "post_commit_update": true,
@@ -31,6 +56,13 @@ cat > .project-map-config.json << 'EOF'
   "output": {
     "map_file": "PROJECT_MAP.md",
     "fingerprint_file": "PROJECT_FINGERPRINT.json"
+  },
+  "description": {
+    "mode": "llm",
+    "max_length": 20,
+    "cache_file": ".file-descriptions.json",
+    "tasks_file": ".llm-tasks.json",
+    "timeout_seconds": 60
   }
 }
 EOF
@@ -57,3 +89,5 @@ echo "   安装钩子: python3 generate_map.py --install-hooks"
 echo "   静默模式: python3 generate_map.py --silent"
 echo ""
 echo "📖 文档: https://github.com/JEREMY30312/cc-verify"
+echo ""
+echo "💡 提示: LLM模式需要AI平台支持，首次运行会生成任务清单"
