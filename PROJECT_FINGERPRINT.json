@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-04-13T14:11:12.892288",
+    "generated_at": "2026-04-13T14:43:12.640217",
     "generator_version": "2.0",
     "total_files": 416,
     "total_directories": 79,
@@ -131,15 +131,11 @@
     "recent_changes_count": 0,
     "hot_directories": [
       [
-        "portable",
-        2
-      ],
-      [
         "根目录",
         1
       ],
       [
-        "portable/generate-descriptions",
+        "portable",
         1
       ]
     ]
@@ -508,19 +504,15 @@
     },
     "hot_directories": [
       [
-        "portable",
-        2
-      ],
-      [
         "根目录",
         1
       ],
       [
-        "portable/generate-descriptions",
+        "portable",
         1
       ]
     ],
     "file_count": 416,
-    "git_change_count": 4
+    "git_change_count": 2
   }
 }

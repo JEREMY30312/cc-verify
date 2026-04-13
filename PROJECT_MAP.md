@@ -1,6 +1,6 @@
 # 🗺️ 项目地图 (Live)
 
-> **Updated:** 2026-04-13 14:11:12
+> **Updated:** 2026-04-13 14:43:12
  > **Version:** 2.2 | **Mode:** 智能层级 + 关键文件识别 + LLM描述
 
 ## 🔥 最近变动 (7天)
@@ -8,9 +8,7 @@
 | 文件 | 目录 | 变更 | 时间 | 描述 |
 |------|------|------|------|------|
 | enerate_map.py | 根目录 | 🟢 修改 | - | - |
-| install.sh | portable | 🟢 修改 | - | - |
 | standalone.py | portable | 🟢 修改 | - | - |
-|  | portable/generate-descriptions | ⚪ 未知 | - | - |
 
 ## 📂 文件目录
 

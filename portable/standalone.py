@@ -2,8 +2,8 @@
 """
 > **Description:** 项目地图生成器独立版 - 单文件，无外部依赖
 
-项目地图生成器 V2.2 独立版
-支持Git集成、LLM智能描述、学习机制、YAML描述提取
+项目地图生成器 V2.3 独立版
+支持Git集成、LLM智能描述、学习机制、YAML描述、一键安装/卸载/升级
 单文件，Python 3.6+，无外部依赖
 """
 
@@ -15,6 +15,7 @@ import subprocess
 import datetime
 import shutil
 import time
+import argparse
 from pathlib import Path
 from collections import defaultdict
 
@@ -918,57 +919,245 @@ def run_hook(hook_name):
         print(f"❌ 钩子执行失败: {e}")
 
 
+# ================= 安装/卸载/升级 =================
+
+
+def get_global_config_path():
+    """获取全局配置文件路径"""
+    config_dir = os.path.expanduser("~/.config/project-map")
+    os.makedirs(config_dir, exist_ok=True)
+    return os.path.join(config_dir, "config.json")
+
+
+def load_global_config():
+    """加载全局配置"""
+    config_path = get_global_config_path()
+    if os.path.exists(config_path):
+        with open(config_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {
+        "default_repo": "JEREMY30312/cc-verify",
+        "default_branch": "main",
+        "installed_hooks": False,
+    }
+
+
+def save_global_config(config):
+    """保存全局配置"""
+    config_path = get_global_config_path()
+    with open(config_path, "w", encoding="utf-8") as f:
+        json.dump(config, f, ensure_ascii=False, indent=2)
+
+
+def install(repo="JEREMY30312/cc-verify", branch="main"):
+    """一键安装"""
+    print("🗺️  项目地图生成器 V2.3 - 安装中...")
+    print("")
+
+    # 1. 下载主程序
+    print("📥 下载主程序...")
+    url = f"https://raw.githubusercontent.com/{repo}/{branch}/portable/standalone.py"
+    try:
+        result = subprocess.run(
+            ["curl", "-fsSL", "-o", "generate_map.py", url],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        print("   ✅ 已下载 generate_map.py")
+    except subprocess.CalledProcessError as e:
+        print(f"   ❌ 下载失败: {e.stderr}")
+        return False
+
+    # 2. 创建默认配置
+    print("⚙️  创建默认配置...")
+    with open(".project-map-config.json", "w", encoding="utf-8") as f:
+        json.dump(DEFAULT_CONFIG, f, ensure_ascii=False, indent=2)
+    print("   ✅ 已创建 .project-map-config.json")
+
+    # 3. 保存全局配置
+    global_config = load_global_config()
+    global_config["default_repo"] = repo
+    global_config["default_branch"] = branch
+    save_global_config(global_config)
+
+    # 4. 首次运行
+    print("🚀 首次运行...")
+    try:
+        subprocess.run(["python3", "generate_map.py"], check=True)
+    except subprocess.CalledProcessError:
+        print("   ⚠️  首次运行失败，请手动运行: python3 generate_map.py")
+
+    # 5. 询问是否安装钩子
+    if os.path.isdir(".git"):
+        print("")
+        print("🔧 是否安装 Git 钩子？")
+        print("   安装后，每次提交/合并/切换分支时自动更新项目地图")
+        print("   输入 'y' 安装，其他键跳过")
+        try:
+            choice = input("   > ")
+            if choice.lower() == "y":
+                install_hooks()
+                global_config["installed_hooks"] = True
+                save_global_config(global_config)
+        except (EOFError, KeyboardInterrupt):
+            print("   ⏭️  跳过钩子安装")
+
+    print("")
+    print("✅ 安装完成！")
+    print("   使用: python3 generate_map.py")
+    print("   卸载: python3 generate_map.py --uninstall")
+    print("   升级: python3 generate_map.py --upgrade")
+    print("")
+    print("📖 文档: https://github.com/JEREMY30312/cc-verify")
+    print("")
+    print("💡 提示: LLM模式需要AI平台支持，首次运行会生成任务清单")
+
+    return True
+
+
+def uninstall():
+    """卸载"""
+    print("⚠️  即将卸载项目地图生成器")
+    print("")
+    print("将删除以下文件：")
+    print("   - generate_map.py")
+    print("   - .project-map-config.json")
+    print("   - .project-map-config.example.json")
+    print("   - .file-descriptions.json")
+    print("   - .llm-tasks.json")
+    print("   - PROJECT_MAP.md")
+    print("   - PROJECT_FINGERPRINT.json")
+    print("   - PROJECT_CLEANUP_GUIDE.md (如果存在)")
+    print("   - .git/hooks/post-commit (如果存在)")
+    print("   - .git/hooks/post-merge (如果存在)")
+    print("   - .git/hooks/post-checkout (如果存在)")
+    print("")
+
+    # 二次确认
+    print("确定要卸载吗？(y/n) ", end="")
+    try:
+        choice = input()
+        if choice.lower() != "y":
+            print("❌ 已取消卸载")
+            return False
+    except (EOFError, KeyboardInterrupt):
+        print("❌ 已取消卸载")
+        return False
+
+    print("")
+    print("🗑️  删除文件...")
+
+    # 删除主程序和配置文件
+    files_to_delete = [
+        "generate_map.py",
+        ".project-map-config.json",
+        ".project-map-config.example.json",
+        ".file-descriptions.json",
+        ".llm-tasks.json",
+        "PROJECT_MAP.md",
+        "PROJECT_FINGERPRINT.json",
+        "PROJECT_CLEANUP_GUIDE.md",
+    ]
+
+    for file in files_to_delete:
+        if os.path.exists(file):
+            os.remove(file)
+            print(f"   ✅ 已删除 {file}")
+
+    # 删除Git钩子
+    hooks_to_delete = [
+        ".git/hooks/post-commit",
+        ".git/hooks/post-merge",
+        ".git/hooks/post-checkout",
+    ]
+
+    for hook in hooks_to_delete:
+        if os.path.exists(hook):
+            os.remove(hook)
+            print(f"   ✅ 已删除 {hook}")
+
+    # 清理全局配置
+    global_config = load_global_config()
+    global_config["installed_hooks"] = False
+    save_global_config(global_config)
+
+    print("")
+    print("✅ 卸载完成！")
+    print("   如需重新安装，请运行:")
+    print(
+        "   curl -fsSL https://raw.githubusercontent.com/JEREMY30312/cc-verify/main/portable/install.sh | bash"
+    )
+
+    return True
+
+
+def upgrade(repo=None, branch=None):
+    """升级"""
+    print("🔄 项目地图生成器 - 升级中...")
+    print("")
+
+    # 读取全局配置
+    global_config = load_global_config()
+    if repo is None:
+        repo = global_config.get("default_repo", "JEREMY30312/cc-verify")
+    if branch is None:
+        branch = global_config.get("default_branch", "main")
+
+    # 1. 备份配置
+    print("💾 备份配置...")
+    if os.path.exists(".project-map-config.json"):
+        shutil.copy(".project-map-config.json", ".project-map-config.json.backup")
+        print("   ✅ 已备份 .project-map-config.json")
+
+    # 2. 下载最新版本
+    print("📥 下载最新版本...")
+    url = f"https://raw.githubusercontent.com/{repo}/{branch}/portable/standalone.py"
+    try:
+        result = subprocess.run(
+            ["curl", "-fsSL", "-o", "generate_map.py", url],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        print("   ✅ 已下载 generate_map.py")
+    except subprocess.CalledProcessError as e:
+        print(f"   ❌ 下载失败: {e.stderr}")
+        return False
+
+    # 3. 恢复配置
+    print("⚙️  恢复配置...")
+    if os.path.exists(".project-map-config.json.backup"):
+        shutil.copy(".project-map-config.json.backup", ".project-map-config.json")
+        print("   ✅ 已恢复 .project-map-config.json")
+
+    # 4. 重新安装钩子（如果之前有）
+    if global_config.get("installed_hooks", False):
+        print("🔧 重新安装钩子...")
+        try:
+            install_hooks()
+            print("   ✅ 已重新安装钩子")
+        except Exception:
+            print("   ⚠️  钩子安装失败")
+
+    # 5. 更新全局配置
+    global_config["default_repo"] = repo
+    global_config["default_branch"] = branch
+    save_global_config(global_config)
+
+    print("")
+    print("✅ 升级完成！")
+    print("   使用: python3 generate_map.py")
+
+    return True
+
+
 # ================= 主函数 =================
 
 
 def main():
     """主函数"""
-    # 检查命令行参数
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "--install-hooks":
-            install_hooks()
-            return
-        elif sys.argv[1] == "--run-hook" and len(sys.argv) > 2:
-            run_hook(sys.argv[2])
-            return
-        elif sys.argv[1] == "--silent":
-            # 静默模式
-            try:
-                files_info = scan_project_structure(".")
-                git_changes = get_git_status(".")
-
-                # LLM描述生成（静默模式）
-                if DESC_MODE == "llm":
-                    tasks = detect_file_changes(
-                        files_info, DESC_CACHE_FILE, MAX_DESCRIPTION_LENGTH
-                    )
-                    if tasks:
-                        write_tasks_json(tasks, DESC_TASKS_FILE)
-                        if wait_for_ai_completion(DESC_TIMEOUT, DESC_CACHE_FILE):
-                            ai_cache = load_description_cache(DESC_CACHE_FILE)
-                            for f in files_info:
-                                desc = get_description_from_cache(ai_cache, f.path)
-                                if desc:
-                                    f.description = desc
-                                    f.is_new_format = True
-                            current_files = [f.path for f in files_info]
-                            cleaned_cache = clean_description_cache(
-                                ai_cache, current_files
-                            )
-                            save_description_cache(cleaned_cache, DESC_CACHE_FILE)
-
-                map_content = generate_project_map(files_info, git_changes)
-                with open(TARGET_FILE, "w", encoding="utf-8") as f:
-                    f.write(map_content)
-
-                fingerprint = generate_project_fingerprint(files_info, git_changes)
-                with open(FINGERPRINT_FILE, "w", encoding="utf-8") as f:
-                    json.dump(fingerprint, f, ensure_ascii=False, indent=2)
-            except Exception:
-                pass
-            return
-
-    print("🚀 开始生成项目地图 V2.2 (独立版)...")
+    print("🚀 开始生成项目地图 V2.3 (独立版)...")
 
     print("📁 扫描项目结构...")
     files_info = scan_project_structure(".")
@@ -1036,4 +1225,35 @@ def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="项目地图生成器 V2.3 (独立版)")
+    parser.add_argument("--install", action="store_true", help="一键安装")
+    parser.add_argument("--uninstall", action="store_true", help="卸载")
+    parser.add_argument("--upgrade", action="store_true", help="升级")
+    parser.add_argument("--repo", help="GitHub仓库 (owner/repo)")
+    parser.add_argument("--branch", help="Git分支 (默认: main)")
+    parser.add_argument("--silent", action="store_true", help="静默模式")
+    parser.add_argument("--install-hooks", action="store_true", help="安装Git钩子")
+
+    args = parser.parse_args()
+
+    # 处理安装/卸载/升级
+    if args.install:
+        repo = args.repo or "JEREMY30312/cc-verify"
+        branch = args.branch or "main"
+        install(repo, branch)
+        sys.exit(0)
+
+    if args.uninstall:
+        uninstall()
+        sys.exit(0)
+
+    if args.upgrade:
+        upgrade(args.repo, args.branch)
+        sys.exit(0)
+
+    if args.install_hooks:
+        install_hooks()
+        sys.exit(0)
+
+    # 正常运行
     main()
